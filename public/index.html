@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+ <!--    <link rel="stylesheet" href="../stylesheets/style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+  	<script src="main.js"></script>
+  </head>
+  	<body ng-controller="mainController">
+
+  	<h3>Login</h3>
+        <form ng-submit="login()">
+            <input type="text" ng-model="loginForm.username" placeholder="Username"/>
+            <input type="password" ng-model="loginForm.password" placeholder="Password"/>
+            <input type="submit"/>
+        </form>
+
+        <h3>Sign Up</h3>
+        <form ng-submit="signup()">
+            <input type="text" ng-model="signupForm.username" placeholder="Username"/>
+            <input type="password" ng-model="signupForm.password" placeholder="Password"/>
+            <input type="submit"/>
+        </form>
+
+	</body>
+</html>
