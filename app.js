@@ -35,6 +35,23 @@ var User = require('./models/model.js')
 // });
 // var User = mongoose.model('user', userSchema);
 
+var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
+var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
+
+var client = require('twilio')(accountSid, authToken); 
+
+function hello(){
+client.messages.create({ 
+	to: "+12083710092", 
+	from: "+13038482330", 
+	body: "Yo",   
+}, function(err, responseData) { 
+	console.log('done'); 
+})
+}
+// hello();
+
+
 
 // Passport
 var passport = require('passport')
@@ -113,8 +130,12 @@ app.get('/', function(req, res){
     res.sendFile('/html/login.html', {root: './public'})
 })
 
+app.post('/settings', controller.addSettings);
+
+app.post('/habits', controller.addHabits);
 
 app.post('/signup', function(req, res){
+	console.log("111");
     bcrypt.genSalt(11, function(error, salt){
         bcrypt.hash(req.body.password, salt, function(hashError, hash){
             var newUser = new User({
@@ -141,6 +162,7 @@ app.post('/login', function(req, res, next){
         if (!user) { return res.send({error : 'something went wrong :('}); }
         req.logIn(user, function(err) {
             if (err) { return next(err); }
+            console.log("Logged in")
             return res.send({success:'success'});
         });
     })(req, res, next);
@@ -151,6 +173,7 @@ app.post('/login', function(req, res, next){
 // app.use is like 'vertical middleware'. They get evaluated from top to bottom.
 // there is also inline, or 'horizontal' middleware.
 app.get('/dashboard', app.isAuthenticated, function(req, res){
+	console.log(req.user)
     res.sendFile('/dashboard.html', {root: './public'})
 })
 
