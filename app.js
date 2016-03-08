@@ -123,12 +123,7 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 console.log(req.body)
-  var resp = new twilio.TwimlResponse();
-  resp.message('Thanks for subscribing!');
-  res.writeHead(200, {
-    'Content-Type':'text/xml'
-  });
-  res.end(resp.toString());
+ res.send(200);
 });
 
 app.post('/settings', controller.addSettings);
