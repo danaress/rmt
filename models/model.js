@@ -3,11 +3,15 @@ var mongoose = require('mongoose')
 var userSchema = mongoose.Schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    number: { type: Number, required: false },
     time: { type: Number, required: false },
     start: { type: Date, default: Date.now},
     habit1: { type: String, required: false },
     habit2: { type: String, required: false },
-    habit3: { type: String, required: false }
+    habit3: { type: String, required: false },
+    array1: { type: Array, required: false },
+    array2: { type: Array, required: false },
+    array3: { type: Array, required: false },
 });
 
 module.exports = mongoose.model('user', userSchema)

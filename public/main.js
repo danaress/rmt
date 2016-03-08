@@ -5,6 +5,8 @@ angular.module('myApp')
 
 
 
+
+
         $scope.signup = function(){
             $http({ 
                 method : 'POST',
@@ -46,18 +48,5 @@ angular.module('myApp')
                 else { console.log(returnData)}
             })
         }
-
-        function tick()
-			{
-			    //get the mins of the current time
-			    var mins = new Date().getMinutes();
-			    var hour = new Date().getHours();
-			    if(mins == 00){
-			        console.log('mins = ' + mins + ". and hours = " + hour);
-			     }
-			}
-			tick();
-
-setInterval(function() { tick(); }, 1000);
 
 	}]);

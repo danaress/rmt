@@ -19,9 +19,10 @@ addSettings = function(req, res){
 addHabits = function(req, res){
 
 	user.update(
-		{ username: req.user.username},
+		{ 'username': req.user.username},
 		{ $set:
 			{
+				number: req.body.number,
 				habit1: req.body.habit1,
 				habit2: req.body.habit2,
 				habit3: req.body.habit3,
@@ -32,9 +33,29 @@ addHabits = function(req, res){
 	})
 }
 
+checkForTimes = function(req, res){
+	var datex = new Date().getHours();
+	console.log("got this far")
+	user.find({ time: datex}, function(err, docs){
+		console.log("controller")
+		res.send(docs);
+
+	})}
+
+// function hello(re, res){
+// 	client.messages.create({
+// 	to: $scope.number, 
+// 	from: "+13038482330", 
+// 	body: "Yo",   
+// }, function(err, doc) { 
+// 	res.send(done);
+// })
+// }
+
 
 
 module.exports = {
 	addSettings : addSettings,
 	addHabits : addHabits,
+	checkForTimes: checkForTimes,
 }

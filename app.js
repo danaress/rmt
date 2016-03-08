@@ -29,27 +29,14 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/users')
 var User = require('./models/model.js')
 
-// var userSchema = mongoose.Schema({
-//     username: { type: String, required: true, unique: true },
-//     password: { type: String, required: true },
-// });
-// var User = mongoose.model('user', userSchema);
 
-var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
-var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
 
-var client = require('twilio')(accountSid, authToken); 
+////////////// Twili0 ///////////
 
-function hello(){
-client.messages.create({ 
-	to: "+12083710092", 
-	from: "+13038482330", 
-	body: "Yo",   
-}, function(err, responseData) { 
-	console.log('done'); 
-})
-}
-// hello();
+// var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
+// var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
+// var client = require('twilio')(accountSid, authToken);
+
 
 
 
@@ -134,6 +121,8 @@ app.post('/settings', controller.addSettings);
 
 app.post('/habits', controller.addHabits);
 
+app.get('/checkForTimes', controller.checkForTimes)
+
 app.post('/signup', function(req, res){
 	console.log("111");
     bcrypt.genSalt(11, function(error, salt){
@@ -141,6 +130,7 @@ app.post('/signup', function(req, res){
             var newUser = new User({
                 username: req.body.username,
                 password: hash,
+                number: req.body.number,
             });
             newUser.save(function(saveErr, user){
                 if ( saveErr ) { res.send({ err:saveErr }) }
