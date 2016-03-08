@@ -13,7 +13,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 05){
+			    if(mins == 53){
 				var datex = new Date().getHours();
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
@@ -23,7 +23,7 @@ console.log("worker working!!!!!");
 			    console.log(docs[i].number)
 
 			    client.messages.create({ 
-				to: docs[i].number, 
+				to: +docs[i].number, 
 				from: "+13038482330", 
 				body: "'Hey" + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
 			},  function(err, responseData) { 
