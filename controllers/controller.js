@@ -33,14 +33,6 @@ addHabits = function(req, res){
 	})
 }
 
-checkForTimes = function(req, res){
-	var datex = new Date().getHours();
-	console.log("got this far")
-	user.find({ time: datex}, function(err, docs){
-		console.log("controller")
-		res.send(docs);
-
-	})}
 
 // function hello(re, res){
 // 	client.messages.create({
