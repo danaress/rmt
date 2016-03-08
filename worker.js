@@ -13,7 +13,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 00){
+			    if(mins == 05){
 				var datex = new Date().getHours();
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
@@ -37,6 +37,7 @@ setInterval(function() { tick(); }, 100000);
 
 smsTest = function(req, res){
 var response = req.body.split(' ')
+console.log(response)
  res.sendStatus(200);
 }
 
