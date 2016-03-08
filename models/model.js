@@ -14,4 +14,4 @@ var userSchema = mongoose.Schema({
     array3: { type: Array, required: false },
 });
 
-module.exports = mongoose.model('user', userSchema)
+module.exports = mongoose.model('users', userSchema)

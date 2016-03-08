@@ -1,10 +1,10 @@
-var user = require('../models/model.js')
+var users = require('../models/model.js')
 var mongoose = require('mongoose');
 
 addSettings = function(req, res){
 
 	console.log("req user" + req.user);
-	user.update(
+	users.update(
 		{ username: req.user.username},
 		{ $set:
 			{
@@ -18,7 +18,7 @@ addSettings = function(req, res){
 
 addHabits = function(req, res){
 
-	user.update(
+	users.update(
 		{ 'username': req.user.username},
 		{ $set:
 			{

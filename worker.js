@@ -23,9 +23,9 @@ console.log("worker working!!!!!");
 			    console.log(docs[i].number)
 
 			    client.messages.create({ 
-				to: docs[i].number, 
+				to: "+1"+docs[i].number, 
 				from: "+13038482330", 
-				body: "Hey " + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
+				body: "'Hey" + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
 			},  function(err, responseData) { 
 				console.log('done'); 
 			})
