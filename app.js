@@ -125,11 +125,11 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
-	User.update(
 		var num = req.body.From
 		console.log(num)
 		console.log(num.slice(1))
-		{ 'number': req.body.from},
+	User.update(
+		{ 'number': num},
 		{ $push:
 			{
 				array1: x[0],
