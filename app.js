@@ -125,7 +125,7 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
-	users.update(
+	User.update(
 		{ 'number': req.body.from},
 		{ $push:
 			{
