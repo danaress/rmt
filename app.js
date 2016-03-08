@@ -121,10 +121,12 @@ app.get('/', function(req, res){
     res.sendFile('/html/login.html', {root: './public'})
 })
 
-app.post('/test', function (req, res) {
-console.log(req.body)
- res.send(200);
-});
+app.post('/test', worker.smsTest)
+
+// app.post('/test', function (req, res) {
+// console.log(req.body)
+//  res.sendStatus(200);
+// });
 
 app.post('/settings', controller.addSettings);
 

@@ -36,19 +36,9 @@ setInterval(function() { tick(); }, 100000);
 
 
 smsTest = function(req, res){
-    //Validate that this request really came from Twilio...
-    // if (twilio.validateExpressRequest(req, 'authToken')) {
-    	var x = req.param('Body')
-        console.log(x)
-        window.location.href="/dashboard.html"
-        client.messages.create({ 
-				to: '+12039470215', 
-				from: "+13038482330", 
-				body: "Yo",   
-			},  function(err, responseData) { 
-				console.log('done'); 
-			})
-    }
+console.log(req.body)
+ res.sendStatus(200);
+}
 
 
 
