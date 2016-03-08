@@ -13,7 +13,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 53){
+			    if(mins == 02){
 				var datex = new Date().getHours();
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
@@ -25,15 +25,15 @@ console.log("worker working!!!!!");
 			    client.messages.create({ 
 				to: +docs[i].number, 
 				from: "+13038482330", 
-				body: "'Hey" + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
+				body: "'Hey",   
 			},  function(err, responseData) { 
 				console.log('done'); 
 			})
 				}})}}
-		// tick();
+		tick();
 setInterval(function() { tick(); }, 100000);
 
-
+ // + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)"
 
 // smsTest = function(req, res){
 // var response = req.body.split(' ')
