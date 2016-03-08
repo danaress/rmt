@@ -35,7 +35,7 @@ setInterval(function() { tick(); }, 100000);
 
 
 smsTest = function(req, res){
-	if (twilio.validateExpressRequest(req, authToken, {url: 'http://45.55.108.165//test'}) || false) {
+	if (twilio.validateExpressRequest(req, authToken, {url: 'http://192.241.221.150/test'}) || false) {
         res.header('Content-Type', 'text/xml');
         console.log(req.body)
         res.send("<Response><Sms>Test</Sms></Response");
