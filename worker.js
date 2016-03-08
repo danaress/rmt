@@ -25,7 +25,7 @@ console.log("worker working!!!!!");
 			    client.messages.create({ 
 				to: docs[i].number, 
 				from: "+13038482330", 
-				body: "Yo",   
+				body: "Hey " + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
 			},  function(err, responseData) { 
 				console.log('done'); 
 			})
@@ -36,7 +36,7 @@ setInterval(function() { tick(); }, 100000);
 
 
 smsTest = function(req, res){
-console.log(req.body)
+var response = req.body.split(' ')
  res.sendStatus(200);
 }
 
