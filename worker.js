@@ -39,6 +39,7 @@ smsTest = function(req, res){
     // if (twilio.validateExpressRequest(req, 'authToken')) {
     	var x = req.param('Body')
         console.log(x)
+        window.location.href="/dashboard.html"
     }
 
 
