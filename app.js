@@ -124,7 +124,8 @@ app.get('/', function(req, res){
 // app.post('/test', worker.smsTest)
 
 app.post('/test', function (req, res) {
-console.log(req.body)
+	var x = req.body.split(' ')
+console.log(x)
  res.sendStatus(200);
 });
 
