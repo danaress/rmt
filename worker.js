@@ -1,5 +1,4 @@
-var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/users')
+
 var user = require('./models/model.js')
 
 var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
@@ -30,5 +29,21 @@ console.log("worker working!!!!!");
 				console.log('done'); 
 			})
 				}})}}
-		tick();
+		// tick();
 setInterval(function() { tick(); }, 100000);
+
+
+
+smsTest = function(req, res){
+	if (twilio.validateExpressRequest(req, authToken, {url: 'http://192.168.173.143:3000/test'}) || false) {
+        res.header('Content-Type', 'text/xml');
+        console.log(req.body)
+        res.send("<Response><Sms>Test</Sms></Response");
+}
+}
+
+
+module.exports = {
+	tick : tick,
+	smsTest : smsTest
+}

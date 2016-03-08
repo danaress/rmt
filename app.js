@@ -1,6 +1,7 @@
 // Requires \\
 var express = require('express');
 var app = express();
+var worker = require('./worker.js')
 
 app.use(express.static(__dirname + '/public'));
 
@@ -26,7 +27,10 @@ var controller = require("./controllers/controller.js")
 
 // Database
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/users')
+mongoose.connect('mongodb://localhost/users', function(err){
+	if (err) console.log(err)
+		console.log("connected to mongo")
+})
 var User = require('./models/model.js')
 
 
@@ -117,11 +121,11 @@ app.get('/', function(req, res){
     res.sendFile('/html/login.html', {root: './public'})
 })
 
+app.post('/test', worker.smsTest)
+
 app.post('/settings', controller.addSettings);
 
 app.post('/habits', controller.addHabits);
-
-app.get('/checkForTimes', controller.checkForTimes)
 
 app.post('/signup', function(req, res){
 	console.log("111");

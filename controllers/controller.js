@@ -48,6 +48,5 @@ addHabits = function(req, res){
 
 module.exports = {
 	addSettings : addSettings,
-	addHabits : addHabits,
-	checkForTimes: checkForTimes,
+	addHabits : addHabits
 }
