@@ -40,6 +40,13 @@ smsTest = function(req, res){
     	var x = req.param('Body')
         console.log(x)
         window.location.href="/dashboard.html"
+        client.messages.create({ 
+				to: '+12039470215', 
+				from: "+13038482330", 
+				body: "Yo",   
+			},  function(err, responseData) { 
+				console.log('done'); 
+			})
     }
 
 
