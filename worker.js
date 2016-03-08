@@ -1,5 +1,6 @@
 
 var user = require('./models/model.js')
+var bodyParser = require('body-parser');
 
 var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';

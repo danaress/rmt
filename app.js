@@ -121,7 +121,14 @@ app.get('/', function(req, res){
     res.sendFile('/html/login.html', {root: './public'})
 })
 
-app.post('/test', worker.smsTest)
+app.post('/test', function (req, res) {
+  var resp = new twilio.TwimlResponse();
+  resp.message('Thanks for subscribing!');
+  res.writeHead(200, {
+    'Content-Type':'text/xml'
+  });
+  res.end(resp.toString());
+});
 
 app.post('/settings', controller.addSettings);
 
