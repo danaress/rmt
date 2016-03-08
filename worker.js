@@ -45,6 +45,5 @@ setInterval(function() { tick(); }, 100000);
 
 
 module.exports = {
-	tick : tick,
-	smsTest : smsTest
+	tick : tick
 }
