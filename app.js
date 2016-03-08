@@ -122,6 +122,7 @@ app.get('/', function(req, res){
 })
 
 app.post('/test', function (req, res) {
+console.log(req.body)
   var resp = new twilio.TwimlResponse();
   resp.message('Thanks for subscribing!');
   res.writeHead(200, {
