@@ -35,11 +35,11 @@ setInterval(function() { tick(); }, 100000);
 
 
 
-smsTest = function(req, res){
-var response = req.body.split(' ')
-console.log(response)
- res.sendStatus(200);
-}
+// smsTest = function(req, res){
+// var response = req.body.split(' ')
+// console.log(response)
+//  res.sendStatus(200);
+// }
 
 
 
