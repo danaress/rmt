@@ -37,9 +37,9 @@ var User = require('./models/model.js')
 
 ////////////// Twili0 ///////////
 
-// var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
-// var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
-// var client = require('twilio')(accountSid, authToken);
+var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
+var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
+var client = require('twilio')(accountSid, authToken);
 
 
 
@@ -191,7 +191,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 3000
+var port = 80
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 
