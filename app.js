@@ -125,7 +125,9 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
-console.log(x)
+console.log(x[0])
+console.log(x[1])
+console.log(x[2])
  res.sendStatus(200);
 });
 
