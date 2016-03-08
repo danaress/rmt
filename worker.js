@@ -35,12 +35,18 @@ setInterval(function() { tick(); }, 100000);
 
 
 smsTest = function(req, res){
-	if (twilio.validateExpressRequest(req, authToken, {url: 'http://192.241.221.150/test'}) || false) {
-        res.header('Content-Type', 'text/xml');
-        console.log(req.body)
-        res.send("<Response><Sms>Test</Sms></Response");
+    //Validate that this request really came from Twilio...
+    if (twilio.validateExpressRequest(req, 'authToken')) {
+        var twiml = new client.TwimlResponse();
+        res.type('text/xml');
+        res.send(twiml.toString("HEYEEEE"));
+    }
+    else {
+        res.send('you are not twilio.  Buzz off.');
+    }
 }
-}
+
+
 
 
 module.exports = {
