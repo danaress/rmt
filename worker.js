@@ -37,7 +37,8 @@ setInterval(function() { tick(); }, 100000);
 smsTest = function(req, res){
     //Validate that this request really came from Twilio...
     // if (twilio.validateExpressRequest(req, 'authToken')) {
-        console.log(req.body);
+    	var x = req.param('Body')
+        console.log(x)
     }
 
 
