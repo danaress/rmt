@@ -125,9 +125,19 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
-console.log(x[0])
-console.log(x[1])
-console.log(x[2])
+	users.update(
+		{ 'number': req.body.from},
+		{ $push:
+			{
+				array1: x[0],
+				array2: x[1],
+				array3: x[2],
+		}
+	}, function(err, doc){
+		console.log(err)
+		console.log(doc)
+	})
+console.log(x)
  res.sendStatus(200);
 });
 
