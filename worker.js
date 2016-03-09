@@ -1,6 +1,10 @@
 
 var user = require('./models/model.js')
 var bodyParser = require('body-parser');
+mongoose.connect('mongodb://localhost/users', function(err){
+	if (err) console.log(err)
+		console.log("connected to mongo")
+})
 
 var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
@@ -13,7 +17,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 03){
+			    if(mins == 06){
 				var datex = new Date().getHours();
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
@@ -31,7 +35,7 @@ console.log("worker working!!!!!");
 			})
 				}})}}
 		tick();
-setInterval(function() { tick(); }, 60000);
+setInterval(function() { tick(); }, 50000);
 
  // + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)"
 
