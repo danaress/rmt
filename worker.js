@@ -18,7 +18,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 19){
+			    if(mins == 21){
 				var datex = new Date().getHours() - 2;
 				console.log(datex)
 				console.log("got this far")
@@ -31,13 +31,13 @@ console.log("worker working!!!!!");
 			    client.messages.create({ 
 				to: +docs[i].number, 
 				from: "+13038482330", 
-				body: "'Hey",   
+				body: "'Hey" + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
 			},  function(err, responseData) { 
 				console.log('done'); 
 			})
 				}})}}
 		tick();
-setInterval(function() { tick(); }, 50000);
+setInterval(function() { tick(); }, 60000);
 
  // + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)"
 
