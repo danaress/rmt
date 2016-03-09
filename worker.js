@@ -13,7 +13,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 02){
+			    if(mins == 03){
 				var datex = new Date().getHours();
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
@@ -31,7 +31,7 @@ console.log("worker working!!!!!");
 			})
 				}})}}
 		tick();
-setInterval(function() { tick(); }, 100000);
+setInterval(function() { tick(); }, 60000);
 
  // + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)"
 
