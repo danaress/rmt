@@ -18,8 +18,9 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 06){
+			    if(mins == 10){
 				var datex = new Date().getHours();
+				console.log(datex)
 				console.log("got this far")
 				var x = user.find({ time: datex}, function(err, docs){
 					console.log(docs.length)
