@@ -4,8 +4,7 @@ angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
 
 
-
-
+        // Functions for Signing up, selecting preferred time, setting habits, and logging in.
 
         $scope.signup = function(){
             $http({ 
@@ -47,6 +46,13 @@ angular.module('myApp')
                 if ( returnData.data.success ) { window.location.href="/dashboard" } 
                 else { console.log(returnData)}
             })
+        }
+
+
+        // Functions for Login screen
+
+        $scope.loginClick = function(){
+            $scope.loginHide = true;
         }
 
 	}]);

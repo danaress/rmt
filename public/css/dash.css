@@ -1,3 +1,19 @@
 body{
-	background-color: gray;
+	background-color: #55ffff;
+}
+
+.background{
+/*  margin-top: 40%;*/
+}
+
+.login{
+  margin-bottom: 50px;
+  margin-right: auto;
+  /*padding: 15px 40px 15px 40px;*/
+  width: 100%;
+  font-size: 4em;
+}
+
+.spacing{
+  margin-bottom: 50%;
 }
