@@ -1,6 +1,7 @@
 
 var user = require('./models/model.js')
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/users', function(err){
 	if (err) console.log(err)
 		console.log("connected to mongo")
