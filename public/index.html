@@ -4,33 +4,37 @@
   <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
-    <link rel="stylesheet" href="./css/dash.css">
+    
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   	<script src="main.js"></script>
-
+    <link rel="stylesheet" href="./css/dash.css">
   </head>
   	<body ng-controller="mainController">
 
 
       <!-- Spacing on top half of login screen -->
-      <div class="container-fluid spacing">
+      <div id="balls2" class="container-fluid">
+        <div class="col-xs-12 spacing">
+            <div class="col-xs-4 header">
+              <h2 class="headline">Welcome to App Name!</h2>
+              <p class="welcome">Sign Up or Log In Below:</p>
+            </div>
+        </div>
       </div>
 
-      <!-- Container w/ Login button and from -->
+      <!-- Container w/ Signup button and form -->
       <div class="container-fluid">
-        <!-- <img class="backgroundImg" src="./assets/background.jpg"/> -->
-        <div class="col-xs-4">
+        <div class="col-xs-12">
+          <h3>Step 1: Create Your Free Acount</h3>
         </div>
-          <div class="col-xs-4 background">
-          	<button type="button" class="btn btn-default login" ng-click="loginClick()">Login</button>
-                <form class="form-group" ng-show="loginHide" ng-submit="login()">
-                    <input class="form-control" type="text" ng-model="loginForm.username" placeholder="Username"/>
-                    <input class="form-control" type="password" ng-model="loginForm.password" placeholder="Password"/>
-                    <input class="form-control btn-primary" type="submit"/>
-                    <a ng-click="cancelClick()">Cancel</a>
+          <div class="col-xs-10 background">
+                <form class="form-group" ng-submit="signup()">
+                    <input class="input" type="text" ng-model="signupForm.username" placeholder="Username"/>
+                    <input class="input" type="password" ng-model="signupForm.password" placeholder="Password"/>
+                    <input class="form-control button btn-primary" value="Sign Up" type="submit"/>
                 </form>
           </div>
         <div class="col-xs-4">
@@ -38,23 +42,28 @@
       </div> 
 
 
-      <!-- Container w/ Signup button and form -->
+
+
+
+
+      <!-- Container w/ Login button and from -->
       <div class="container-fluid">
-        <!-- <img class="backgroundImg" src="./assets/background.jpg"/> -->
-        <div class="col-xs-4">
+        <div class="col-xs-12">
+          <h3>Already Have An Account?</h3>
         </div>
-          <div class="col-xs-4 background">
-                <button type="button" class="btn btn-default login" ng-click="signupClick()">Sign Up</button>
-                <form class="form-group" ng-show="signupHide" ng-submit="signup()">
-                    <input class="form-control" type="text" ng-model="signupForm.username" placeholder="Username"/>
-                    <input class="form-control" type="password" ng-model="signupForm.password" placeholder="Password"/>
-                    <input class="form-control btn-primary" type="submit"/>
-                    <a ng-click="cancelClick2()">Cancel</a>
+          <div class="col-xs-10 background">
+          	<button type="button" class="form-control button btn-primary" ng-click="loginClick()">Login</button>
+                <form class="form-group" ng-show="loginHide" ng-submit="login()">
+                    <input class="input" type="text" ng-model="loginForm.username" placeholder="Username"/>
+                    <input class="input" type="password" ng-model="loginForm.password" placeholder="Password"/>
+                    <input class="form-control button btn-primary" type="submit"/>
                 </form>
           </div>
         <div class="col-xs-4">
         </div>
-      </div>   
+      </div> 
+
+  
  <button class="btn" ng-click="home()">Load</button>
 	</body>
 </html>

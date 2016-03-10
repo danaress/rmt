@@ -133,6 +133,7 @@ app.post('/test', function (req, res) {
 		{ 'number': num},
 		{ $push:
 			{
+                
 				array1: x[0],
 				array2: x[1],
 				array3: x[2],
