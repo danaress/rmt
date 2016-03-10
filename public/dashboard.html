@@ -18,7 +18,7 @@
     <body>
     	<div ng-controller="mainController">
         <nav class="navbar navbar-primary navbar-fixed-top">
-            <div class="container-fluid">
+            <div class="container-fluid navbar">
                 <!-- <div class="col-xs-12"> -->
                     <h1 class="col-xs-6 bigIcon"><i class="ion-person"></i></h1>
                     <h1 class="col-xs-6 bigIcon"><i data-toggle="modal" data-target="#myModal"class="ion-ios-gear floatRight"></i></h1>
@@ -90,10 +90,7 @@
 
 <div ng-controller="dashController">
 
-            <div class="container">
-            <div class="balls xs-col-12">
-            <button ng-click="getMetrics()">Test</button>
-            </div>
+            <div class="container-fluid graphs">
             </div>
                 <div id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
                 <div id="container2" style="width: 400px; height: 400px; margin: 0 auto"></div>

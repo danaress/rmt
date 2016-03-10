@@ -136,17 +136,17 @@ $scope.loadChart1 = function(){
             background: [{ // Track for Move
                 outerRadius: '112%',
                 innerRadius: '88%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.1).get(),
+                backgroundColor:'rgba(46, 204, 113, .1)',
                 borderWidth: 0
             }, { // Track for Exercise
                 outerRadius: '87%',
                 innerRadius: '63%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.1).get(),
+                backgroundColor:'rgba(231, 76, 60, .1)',
                 borderWidth: 0
             }, { // Track for Stand
                 outerRadius: '62%',
                 innerRadius: '38%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(149, 165, 166, .1)',
                 borderWidth: 0
             }]
         },
@@ -171,27 +171,27 @@ $scope.loadChart1 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: Highcharts.getOptions().colors[0],
+            borderColor: 'rgb(46, 204, 113)',
             data: [{
-                color: Highcharts.getOptions().colors[0],
+                color: 'rgb(46, 204, 113)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH1Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: Highcharts.getOptions().colors[1],
+            borderColor: 'rgb(231, 76, 60)',
             data: [{
-                color: Highcharts.getOptions().colors[1],
+                color: 'rgb(231, 76, 60)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH1N
             }]
         }, {
             name: 'Not recorded',
-            borderColor: Highcharts.getOptions().colors[2],
+            borderColor: 'rgb(149, 165, 166)',
             data: [{
-                color: Highcharts.getOptions().colors[2],
+                color: 'rgb(149, 165, 166)',
                 radius: '50%',
                 innerRadius: '50%',
                 y: 33
@@ -288,17 +288,17 @@ $scope.loadChart2 = function(){
             background: [{ // Track for Move
                 outerRadius: '112%',
                 innerRadius: '88%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(46, 204, 113, .1)',
                 borderWidth: 0
             }, { // Track for Exercise
                 outerRadius: '87%',
                 innerRadius: '63%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(231, 76, 60, .1)',
                 borderWidth: 0
             }, { // Track for Stand
                 outerRadius: '62%',
                 innerRadius: '38%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(149, 165, 166, .1)',
                 borderWidth: 0
             }]
         },
@@ -323,27 +323,27 @@ $scope.loadChart2 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: Highcharts.getOptions().colors[0],
+            borderColor: 'rgb(46, 204, 113)',
             data: [{
-                color: Highcharts.getOptions().colors[0],
+                color: 'rgb(46, 204, 113)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH2Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: Highcharts.getOptions().colors[1],
+            borderColor: 'rgb(231, 76, 60)',
             data: [{
-                color: Highcharts.getOptions().colors[1],
+                color: 'rgb(231, 76, 60)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH2N
             }]
         }, {
             name: 'Not recorded',
-            borderColor: Highcharts.getOptions().colors[2],
+            borderColor: 'rgb(149, 165, 166)',
             data: [{
-                color: Highcharts.getOptions().colors[2],
+                color: 'rgb(149, 165, 166)',
                 radius: '50%',
                 innerRadius: '50%',
                 y: 33
@@ -440,17 +440,17 @@ $scope.loadChart3 = function(){
             background: [{ // Track for Move
                 outerRadius: '112%',
                 innerRadius: '88%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(46, 204, 113, .1)',
                 borderWidth: 0
             }, { // Track for Exercise
                 outerRadius: '87%',
                 innerRadius: '63%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(231, 76, 60, .1)',
                 borderWidth: 0
             }, { // Track for Stand
                 outerRadius: '62%',
                 innerRadius: '38%',
-                backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0.1).get(),
+                backgroundColor: 'rgba(149, 165, 166, .1)',
                 borderWidth: 0
             }]
         },
@@ -475,27 +475,27 @@ $scope.loadChart3 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: Highcharts.getOptions().colors[0],
+            borderColor: 'rgb(46, 204, 113)',
             data: [{
-                color: Highcharts.getOptions().colors[0],
+                color: 'rgb(46, 204, 113)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH3Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: Highcharts.getOptions().colors[1],
+            borderColor: 'rgb(231, 76, 60)',
             data: [{
-                color: Highcharts.getOptions().colors[1],
+                color: 'rgb(231, 76, 60)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH3N
             }]
         }, {
             name: 'Not recorded',
-            borderColor: Highcharts.getOptions().colors[2],
+            borderColor: 'rgb(149, 165, 166)',
             data: [{
-                color: Highcharts.getOptions().colors[2],
+                color: 'rgb(149, 165, 166)',
                 radius: '50%',
                 innerRadius: '50%',
                 y: 33

@@ -50,6 +50,7 @@ background-color: #E3000E;
 
 .bigIcon{
 	font-size: 100px;
+	color: white;
 }
 
 .floatRight{
@@ -57,4 +58,12 @@ background-color: #E3000E;
 }
 .balls{
 	margin-top: 500px;
+}
+
+.navbar{
+	background-color: #E3000E;
+}
+
+.graphs{
+	margin-top: 50px;
 }
