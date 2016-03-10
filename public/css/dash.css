@@ -17,3 +17,14 @@ body{
 .spacing{
   margin-bottom: 50%;
 }
+
+.bigIcon{
+	font-size: 100px;
+}
+
+.floatRight{
+	float: right;
+}
+.balls{
+	margin-top: 500px;
+}

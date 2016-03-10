@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var controller = require("./controllers/controller.js")
 
 
+
 // Database
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/users', function(err){
@@ -144,9 +145,11 @@ console.log(x)
  res.sendStatus(200);
 });
 
-app.post('/settings', controller.addSettings);
+// app.post('/settings', controller.addSettings);
 
 app.post('/habits', controller.addHabits);
+
+app.post('/metrics', controller.getMetrics);
 
 app.post('/signup', function(req, res){
 	console.log("111");
@@ -204,7 +207,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 

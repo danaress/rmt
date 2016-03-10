@@ -1,20 +1,20 @@
 var users = require('../models/model.js')
 var mongoose = require('mongoose');
 
-addSettings = function(req, res){
+// addSettings = function(req, res){
 
-	console.log("req user" + req.user);
-	users.update(
-		{ username: req.user.username},
-		{ $set:
-			{
-				time: req.body.time
-		}
-	}, function(err, doc){
-		console.log(err)
-		console.log(doc)
-	})
-}
+// 	console.log("req user" + req.user);
+// 	users.update(
+// 		{ username: req.user.username},
+// 		{ $set:
+// 			{
+// 				time: req.body.time
+// 		}
+// 	}, function(err, doc){
+// 		console.log(err)
+// 		console.log(doc)
+// 	})
+// }
 
 addHabits = function(req, res){
 
@@ -22,6 +22,7 @@ addHabits = function(req, res){
 		{ 'username': req.user.username},
 		{ $set:
 			{
+				time: req.body.time,
 				number: req.body.number,
 				habit1: req.body.habit1,
 				habit2: req.body.habit2,
@@ -33,20 +34,17 @@ addHabits = function(req, res){
 	})
 }
 
-
-// function hello(re, res){
-// 	client.messages.create({
-// 	to: $scope.number, 
-// 	from: "+13038482330", 
-// 	body: "Yo",   
-// }, function(err, doc) { 
-// 	res.send(done);
-// })
-// }
-
+getMetrics = function(req, res){
+	users.find(
+		{'username': req.user.username},
+ function(err, docs){
+ 	res.send(docs)
+		console.log(err)
+		console.log(docs)
+})}
 
 
 module.exports = {
-	addSettings : addSettings,
-	addHabits : addHabits
+	addHabits : addHabits,
+	getMetrics : getMetrics,
 }

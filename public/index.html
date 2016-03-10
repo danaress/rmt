@@ -3,8 +3,11 @@
 <html ng-app="myApp">
   <head>
     <title></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   	<script src="main.js"></script>
 
@@ -23,10 +26,10 @@
         </div>
           <div class="col-xs-4 background">
           	<button type="button" class="btn btn-default login" ng-click="loginClick()">Login</button>
-                <form ng-show="loginHide" ng-submit="login()">
-                    <input type="text" ng-model="loginForm.username" placeholder="Username"/>
-                    <input type="password" ng-model="loginForm.password" placeholder="Password"/>
-                    <input type="submit"/>
+                <form class="form-group" ng-show="loginHide" ng-submit="login()">
+                    <input class="form-control" type="text" ng-model="loginForm.username" placeholder="Username"/>
+                    <input class="form-control" type="password" ng-model="loginForm.password" placeholder="Password"/>
+                    <input class="form-control btn-primary" type="submit"/>
                     <a ng-click="cancelClick()">Cancel</a>
                 </form>
           </div>
@@ -41,16 +44,17 @@
         <div class="col-xs-4">
         </div>
           <div class="col-xs-4 background">
-                <button type="button" class="btn btn-default login">Sign Up</button>
-                <form ng-show="signupHide" ng-submit="signup()">
-                    <input type="text" ng-model="signupForm.username" placeholder="Username"/>
-                    <input type="password" ng-model="signupForm.password" placeholder="Password"/>
-                    <input type="submit"/>
+                <button type="button" class="btn btn-default login" ng-click="signupClick()">Sign Up</button>
+                <form class="form-group" ng-show="signupHide" ng-submit="signup()">
+                    <input class="form-control" type="text" ng-model="signupForm.username" placeholder="Username"/>
+                    <input class="form-control" type="password" ng-model="signupForm.password" placeholder="Password"/>
+                    <input class="form-control btn-primary" type="submit"/>
+                    <a ng-click="cancelClick2()">Cancel</a>
                 </form>
           </div>
         <div class="col-xs-4">
         </div>
-      </div>     
-
+      </div>   
+ <button class="btn" ng-click="home()">Load</button>
 	</body>
 </html>

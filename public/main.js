@@ -17,16 +17,6 @@ angular.module('myApp')
             })
         }
 
-        $scope.timeSettings = function(){
-        	$http({ 
-                method : 'POST',
-                url    : '/settings',
-                data   : $scope.settings
-            }).then(function(returnData){
-            	console.log("main.js")
-            	})
-            }
-
         $scope.habitSetting = function(){
         	$http({ 
                 method : 'POST',
@@ -49,10 +39,31 @@ angular.module('myApp')
         }
 
 
+
+
+
+
+
+
+
+
+
         // Functions for Login screen
 
         $scope.loginClick = function(){
             $scope.loginHide = true;
+        }
+
+        $scope.cancelClick = function(){
+            $scope.loginHide = false;
+        }
+
+        $scope.signupClick = function(){
+            $scope.signupHide = true;
+        }
+
+        $scope.cancelClick2 = function(){
+            $scope.signupHide = false;
         }
 
 	}]);
