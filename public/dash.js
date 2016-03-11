@@ -240,7 +240,7 @@ $scope.loadChartH1Week = function(){
                 color: 'rgb(149, 165, 166)',
                 radius: '50%',
                 innerRadius: '50%',
-                y: FinalH1Week0
+                y: $scope.FinalH1Week0
             }]
         }]
     },
