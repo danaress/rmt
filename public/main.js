@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngTouch'])
 
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
@@ -40,7 +40,9 @@ angular.module('myApp')
 
 
 
-
+        $scope.testing = function(){
+            $('#myModal').modal('show')
+        }
 
 
 

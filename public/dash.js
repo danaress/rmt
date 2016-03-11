@@ -1,4 +1,3 @@
-angular.module('myApp')
 
 angular.module('myApp')
     .controller('dashController', ['$scope', '$http', function($scope, $http){        
