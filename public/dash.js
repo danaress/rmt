@@ -128,6 +128,7 @@ angular.module('myApp')
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
+                $scope.array1Week();
             })
         }
         $scope.getMetrics()
