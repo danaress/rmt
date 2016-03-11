@@ -37,10 +37,10 @@ addHabits = function(req, res){
 getMetrics = function(req, res){
 	users.find(
 		{'username': req.user.username},
- function(err, docs){
- 	res.send(docs)
+ function(err, dox){
+ 	res.send(dox)
 		console.log(err)
-		console.log(docs)
+		console.log(dox)
 })}
 
 

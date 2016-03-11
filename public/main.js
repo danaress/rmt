@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngTouch'])
+angular.module('myApp', [])
 
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
