@@ -2,6 +2,8 @@
 angular.module('myApp')
     .controller('dashController', ['$scope', '$http', function($scope, $http){        
 
+        $scope.mili = 86400000
+
         $scope.FinalH1N = 0
         $scope.FinalH1Y = 0
         $scope.FinalH2N = 0
@@ -65,14 +67,19 @@ angular.module('myApp')
                 }
 
             }
-            var d = new Date()
+            var d = Date.now()
+            console.log("date now  = " + d)
             var x = $scope.userInfo[0].start
-            console.log(d.getDay())
-            $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
-            $scope.FinalH1N = (100*($scope.H1N/($scope.H1N+$scope.H1Y)))
-            console.log("This is the final Y for original function to compare " + $scope.FinalH1Y)
-            console.log("This is the final N for original function to compare " + $scope.FinalH1N)
+            console.log(x)
+            var numdays = ((d-x)/$scope.mili)
+            console.log(numdays)
+            $scope.FinalH1Y = (100*($scope.H1Y/numdays))
+            $scope.FinalH1N = (100*($scope.H1N/numdays))
+            $scope.FinalH10 = (100-($scope.FinalH1N+$scope.FinalH1Y))
             $scope.loadChart1();
+
+// $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
+// $scope.FinalH1N = (100*($scope.H1N/($scope.H1N+$scope.H1Y)))
         }
         ///////End
 
@@ -392,7 +399,7 @@ $scope.loadChart1 = function(){
                 color: 'rgb(149, 165, 166)',
                 radius: '50%',
                 innerRadius: '50%',
-                y: 33
+                y: $scope.FinalH10
             }]
         }]
     },
