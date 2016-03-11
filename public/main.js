@@ -4,9 +4,10 @@ angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
 
 
-
-        // var x = Date.parse('02:26:12 UTC 2016-03-11')
-        // console.log(x);
+        var y = new Date(2016, 2, 9)
+        var x = new Date()
+        var diff = (((x-y)/1000)/86400);
+        console.log(diff);
 
 
 
