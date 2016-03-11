@@ -2,7 +2,7 @@
 angular.module('myApp')
     .controller('dashController', ['$scope', '$http', function($scope, $http){        
 
-        $scope.mili = 8640000000
+        $scope.mili = 86399999
 
         $scope.FinalH1N = 0
         $scope.FinalH1Y = 0
