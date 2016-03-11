@@ -45,7 +45,7 @@ angular.module('myApp')
             console.log(d.getDay())
             $scope.FinalH1WeekY = (100*($scope.H1WeekY/($scope.H1WeekN+$scope.H1WeekY)))
             $scope.FinalH1WeekN = (100*($scope.H1WeekN/($scope.H1WeekN+$scope.H1WeekY)))
-            $scope.FinalH1Week0 = (10*(7-($scope.FinalH1WeekN + $scope.FinalH1WeekY))
+            $scope.FinalH1Week0 = (10*(7-($scope.FinalH1WeekN + $scope.FinalH1WeekY)))
         }
 
 
@@ -141,7 +141,7 @@ angular.module('myApp')
 $scope.loadChart1 = function(){
         $(function () {
 
-    Highcharts.chart('container', {
+    Highcharts.chart('H1Week', {
 
         chart: {
             type: 'solidgauge',
