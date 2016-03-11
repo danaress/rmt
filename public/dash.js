@@ -153,7 +153,7 @@ $scope.loadChart1 = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit1 'All Time',
+            text: $scope.userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
