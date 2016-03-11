@@ -126,12 +126,9 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
-    console.log(req.body)
-    console.log(Date.parse(req.body.DateSent))
-    var y = Date.parse(req.body.DateSent)
+    var y = Date.now()
     console.log("This is the date: " + y)
 		var num = req.body.From
-		console.log(y)
 		console.log(num.slice(1))
 	User.update(
 		{ 'number': num},
