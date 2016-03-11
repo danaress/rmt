@@ -58,6 +58,7 @@ angular.module('myApp')
                 console.log($scope.modalTime)
             } else {
                 $scope.modalTime == $scope.allUserInfo[0].time
+                console.log($scope.modalTime)
             }
                 if ($scope.allUserInfo[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
