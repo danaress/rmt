@@ -20,12 +20,15 @@ angular.module('myApp')
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
             $scope.today = Date.now()
+            console.log($scope.today)
+            console.log($scope.userInfo[0].array1[0[1]]
             $scope.week = 691000000
             for (var i=0; i<$scope.userInfo[0].array1.length; i++){
                 if (($scope.today - $scope.userInfo[0].array1[i[1]]) < $scope.week){
             $scope.weekArray.push($scope.userInfo[0].array1[i[0]])
     }
             }
+            console.log($scope.weekArray);
             for (var i=0; i < $scope.weekArray.length; i++){
                 if ($scope.weekArray[i] == "y" || $scope.weekArray[i] == "Y"){
                     $scope.H1WeekY = ($scope.H1WeekY + 1)
