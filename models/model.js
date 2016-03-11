@@ -5,7 +5,7 @@ var userSchema = mongoose.Schema({
     password: { type: String, required: true },
     number: { type: Number, required: false, default: 0 },
     time: { type: String, required: false, default: null },
-    start: { type: Date, default: Date.now()},
+    start: { type: Number, default: Date.now()},
     habit1: { type: String, required: false, default: '' },
     habit2: { type: String, required: false, default: '' },
     habit3: { type: String, required: false, default: '' },
