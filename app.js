@@ -128,16 +128,16 @@ app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
     var y = req.body.Date
 		var num = req.body.From
-		console.log(num)
+		console.log(y)
 		console.log(num.slice(1))
 	User.update(
 		{ 'number': num},
 		{ $push:
 			{
                 
-				array1: {x[0], y},
-				array2: {x[1], y},
-				array3: {x[2], y},
+				array1: [x[0], y],
+				array2: [x[1], y],
+				array3: [x[2], y],
 		}
 	}, function(err, doc){
 		console.log(err)
