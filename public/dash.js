@@ -46,6 +46,7 @@ angular.module('myApp')
             $scope.FinalH1WeekY = (100*($scope.H1WeekY/($scope.H1WeekN+$scope.H1WeekY)))
             $scope.FinalH1WeekN = (100*($scope.H1WeekN/($scope.H1WeekN+$scope.H1WeekY)))
             $scope.FinalH1Week0 = (10*(7-($scope.FinalH1WeekN + $scope.FinalH1WeekY)))
+            $scope.loadChartH1Week();
         }
 
 
@@ -138,7 +139,7 @@ angular.module('myApp')
 
 
 // /////////////////////////////////////// HighCharts Activity Gauge for Array 1  in LAST 7 DAYS ///////////////////////////////
-$scope.loadChart1 = function(){
+$scope.loadChartH1Week = function(){
         $(function () {
 
     Highcharts.chart('H1Week', {
