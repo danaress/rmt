@@ -8,8 +8,46 @@ angular.module('myApp')
         $scope.FinalH2Y = 0
         $scope.FinalH3N = 0
         $scope.FinalH3Y = 0
+        $scope.FinalH1WeekY = 0
+        $scope.FinalH1WeekN = 0
 
             //Function for Chart 1
+
+        $scope.array1Week = function(){
+            console.log($scope.userInfo[0]);
+            console.log("length = " + $scope.userInfo[0].array1.length)
+            $scope.weekArray = []
+            $scope.H1WeekY = 0
+            $scope.H1WeekN = 0
+            var today = Date.now()
+            var week = 691000000
+            for (var i=0; i<$scope.userInfo[0].array1.length; i++){
+                if (today - $scope.userInfo[0].array1[i[1]])<week){
+            $scope.weekArray.push($scope.userInfo[0].array1[i[0]])
+    }
+            }
+            for (var i=0; i < $scope.weekArray.length; i++){
+                if ($scope.weekArray[i] == "y" || $scope.weekArray[i] == "Y"){
+                    $scope.H1WeekY = ($scope.H1WeekY + 1)
+                    
+                } else if ($scope.H1WeekY[i] == "n" || $scope.H1WeekY[i] == "N"){
+                    $scope.H1WeekN = ($scope.H1WeekN + 1)
+                }
+
+            }
+            var d = new Date()
+            var x = $scope.userInfo[0].start
+            console.log(d)
+            console.log(x)
+            console.log(d.getDay())
+            $scope.FinalH1WeekY = (100*($scope.H1WeekY/($scope.H1WeekN+$scope.H1WeekY)))
+            $scope.FinalH1WeekN = (100*($scope.H1WeekN/($scope.H1WeekN+$scope.H1WeekY)))
+            console.log("This is the final Y for 1 week " + $scope.FinalH1WeekY)
+            console.log("This is the final N for 1 week " + $scope.FinalH1WeekN)
+        }
+
+
+
         $scope.array1Metrics = function(){
             console.log($scope.userInfo[0]);
             console.log("length = " + $scope.userInfo[0].array1.length)
@@ -31,6 +69,8 @@ angular.module('myApp')
             console.log(d.getDay())
             $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
             $scope.FinalH1N = (100*($scope.H1N/($scope.H1N+$scope.H1Y)))
+            console.log("This is the final Y for original function to compare " + $scope.FinalH1Y)
+            console.log("This is the final N for original function to compare " + $scope.FinalH1N)
             $scope.loadChart1();
         }
         ///////End

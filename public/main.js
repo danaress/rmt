@@ -4,11 +4,10 @@ angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
 
 
-        var y = new Date(2016, 2, 9)
-        var x = new Date()
-        var diff = (((x-y)/1000)/86400);
-        console.log(diff);
-
+        // var y = 1457729724651
+        // var x = Date.now()
+        // var diff = (x-y);
+        // console.log(diff);
 
 
         // Functions for Signing up, selecting preferred time, setting habits, and logging in.
