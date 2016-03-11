@@ -57,20 +57,20 @@ angular.module('myApp')
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 console.log($scope.modalTime)
             } else {
-                $scope.modalTime == $scope.allUserInfo[0].time
+                $scope.modalTime = $scope.allUserInfo[0].time
                 console.log($scope.modalTime)
             }
                 if ($scope.allUserInfo[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
                     $scope.modalNumber = "It looks like you haven't selected a number yet - head over to Settings in the top right!"
                 } else {
-                    $scope.modal2Number == $scope.allUserInfo[0].number
-                    $scope.modalNumber == $scope.allUserInfo[0].number
+                    $scope.modal2Number = $scope.allUserInfo[0].number
+                    $scope.modalNumber = $scope.allUserInfo[0].number
                 }
                 if ($scope.allUserInfo[0].habit1 == ''){
                     $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
                 } else if ($scope.allUserInfo[0].habit1 == ''){
-                    $scope.modalHabit == ("Habit 1: " + $scope.allUserInfo[0].habit1 + ". Habit 2: " + $scope.allUserInfo[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
+                    $scope.modalHabit = ("Habit 1: " + $scope.allUserInfo[0].habit1 + ". Habit 2: " + $scope.allUserInfo[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
                 }
                 })
         }
