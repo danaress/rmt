@@ -84,6 +84,7 @@ angular.module('myApp')
                 $scope.userInfo = returninfo.data
                 console.log($scope.userInfo[0].array1.length)
                 $scope.name = $scope.userInfo[0].username
+                $scope.phone = $scope.userInfo[0].number
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();

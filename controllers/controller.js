@@ -44,7 +44,18 @@ getMetrics = function(req, res){
 })}
 
 
+getmodal = function(req, res){
+	users.find(
+		{'username': req.user.username},
+ function(err, docs){
+ 	res.send(docs)
+		console.log(err)
+		console.log(docs)
+})}
+
+
 module.exports = {
 	addHabits : addHabits,
 	getMetrics : getMetrics,
+	getmodal : getmodal
 }

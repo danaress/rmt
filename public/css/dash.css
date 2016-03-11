@@ -62,8 +62,32 @@ background-color: #E3000E;
 
 .navbar{
 	background-color: #E3000E;
+/*	opacity: ;*/
 }
 
 .graphs{
-	margin-top: 50px;
+	margin-top: 20%;
+}
+
+.mobileBox{
+	z-index: 2;
+	margin-top: 15%;
+	background-color: white;
+	position: fixed;
+	width: 100%;
+}
+
+.smallBox{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.submitBox{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 35%;
+}
+
+.description{
+	font-size: 14px;
 }
