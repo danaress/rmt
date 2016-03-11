@@ -18,7 +18,7 @@ console.log("worker working!!!!!");
 			{
 			    //get the mins of the current time
 			    var mins = new Date().getMinutes();
-			    if(mins == 50 || mins == 51){
+			    if(mins == 15 || mins == 51){
 				var datex = new Date().getHours() - 2;
 				console.log(datex)
 				console.log("got this far")

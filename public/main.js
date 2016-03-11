@@ -4,6 +4,12 @@ angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', function($scope, $http){
 
 
+
+        // var x = Date.parse('02:26:12 UTC 2016-03-11')
+        // console.log(x);
+
+
+
         // Functions for Signing up, selecting preferred time, setting habits, and logging in.
 
         $scope.signup = function(){
