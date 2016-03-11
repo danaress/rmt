@@ -33,7 +33,7 @@ angular.module('myApp')
                 if ($scope.weekArray[i] == "y" || $scope.weekArray[i] == "Y"){
                     $scope.H1WeekY = ($scope.H1WeekY + 1)
                     
-                } else if ($scope.H1WeekY[i] == "n" || $scope.H1WeekY[i] == "N"){
+                } else if ($scope.weekArray[i] == "n" || $scope.weekArray[i] == "N"){
                     $scope.H1WeekN = ($scope.H1WeekN + 1)
                 }
 
