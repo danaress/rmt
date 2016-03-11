@@ -126,6 +126,7 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
+    console.log(req.body.Date)
     var y = req.body.Date
 		var num = req.body.From
 		console.log(y)
