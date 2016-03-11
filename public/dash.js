@@ -57,18 +57,16 @@ angular.module('myApp')
             $scope.H1Y = 0
             $scope.H1N = 0
             for (var i=0; i < $scope.userInfo[0].array1.length; i++){
-                if ($scope.userInfo[0].array1[i] == "y" || $scope.userInfo[0].array1[i] == "Y"){
+                if ($scope.userInfo[0].array1[i][0] == "y" || $scope.userInfo[0].array1[i][0] == "Y"){
                     $scope.H1Y = ($scope.H1Y + 1)
                     
-                } else if ($scope.userInfo[0].array1[i] == "n" || $scope.userInfo[0].array1[i] == "N"){
+                } else if ($scope.userInfo[0].array1[i][0] == "n" || $scope.userInfo[0].array1[i][0] == "N"){
                     $scope.H1N = ($scope.H1N + 1)
                 }
 
             }
             var d = new Date()
             var x = $scope.userInfo[0].start
-            console.log(d)
-            console.log(x)
             console.log(d.getDay())
             $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
             $scope.FinalH1N = (100*($scope.H1N/($scope.H1N+$scope.H1Y)))
@@ -84,10 +82,10 @@ angular.module('myApp')
             $scope.H2Y = 0
             $scope.H2N = 0
             for (var i=0; i < $scope.userInfo[0].array2.length; i++){
-                if ($scope.userInfo[0].array2[i] == "y" || $scope.userInfo[0].array2[i] == "Y"){
+                if ($scope.userInfo[0].array2[i][0] == "y" || $scope.userInfo[0].array2[i][0] == "Y"){
                     $scope.H2Y = ($scope.H2Y + 1)
                     
-                } else if ($scope.userInfo[0].array2[i] == "n" || $scope.userInfo[0].array2[i] == "N"){
+                } else if ($scope.userInfo[0].array2[i][0] == "n" || $scope.userInfo[0].array2[i][0] == "N"){
                     $scope.H2N = ($scope.H2N + 1)
                 }
 
@@ -104,10 +102,10 @@ angular.module('myApp')
             $scope.H3Y = 0
             $scope.H3N = 0
             for (var i=0; i < $scope.userInfo[0].array3.length; i++){
-                if ($scope.userInfo[0].array3[i] == "y" || $scope.userInfo[0].array3[i] == "Y"){
+                if ($scope.userInfo[0].array3[i][0] == "y" || $scope.userInfo[0].array3[i][0] == "Y"){
                     $scope.H3Y = ($scope.H3Y + 1)
                     
-                } else if ($scope.userInfo[0].array3[i] == "n" || $scope.userInfo[0].array3[i] == "N"){
+                } else if ($scope.userInfo[0].array3[i][0] == "n" || $scope.userInfo[0].array3[i][0] == "N"){
                     $scope.H3N = ($scope.H3N + 1)
                 }
 
