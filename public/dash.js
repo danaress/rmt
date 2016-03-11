@@ -19,10 +19,10 @@ angular.module('myApp')
             $scope.weekArray = []
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
-            var today = Date.now()
-            var week = 691000000
+            $scope.today = Date.now()
+            $scope.week = 691000000
             for (var i=0; i<$scope.userInfo[0].array1.length; i++){
-                if (today - $scope.userInfo[0].array1[i[1]])<week){
+                if (today - $scope.userInfo[0].array1[i[1]]) < week){
             $scope.weekArray.push($scope.userInfo[0].array1[i[0]])
     }
             }
