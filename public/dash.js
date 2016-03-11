@@ -71,7 +71,7 @@ angular.module('myApp')
             console.log($scope.d)
             var x = $scope.userInfo[0].start
             console.log(x)
-            var numdays = ((d-x)/$scope.mili)
+            var numdays = (($scope.d-x)/$scope.mili)
             console.log(numdays)
             $scope.FinalH1Y = (100*($scope.H1Y/numdays))
             $scope.FinalH1N = (100*($scope.H1N/numdays))
