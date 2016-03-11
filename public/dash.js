@@ -67,14 +67,12 @@ angular.module('myApp')
                 }
 
             }
-            $scope.d = Date.now()
-            console.log($scope.d)
-            var x = $scope.userInfo[0].start
-            console.log(x)
-            var numdays = (($scope.d-x)/$scope.mili)
-            console.log(numdays)
-            $scope.FinalH1Y = (100*($scope.H1Y/numdays))
-            $scope.FinalH1N = (100*($scope.H1N/numdays))
+            $scope.datenow = Date.now()
+            $scope.startdate = $scope.userInfo[0].start
+            $scope.numdays = Math.round(($scope.datenow-$scope.startdate)/$scope.mili)
+            console.log($scope.numdays)
+            $scope.FinalH1Y = (100*($scope.H1Y/$scope.numdays))
+            $scope.FinalH1N = (100*($scope.H1N/$scope.numdays))
             $scope.FinalH10 = (100-($scope.FinalH1N+$scope.FinalH1Y))
             $scope.loadChart1();
 
