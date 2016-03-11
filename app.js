@@ -126,6 +126,7 @@ app.get('/', function(req, res){
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')
+    var y = req.body.Date
 		var num = req.body.From
 		console.log(num)
 		console.log(num.slice(1))
@@ -134,9 +135,9 @@ app.post('/test', function (req, res) {
 		{ $push:
 			{
                 
-				array1: x[0],
-				array2: x[1],
-				array3: x[2],
+				array1: {x[0], y},
+				array2: {x[1], y},
+				array3: {x[2], y},
 		}
 	}, function(err, doc){
 		console.log(err)
