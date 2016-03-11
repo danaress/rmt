@@ -45,9 +45,9 @@ angular.module('myApp')
             console.log(d)
             console.log(x)
             console.log(d.getDay())
-            $scope.FinalH1WeekY = (100*($scope.H1WeekY/($scope.H1WeekN+$scope.H1WeekY)))
-            $scope.FinalH1WeekN = (100*($scope.H1WeekN/($scope.H1WeekN+$scope.H1WeekY)))
-            $scope.FinalH1Week0 = (10*(7-($scope.FinalH1WeekN + $scope.FinalH1WeekY)))
+            $scope.FinalH1WeekY = Math.round(100*($scope.H1WeekY/($scope.H1WeekN+$scope.H1WeekY)))
+            $scope.FinalH1WeekN = Math.round(100*($scope.H1WeekN/($scope.H1WeekN+$scope.H1WeekY)))
+            $scope.FinalH1Week0 = Math.round(10*(7-($scope.FinalH1WeekN + $scope.FinalH1WeekY)))
             $scope.loadChartH1Week();
         }
 
@@ -71,9 +71,9 @@ angular.module('myApp')
             $scope.startdate = $scope.userInfo[0].start
             $scope.numdays = Math.round(($scope.datenow-$scope.startdate)/$scope.mili)
             console.log($scope.numdays)
-            $scope.FinalH1Y = (100*($scope.H1Y/$scope.numdays))
-            $scope.FinalH1N = (100*($scope.H1N/$scope.numdays))
-            $scope.FinalH10 = (100-($scope.FinalH1N+$scope.FinalH1Y))
+            $scope.FinalH1Y = Math.round(100*($scope.H1Y/$scope.numdays))
+            $scope.FinalH1N = Math.round(100*($scope.H1N/$scope.numdays))
+            $scope.FinalH10 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
             $scope.loadChart1();
 
 // $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
