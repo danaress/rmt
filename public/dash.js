@@ -68,7 +68,7 @@ angular.module('myApp')
 
             }
             var d = Date.now()
-            console.log("date now  = " + d)
+            console.log(d)
             var x = $scope.userInfo[0].start
             console.log(x)
             var numdays = ((d-x)/$scope.mili)
