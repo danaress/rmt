@@ -21,7 +21,7 @@ angular.module('myApp')
             $scope.H1WeekN = 0
             $scope.today = Date.now()
             console.log($scope.today)
-            console.log($scope.userInfo[0].array1[0[1]]
+            console.log($scope.userInfo[0].array1[0[1]])
             $scope.week = 691000000
             for (var i=0; i<$scope.userInfo[0].array1.length; i++){
                 if (($scope.today - $scope.userInfo[0].array1[i[1]]) < $scope.week){
