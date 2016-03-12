@@ -84,7 +84,7 @@ angular.module('myApp')
             $scope.H3WeekN = 0
             for (var i=0; i<$scope.userInfo[0].array3.length; i++){
                 if (($scope.datenow - $scope.userInfo[0].array3[i][1]) < $scope.week){
-            $scope.week2Array.push($scope.userInfo[0].array3[i][0])
+            $scope.week3Array.push($scope.userInfo[0].array3[i][0])
     }
             }
             for (var i=0; i < $scope.week3Array.length; i++){
