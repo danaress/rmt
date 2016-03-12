@@ -208,8 +208,11 @@ angular.module('myApp')
 
             }
             $scope.FinalH1Y = Math.round(100*($scope.H1Y/$scope.numdays))
+            console.log($scope.FinalH1Y)
             $scope.FinalH1N = Math.round(100*($scope.H1N/$scope.numdays))
+            console.log($scope.FinalH2Y)
             $scope.FinalH10 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
+            console.log($scope.FinalH3Y)
             $scope.loadChart1();
 
 // $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
@@ -266,6 +269,7 @@ angular.module('myApp')
                 userInfo = returninfo.data
                 console.log("user info = ", userInfo)
                 $scope.numdays = Math.round(($scope.datenow-userInfo.startdate)/$scope.mili)
+                consoole.log("Num days = "+ $scope.numdays)
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
