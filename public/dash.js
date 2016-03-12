@@ -136,16 +136,15 @@ angular.module('myApp')
                 }
 
             }
-            $scope.FinalH2Y = Math.round(100*($scope.H1Y/$scope.numdays))
-            $scope.FinalH2N = Math.round(100*($scope.H1N/$scope.numdays))
-            $scope.FinalH20 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
+            $scope.FinalH2Y = Math.round(100*($scope.H2Y/$scope.numdays))
+            $scope.FinalH2N = Math.round(100*($scope.H2N/$scope.numdays))
+            $scope.FinalH20 = Math.round(100-($scope.FinalH2N+$scope.FinalH2Y))
             $scope.loadChart2();
         }
 
 
         //Habit 3 ALL TIME
         $scope.array3Metrics = function(){
-            console.log("length = " + $scope.userInfo[0].array3.length)
             $scope.H3Y = 0
             $scope.H3N = 0
             for (var i=0; i < $scope.userInfo[0].array3.length; i++){
@@ -155,11 +154,10 @@ angular.module('myApp')
                 } else if ($scope.userInfo[0].array3[i][0] == "n" || $scope.userInfo[0].array3[i][0] == "N"){
                     $scope.H3N = ($scope.H3N + 1)
                 }
-
             }
-            $scope.FinalH3Y = Math.round(100*($scope.H1Y/$scope.numdays))
-            $scope.FinalH3N = Math.round(100*($scope.H1N/$scope.numdays))
-            $scope.FinalH30 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
+            $scope.FinalH3Y = Math.round(100*($scope.H3Y/$scope.numdays))
+            $scope.FinalH3N = Math.round(100*($scope.H3N/$scope.numdays))
+            $scope.FinalH30 = Math.round(100-($scope.FinalH3N+$scope.FinalH3Y))
             $scope.loadChart3();
         }
         ///////End
