@@ -6,8 +6,8 @@ angular.module('myApp')
         $scope.week = 604800000
         $scope.month = 2629746000
         $scope.datenow = Date.now()
-                        $scope.numdays = Math.round(($scope.datenow - userInfo.startdate)/$scope.mili)
-                console.log("Num days = "+ $scope.numdays)
+        $scope.numdays = Math.round(($scope.datenow - userInfo.start)/$scope.mili)
+        console.log("Num days = "+ $scope.numdays)
 
         $scope.FinalH1N = 0
         $scope.FinalH1Y = 0
