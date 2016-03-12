@@ -30,8 +30,6 @@ angular.module('myApp')
             $scope.week1Array = []
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
-            console.log($scope.today)
-            console.log($scope.userInfo[0].array1[0][1])
             for (var i=0; i<$scope.userInfo[0].array1.length; i++){
                 if (($scope.datenow - $scope.userInfo[0].array1[i][1]) < $scope.week){
             $scope.week1Array.push($scope.userInfo[0].array1[i][0])
@@ -181,6 +179,8 @@ angular.module('myApp')
                 $scope.array2Metrics();
                 $scope.array3Metrics();
                 $scope.array1Week();
+                $scope.array2Week();
+                $scope.array3Week();
             })
         }
         $scope.getMetrics()

@@ -205,7 +205,6 @@ app.get('/api/me', app.isAuthenticatedAjax, function(req, res){
 
 
 
-
 app.get('/', function(req, res) {
 	res.sendFile('/index.html', {root : './public'});
 });
