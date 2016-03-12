@@ -55,6 +55,8 @@ angular.module('myApp')
             $scope.H2WeekY = 0
             $scope.H2WeekN = 0
             for (var i=0; i<$scope.userInfo[0].array2.length; i++){
+                console.log($scope.today - $scope.userInfo[0].array2[i][1])
+                console.log($scope.week)
                 if (($scope.today - $scope.userInfo[0].array2[i][1]) < $scope.week){
             $scope.week2Array.push($scope.userInfo[0].array2[i][0])
     }
