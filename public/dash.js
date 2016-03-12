@@ -9,6 +9,12 @@ angular.module('myApp')
             .then(function(returninfo){
                 userInfo = returninfo.data
                 console.log("user info = ", userInfo)
+                $scope.mili = 86399999
+                $scope.week = 604800000
+                $scope.month = 2629746000
+                $scope.datenow = Date.now()
+                $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
+                console.log("Num days = "+ $scope.numdays)
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
@@ -25,13 +31,7 @@ angular.module('myApp')
 
 angular.module('myApp').factory('userInfo', function(){
     return {}
-    }) 
-
-
-
-
-
-
+    })
 
         $scope.mili = 86399999
         $scope.week = 604800000
