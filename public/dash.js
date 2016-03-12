@@ -2,6 +2,37 @@
 angular.module('myApp')
     .controller('dashController', ['$scope', '$http', function($scope, $http){        
 
+
+        $scope.getMetrics = function(req, res){
+            console.log('this far')
+            $http.post('/metrics')
+            .then(function(returninfo){
+                userInfo = returninfo.data
+                console.log("user info = ", userInfo)
+                $scope.array1Metrics();
+                $scope.array2Metrics();
+                $scope.array3Metrics();
+                $scope.array1Week();
+                $scope.array2Week();
+                $scope.array3Week();
+                $scope.array1Month();
+                $scope.array2Month();
+                $scope.array3Month();
+            })
+        }
+        $scope.getMetrics()
+
+
+angular.module('myApp').factory('userInfo', function(){
+    return {}
+    }) 
+
+
+
+
+
+
+
         $scope.mili = 86399999
         $scope.week = 604800000
         $scope.month = 2629746000
@@ -260,33 +291,7 @@ angular.module('myApp')
             $scope.FinalH30 = Math.round(100-($scope.FinalH3N+$scope.FinalH3Y))
             $scope.loadChart3();
         }
-        ///////End
-
-
-
-        $scope.getMetrics = function(req, res){
-            console.log('this far')
-            $http.post('/metrics')
-            .then(function(returninfo){
-                userInfo = returninfo.data
-                console.log("user info = ", userInfo)
-                $scope.array1Metrics();
-                $scope.array2Metrics();
-                $scope.array3Metrics();
-                $scope.array1Week();
-                $scope.array2Week();
-                $scope.array3Week();
-                $scope.array1Month();
-                $scope.array2Month();
-                $scope.array3Month();
-            })
-        }
-        $scope.getMetrics()
-
-
-angular.module('myApp').factory('userInfo', function(){
-    return {}
-    })    
+        ///////End   
 
 
 // /////////////////////////////////////// HighCharts Activity Gauge for Array 1  in LAST 30 DAYS ///////////////////////////////
