@@ -37,14 +37,14 @@ angular.module('myApp')
 
         //Habit 1 LAST MONTH
         $scope.array1Month= function(){
-            console.log($scope.userInfo[0]);
-            console.log("length = " + $scope.userInfo[0].array1.length)
+            console.log(userInfo[0]);
+            console.log("length = " + userInfo[0].array1.length)
             $scope.month1Array = []
             $scope.H1MonthY = 0
             $scope.H1MonthN = 0
-            for (var i=0; i<$scope.userInfo[0].array1.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array1[i][1]) < $scope.month){
-            $scope.month1Array.push($scope.userInfo[0].array1[i][0])
+            for (var i=0; i< userInfo[0].array1.length; i++){
+                if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.month){
+            $scope.month1Array.push(userInfo[0].array1[i][0])
     }
             }
             for (var i=0; i < $scope.month1Array.length; i++){
@@ -63,14 +63,14 @@ angular.module('myApp')
 
         //Habit 2 LAST MONTH
         $scope.array2Month= function(){
-            console.log($scope.userInfo[0]);
-            console.log("length = " + $scope.userInfo[0].array2.length)
+            console.log(userInfo[0]);
+            console.log("length = " + userInfo[0].array2.length)
             $scope.month2Array = []
             $scope.H2MonthY = 0
             $scope.H2MonthN = 0
-            for (var i=0; i<$scope.userInfo[0].array2.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array2[i][1]) < $scope.month){
-            $scope.month2Array.push($scope.userInfo[0].array2[i][0])
+            for (var i=0; i<userInfo[0].array2.length; i++){
+                if (($scope.datenow - userInfo[0].array2[i][1]) < $scope.month){
+            $scope.month2Array.push(userInfo[0].array2[i][0])
     }
             }
             for (var i=0; i < $scope.month2Array.length; i++){
@@ -89,14 +89,14 @@ angular.module('myApp')
 
         //Habit 3 LAST MONTH
         $scope.array3Month= function(){
-            console.log($scope.userInfo[0]);
-            console.log("length = " + $scope.userInfo[0].array3.length)
+            console.log(userInfo[0]);
+            console.log("length = " + userInfo[0].array3.length)
             $scope.month3Array = []
             $scope.H3MonthY = 0
             $scope.H3MonthN = 0
-            for (var i=0; i<$scope.userInfo[0].array3.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array3[i][1]) < $scope.month){
-            $scope.month3Array.push($scope.userInfo[0].array3[i][0])
+            for (var i=0; i<userInfo[0].array3.length; i++){
+                if (($scope.datenow - userInfo[0].array3[i][1]) < $scope.month){
+            $scope.month3Array.push(userInfo[0].array3[i][0])
     }
             }
             for (var i=0; i < $scope.month3Array.length; i++){
@@ -114,19 +114,16 @@ angular.module('myApp')
         }
 
 
-
-
-
         //Habit 1 LAST WEEK
         $scope.array1Week = function(){
-            console.log($scope.userInfo[0]);
-            console.log("length = " + $scope.userInfo[0].array1.length)
+            console.log(userInfo[0]);
+            console.log("length = " + userInfo[0].array1.length)
             $scope.week1Array = []
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
-            for (var i=0; i<$scope.userInfo[0].array1.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array1[i][1]) < $scope.week){
-            $scope.week1Array.push($scope.userInfo[0].array1[i][0])
+            for (var i=0; i<userInfo[0].array1.length; i++){
+                if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.week){
+            $scope.week1Array.push(userInfo[0].array1[i][0])
     }
             }
             for (var i=0; i < $scope.week1Array.length; i++){
@@ -148,9 +145,9 @@ angular.module('myApp')
             $scope.week2Array = []
             $scope.H2WeekY = 0
             $scope.H2WeekN = 0
-            for (var i=0; i<$scope.userInfo[0].array2.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array2[i][1]) < $scope.week){
-            $scope.week2Array.push($scope.userInfo[0].array2[i][0])
+            for (var i=0; i<userInfo[0].array2.length; i++){
+                if (($scope.datenow - userInfo[0].array2[i][1]) < $scope.week){
+            $scope.week2Array.push(userInfo[0].array2[i][0])
     }
             }
             console.log($scope.week2Array);
@@ -176,9 +173,9 @@ angular.module('myApp')
             $scope.week3Array = []
             $scope.H3WeekY = 0
             $scope.H3WeekN = 0
-            for (var i=0; i<$scope.userInfo[0].array3.length; i++){
-                if (($scope.datenow - $scope.userInfo[0].array3[i][1]) < $scope.week){
-            $scope.week3Array.push($scope.userInfo[0].array3[i][0])
+            for (var i=0; i<userInfo[0].array3.length; i++){
+                if (($scope.datenow - userInfo[0].array3[i][1]) < $scope.week){
+            $scope.week3Array.push(userInfo[0].array3[i][0])
     }
             }
             for (var i=0; i < $scope.week3Array.length; i++){
@@ -197,15 +194,15 @@ angular.module('myApp')
 
         // Habit 1 ALL TIME
         $scope.array1Metrics = function(){
-            console.log($scope.userInfo[0]);
-            console.log("length = " + $scope.userInfo[0].array1.length)
+            console.log(userInfo[0]);
+            console.log("length = " + userInfo[0].array1.length)
             $scope.H1Y = 0
             $scope.H1N = 0
-            for (var i=0; i < $scope.userInfo[0].array1.length; i++){
-                if ($scope.userInfo[0].array1[i][0] == "y" || $scope.userInfo[0].array1[i][0] == "Y"){
+            for (var i=0; i < userInfo[0].array1.length; i++){
+                if (userInfo[0].array1[i][0] == "y" || userInfo[0].array1[i][0] == "Y"){
                     $scope.H1Y = ($scope.H1Y + 1)
                     
-                } else if ($scope.userInfo[0].array1[i][0] == "n" || $scope.userInfo[0].array1[i][0] == "N"){
+                } else if (userInfo[0].array1[i][0] == "n" || userInfo[0].array1[i][0] == "N"){
                     $scope.H1N = ($scope.H1N + 1)
                 }
 
@@ -222,14 +219,14 @@ angular.module('myApp')
 
         //Habit 2 ALL TIME
         $scope.array2Metrics = function(){
-            console.log("length = " + $scope.userInfo[0].array2.length)
+            console.log("length = " + userInfo[0].array2.length)
             $scope.H2Y = 0
             $scope.H2N = 0
-            for (var i=0; i < $scope.userInfo[0].array2.length; i++){
-                if ($scope.userInfo[0].array2[i][0] == "y" || $scope.userInfo[0].array2[i][0] == "Y"){
+            for (var i=0; i < userInfo[0].array2.length; i++){
+                if (userInfo[0].array2[i][0] == "y" || userInfo[0].array2[i][0] == "Y"){
                     $scope.H2Y = ($scope.H2Y + 1)
                     
-                } else if ($scope.userInfo[0].array2[i][0] == "n" || $scope.userInfo[0].array2[i][0] == "N"){
+                } else if (userInfo[0].array2[i][0] == "n" || userInfo[0].array2[i][0] == "N"){
                     $scope.H2N = ($scope.H2N + 1)
                 }
 
@@ -245,11 +242,11 @@ angular.module('myApp')
         $scope.array3Metrics = function(){
             $scope.H3Y = 0
             $scope.H3N = 0
-            for (var i=0; i < $scope.userInfo[0].array3.length; i++){
-                if ($scope.userInfo[0].array3[i][0] == "y" || $scope.userInfo[0].array3[i][0] == "Y"){
+            for (var i=0; i < userInfo[0].array3.length; i++){
+                if (userInfo[0].array3[i][0] == "y" || userInfo[0].array3[i][0] == "Y"){
                     $scope.H3Y = ($scope.H3Y + 1)
                     
-                } else if ($scope.userInfo[0].array3[i][0] == "n" || $scope.userInfo[0].array3[i][0] == "N"){
+                } else if (userInfo[0].array3[i][0] == "n" || userInfo[0].array3[i][0] == "N"){
                     $scope.H3N = ($scope.H3N + 1)
                 }
             }
@@ -266,11 +263,12 @@ angular.module('myApp')
             console.log('this far')
             $http.post('/metrics')
             .then(function(returninfo){
-                $scope.userInfo = returninfo.data
-                $scope.startdate = $scope.userInfo[0].start
-                $scope.numdays = Math.round(($scope.datenow-$scope.startdate)/$scope.mili)
-                $scope.name = $scope.userInfo[0].username
-                $scope.phone = $scope.userInfo[0].number
+                userInfo = returninfo.data
+                console.log("user info = ", userInfo)
+                // $scope.startdate = userInfo[0].start
+                // $scope.numdays = Math.round(($scope.datenow-$scope.startdate)/$scope.mili)
+                // $scope.name = userInfo[0].username
+                // $scope.phone = userInfo[0].number
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
@@ -283,6 +281,11 @@ angular.module('myApp')
             })
         }
         $scope.getMetrics()
+
+
+angular.module('myApp').factory('userInfo', function(){
+    return {}
+    })    
 
 
 // /////////////////////////////////////// HighCharts Activity Gauge for Array 1  in LAST 30 DAYS ///////////////////////////////
@@ -301,7 +304,7 @@ $scope.loadChartH1Month = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit1,
+            text: userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -454,7 +457,7 @@ $scope.loadChartH2Month = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit2,
+            text: userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -607,7 +610,7 @@ $scope.loadChartH3Month = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit3,
+            text: userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
@@ -759,7 +762,7 @@ $scope.loadChartH3Week = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit3,
+            text: userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
@@ -913,7 +916,7 @@ $scope.loadChartH2Week = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit2,
+            text: userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -1067,7 +1070,7 @@ $scope.loadChartH1Week = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit1,
+            text: userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -1221,7 +1224,7 @@ $scope.loadChart1 = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit1,
+            text: userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -1373,7 +1376,7 @@ $scope.loadChart2 = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit2,
+            text: userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -1525,7 +1528,7 @@ $scope.loadChart3 = function(){
         },
 
         title: {
-            text: $scope.userInfo[0].habit3,
+            text: userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
