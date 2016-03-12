@@ -59,6 +59,7 @@ angular.module('myApp')
             $scope.week2Array.push($scope.userInfo[0].array2[i][0])
     }
             }
+            console.log($scope.week2Array);
             for (var i=0; i < $scope.week2Array.length; i++){
                 if ($scope.week2Array[i] == "y" || $scope.week2Array[i] == "Y"){
                     $scope.H2WeekY = ($scope.H2WeekY + 1)
@@ -70,6 +71,9 @@ angular.module('myApp')
             $scope.FinalH2WeekY = Math.round(100*($scope.H2WeekY/7))
             $scope.FinalH2WeekN = Math.round(100*($scope.H2WeekN/7))
             $scope.FinalH2Week0 = Math.round(10*(7-($scope.H2WeekN + $scope.H2WeekY)))
+            console.log($scope.FinalH2WeekY)
+            console.log($scope.FinalH2WeekN)
+            console.log($scope.FinalH2Week0)
             $scope.loadChartH2Week();
         }
 
