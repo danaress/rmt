@@ -33,12 +33,12 @@ angular.module('myApp').factory('userInfo', function(){
     return {}
     })
 
-        $scope.mili = 86399999
-        $scope.week = 604800000
-        $scope.month = 2629746000
-        $scope.datenow = Date.now()
-        $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-        console.log("Num days = "+ $scope.numdays)
+        // $scope.mili = 86399999
+        // $scope.week = 604800000
+        // $scope.month = 2629746000
+        // $scope.datenow = Date.now()
+        // $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
+        // console.log("Num days = "+ $scope.numdays)
 
         $scope.FinalH1N = 0
         $scope.FinalH1Y = 0
