@@ -265,10 +265,7 @@ angular.module('myApp')
             .then(function(returninfo){
                 userInfo = returninfo.data
                 console.log("user info = ", userInfo)
-                // $scope.startdate = userInfo[0].start
-                // $scope.numdays = Math.round(($scope.datenow-$scope.startdate)/$scope.mili)
-                // $scope.name = userInfo[0].username
-                // $scope.phone = userInfo[0].number
+                $scope.numdays = Math.round(($scope.datenow-userInfo.startdate)/$scope.mili)
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
