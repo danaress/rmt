@@ -156,6 +156,9 @@ $scope.test= "H1Month"
                     $scope.H1MonthN = ($scope.H1MonthN + 1)
                 }
             }
+            console.log($scope.H1MonthY)
+            console.log($scope.H1MonthN)
+            console.log($scope.H1Month0)
             $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/30))
             $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/30))
             $scope.FinalH1Month0 = Math.round(30-($scope.FinalH1MonthN + $scope.FinalH1MonthY))
