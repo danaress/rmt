@@ -52,14 +52,13 @@
       <!-- Container w/ Login button and from -->
       <div class="container-fluid">
         <div class="col-xs-12">
-          <h3>Already Have An Account?</h3>
+          <h3>Already Have An Account? Log In:</h3>
         </div>
           <div class="col-xs-12 background">
-          	<button type="button" class="form-control button btn-primary" ng-click="loginClick()">Login</button>
-                <form class="form-group" ng-show="loginHide" ng-submit="login()">
+                <form class="form-group" ng-submit="login()">
                     <input class="input" type="text" ng-model="loginForm.username" placeholder="Username"/>
                     <input class="input" type="password" ng-model="loginForm.password" placeholder="Password"/>
-                    <input class="form-control button btn-primary" type="submit"/>
+                    <input class="form-control button btn-primary" value="Log In" type="submit"/>
                 </form>
           </div>
         <div class="col-xs-4">
@@ -67,6 +66,5 @@
       </div> 
 
   
- <button class="btn" ng-click="home()">Load</button>
 	</body>
 </html>
