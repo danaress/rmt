@@ -136,9 +136,7 @@ angular.module('myApp').factory('userInfo', function(){
 
 
 $scope.test= "H1Month"
-
-
-        //Habit 1 LAST MONTH
+  //Habit 1 LAST MONTH
         $scope.array1Month= function(){
             console.log(userInfo[0]);
             console.log("length = " + userInfo[0].array1.length)
@@ -158,8 +156,8 @@ $scope.test= "H1Month"
                     $scope.H1MonthN = ($scope.H1MonthN + 1)
                 }
             }
-            $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/7))
-            $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/7))
+            $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/30))
+            $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/30))
             $scope.FinalH1Month0 = Math.round(10*(7-($scope.H1MonthN + $scope.H1MonthY)))
             $scope.loadChartH1Month();
         }
@@ -184,8 +182,8 @@ $scope.test= "H1Month"
                     $scope.H2MonthN = ($scope.H2MonthN + 1)
                 }
             }
-            $scope.FinalH2MonthY = Math.round(100*($scope.H2MonthY/7))
-            $scope.FinalH2MonthN = Math.round(100*($scope.H2MonthN/7))
+            $scope.FinalH2MonthY = Math.round(100*($scope.H2MonthY/30))
+            $scope.FinalH2MonthN = Math.round(100*($scope.H2MonthN/30))
             $scope.FinalH2Month0 = Math.round(10*(7-($scope.H2MonthN + $scope.H2MonthY)))
             $scope.loadChartH2Month();
         }
@@ -210,8 +208,8 @@ $scope.test= "H1Month"
                     $scope.H3MonthN = ($scope.H3MonthN + 1)
                 }
             }
-            $scope.FinalH3MonthY = Math.round(100*($scope.H3MonthY/7))
-            $scope.FinalH3MonthN = Math.round(100*($scope.H3MonthN/7))
+            $scope.FinalH3MonthY = Math.round(100*($scope.H3MonthY/30))
+            $scope.FinalH3MonthN = Math.round(100*($scope.H3MonthN/30))
             $scope.FinalH3Month0 = Math.round(10*(7-($scope.H3MonthN + $scope.H3MonthY)))
             $scope.loadChartH3Month();
         }
