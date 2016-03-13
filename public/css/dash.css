@@ -58,15 +58,18 @@ background-color: #E3000E;
 }
 .balls{
 	margin-top: 500px;
+
 }
 
 .navbar{
-	background-color: #E3000E;
+	background-color: #00C7AB;
 /*	opacity: ;*/
 }
 
-.graphs{
-	margin-top: 30%;
+.graphNavs{
+	margin-top: 20%;
+	border: 1px #00C7AB solid;
+	padding: 0px;
 }
 
 .mobileBox{
@@ -90,4 +93,30 @@ background-color: #E3000E;
 
 .description{
 	font-size: 14px;
+}
+
+.horizontalbtn{
+/*	position: fixed;*/
+}
+
+.navbtn:focus{
+	background-color: #00C7AB;
+	outline: none;
+}
+.navbtn:active{
+	background-color: #00C7AB;
+	outline: none;
+}
+.navbtn{
+	height: 50px;
+	outline: none;
+	background-color: white;
+}
+.btnwrapper{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.modaltest{
+	width: 100%;
 }

@@ -77,7 +77,7 @@
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modaltest">
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -157,26 +157,34 @@
 
 
 
-            <div class="container-fluid graphs">
-            <button class="btn btn-md" ng-click="H1Show()">H1</button>
-            <button class="btn btn-md" ng-click="H2Show()">H2</button>
-            <button class="btn btn-md" ng-click="H3Show()">H3</button>
-            <ol>
-                <li><button class="btn btn-md" ng-click="WeekShow()">H1</button></li>
-                <li><button class="btn btn-md" ng-click="MonthShow()">H1</button></li>
-                <li><button class="btn btn-md" ng-click="AllTimeShow()">H1</button></li>
-            </ol>
-
-                <div ng-show="H1Month" id="H1Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="H2Month" id="H2Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="H3Month" id="H3Month" style="width: 400px; height: 400px; margin: 0 auto"></div>                
-                <div ng-show="H1Week" id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="H2Week" id="H2Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="H3Week" id="H3Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="container" id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="container2" id="container2" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div ng-show="container3" id="container3" style="width: 400px; height: 400px; margin: 0 auto"></div>
-
+            <div class="container graphNavs">
+                    <div class="col-xs-12 btnwrapper">
+                        <button class="col-xs-4 btn navbtn" ng-click="H1Show()">Habit 1</button>
+                        <button class="col-xs-4 btn navbtn" ng-click="H2Show()">Habit 2</button>
+                        <button class="col-xs-4 btn navbtn" ng-click="H3Show()">Habit 3</button>
+<!--                     </div>
+                    <div class="col-xs-12"> -->
+                        <button class="col-xs-4 btn navbtn" ng-click="WeekShow()">Weekly Stats</button>
+                        <button class="col-xs-4 btn navbtn" ng-click="MonthShow()">Monthly Stats</button>
+                        <button class="col-xs-4 btn navbtn" ng-click="AllTimeShow()">All Time</button>
+                    </div>
+            </div>
+            <div class="container graphs">
+                <div class="col-xs-3">
+                </div>
+                <div class="col-xs-6">            
+                    <div ng-show="H1Month" id="H1Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="H2Month" id="H2Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="H3Month" id="H3Month" style="width: 400px; height: 400px; margin: 0 auto"></div>                
+                    <div ng-show="H1Week" id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="H2Week" id="H2Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="H3Week" id="H3Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="container" id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="container2" id="container2" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div ng-show="container3" id="container3" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <div class="col-xs-3">
+                </div>
             </div>
         </div>
     </body>

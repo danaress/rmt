@@ -190,10 +190,6 @@ app.post('/login', function(req, res, next){
     })(req, res, next);
 })
 
-
-// 2 kinds of middleware
-// app.use is like 'vertical middleware'. They get evaluated from top to bottom.
-// there is also inline, or 'horizontal' middleware.
 app.get('/dashboard', app.isAuthenticated, function(req, res){
 	console.log(req.user)
     res.sendFile('/dashboard.html', {root: './public'})

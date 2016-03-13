@@ -6,7 +6,6 @@ angular.module('myApp').factory('userInfo', function(){
     })
 
     .controller('dashController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){        
-
         $scope.H1Show = function(){
             $scope.H1Month = true;
             $scope.H2Month = false;
@@ -75,9 +74,6 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.container3 = true;
         }
 
-
-
-
         $scope.getMetrics = function(req, res){
             console.log('this far')
             $http.post('/metrics')
@@ -101,7 +97,7 @@ angular.module('myApp').factory('userInfo', function(){
             })
         }
         $scope.getMetrics()
-
+        $scope.H1Show()
 
         $scope.loadH1 = function(){
             $scope.loadChartH1Month();
@@ -440,18 +436,18 @@ $scope.loadChartH1Month = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH1MonthY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH1MonthN
@@ -593,18 +589,18 @@ $scope.loadChartH2Month = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH2MonthY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH2MonthN
@@ -746,18 +742,18 @@ $scope.loadChartH3Month = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH3MonthY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH3MonthN
@@ -898,18 +894,18 @@ $scope.loadChartH3Week = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH3WeekY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH3WeekN
@@ -1052,18 +1048,18 @@ $scope.loadChartH2Week = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH2WeekY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH2WeekN
@@ -1206,18 +1202,18 @@ $scope.loadChartH1Week = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH1WeekY
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH1WeekN
@@ -1360,18 +1356,18 @@ $scope.loadChart1 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH1Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH1N
@@ -1512,18 +1508,18 @@ $scope.loadChart2 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH2Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH2N
@@ -1664,18 +1660,18 @@ $scope.loadChart3 = function(){
 
         series: [{
             name: 'Goal Met',
-            borderColor: 'rgb(46, 204, 113)',
+            borderColor: 'rgb(0, 215, 23)',
             data: [{
-                color: 'rgb(46, 204, 113)',
+                color: 'rgb(0, 215, 23)',
                 radius: '100%',
                 innerRadius: '100%',
                 y: $scope.FinalH3Y
             }]
         }, {
             name: 'Goal Not Met',
-            borderColor: 'rgb(231, 76, 60)',
+            borderColor: 'rgb(243, 29, 47)',
             data: [{
-                color: 'rgb(231, 76, 60)',
+                color: 'rgb(243, 29, 47)',
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH3N
