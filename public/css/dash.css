@@ -4,8 +4,8 @@
   margin-bottom: 20%;
 }
 
-#balls2{
-background-color: #E3000E;
+#mainHeader{
+background-color: #00C7AB;
 }
 
 .header{
@@ -108,7 +108,7 @@ background-color: #E3000E;
 	outline: none;
 }
 .navbtn{
-	height: 50px;
+	height: 75px;
 	outline: none;
 	background-color: white;
 }
