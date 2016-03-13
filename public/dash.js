@@ -161,7 +161,7 @@ $scope.test= "H1Month"
             console.log($scope.H1Month0)
             $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/30))
             $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/30))
-            $scope.FinalH1Month0 = Math.round(30-($scope.FinalH1MonthN + $scope.FinalH1MonthY))
+            $scope.FinalH1Month0 = Math.round(100*(($scope.FinalH1MonthN + $scope.FinalH1MonthY)/30))
             console.log($scope.FinalH1MonthY)
             console.log($scope.FinalH1MonthN)
             console.log($scope.FinalH1Month0)
@@ -190,7 +190,7 @@ $scope.test= "H1Month"
             }
             $scope.FinalH2MonthY = Math.round(100*($scope.H2MonthY/30))
             $scope.FinalH2MonthN = Math.round(100*($scope.H2MonthN/30))
-            $scope.FinalH2Month0 = Math.round(30-($scope.FinalH2MonthN + $scope.FinalH2MonthY))
+            $scope.FinalH2Month0 = Math.round(100*(($scope.FinalH2MonthN + $scope.FinalH3MonthY)/30))
             console.log($scope.FinalH2MonthY)
             console.log($scope.FinalH2MonthN)
             console.log($scope.FinalH2Month0)
@@ -219,7 +219,7 @@ $scope.test= "H1Month"
             }
             $scope.FinalH3MonthY = Math.round(100*($scope.H3MonthY/30))
             $scope.FinalH3MonthN = Math.round(100*($scope.H3MonthN/30))
-            $scope.FinalH3Month0 = Math.round(30-($scope.FinalH3MonthN + $scope.FinalH3MonthY))
+            $scope.FinalH3Month0 = Math.round(100*(($scope.FinalH3MonthN + $scope.FinalH3MonthY)/30))
             console.log($scope.FinalH3MonthY)
             console.log($scope.FinalH3MonthN)
             console.log($scope.FinalH3Month0)
