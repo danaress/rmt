@@ -63,21 +63,13 @@ background-color: #00C7AB;
 
 .navbar{
 	background-color: #00C7AB;
-/*	opacity: ;*/
+	margin-bottom: -10px;
 }
 
 .graphNavs{
-	margin-top: 20%;
 	border: 1px #00C7AB solid;
 	padding: 0px;
-}
-
-.mobileBox{
-	z-index: 2;
-	margin-top: 15%;
-	background-color: white;
-	position: fixed;
-	width: 100%;
+	margin: 0px;
 }
 
 .smallBox{

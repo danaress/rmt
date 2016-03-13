@@ -19,7 +19,7 @@
     </head>
     <body>
     	<div ng-controller="mainController">
-        <nav class="navbar navbar-primary navbar-fixed-top">
+        <nav class="navbar">
             <div class="container-fluid navbar">
                 <!-- <div class="col-xs-12"> -->
                     <h1 class="col-xs-6 bigIcon"><i class="ion-person" ng-click="modalInfo()" data-toggle="modal" data-target="#newModal"></i></h1>
@@ -27,54 +27,6 @@
                 <!-- </div> -->
             </div>
         </nav>
-
-
-<!-- <div ng-touch="hideBox" class="mobileBox">
-    <div class="container-fluid">
-    <div class="col-cs-12">
-                <h4>What time would you like to receive texts?</h4>
-                    <form ng-submit="habitSetting()">
-                        <select class="form-group" name="time" ng-model="settings.time">
-                            <option value="0">12:00 AM</option>
-                            <option value="1">1:00 AM</option>
-                            <option value="2">2:00 AM</option>
-                            <option value="3">3:00 AM</option>
-                            <option value="4">4:00 AM</option>
-                            <option value="5">5:00 AM</option>
-                            <option value="6">6:00 AM</option>
-                            <option value="7">7:00 AM</option>
-                            <option value="8">8:00 AM</option>
-                            <option value="9">9:00 AM</option>
-                            <option value="10">10:00 AM</option>
-                            <option value="11">11:00 AM</option>
-                            <option value="12">12:00 PM</option>
-                            <option value="13">1:00 PM</option>
-                            <option value="14">2:00 PM</option>
-                            <option value="15">3:00 PM</option>
-                            <option value="16">4:00 PM</option>
-                            <option value="17">5:00 PM</option>
-                            <option value="18">6:00 PM</option>
-                            <option value="19">7:00 PM</option>
-                            <option value="20">8:00 PM</option>
-                            <option value="21">9:00 PM</option>
-                            <option value="22">10:00 PM</option>
-                            <option value="23">11:00 PM</option>
-                        </select>
-
-                        <h4>What is your phone number?</h4>
-                        <input type="text" class="form-control" ng-model="settings.number" placeholder="Phone number"/><br>
-                        <h4>What are you keeping track of?</h4>
-                        <input type="text" ng-model="settings.habit1" placeholder="Example: "/><br>
-                        <input type="text" ng-model="settings.habit2" placeholder="Example: "/><br>
-                        <input type="text" ng-model="settings.habit3" placeholder="Example: "/><br>
-                        <input value="save" type="submit"/>
-                        <button ng-click="cancelBox()">X</button>
-                    </form>
-                </div>
-            </div>
-</div> -->
-
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
     <div class="modal-dialog modal-lg modaltest">
@@ -126,8 +78,6 @@
   </div>
 </div>
 
-
-
 <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -137,11 +87,10 @@
             </div>
             <div class="modal-body">
                 <p class="description">Habit Tracker is the easiest way to keep track of your most important daily habits. Just select a time that's convenient, enter your phone number, and up to three things you'd like to keep track of. Every day you'll receive a short text asking if you've met your goals for the day. All you need to do is respond with three letters ("Y" or "N") and we'll do the rest. Whenever you want to check out your progress just log in and take a look!</p>
-                <h3>Username: </h3><h3 class="description">{{modalUsername}}</h4>
-                <h3>Selected time to receive texts: </h3><h3 class="description">{{modalTime}} </h4>
-                <h3>Phone number to receive texts: </h3><h3 class="description">{{modalNumber}}</h4>
-                <h3>Habits you are cirrently tracking: </h3><h3 class="description">{{modalHabit}} </h4>
-                
+                <h3>Username: </h3><h3 class="description">{{modalUsername}}</h3>
+                <h3>Selected time to receive texts: </h3><h3 class="description">{{modalTime}}</h3>
+                <h3>Phone number to receive texts: </h3><h3 class="description">{{modalNumber}}</h3>
+                <h3>Habits you are cirrently tracking: </h3><h3 class="description">{{modalHabit}}</h3>
          </div>
     </div>
   </div>
@@ -150,14 +99,11 @@
 
 
 </div> //end of controller
-</div>
 
 
 <div ng-controller="dashController">
 
-
-
-            <div class="container-fluid graphNavs">
+            <div class="container graphNavs">
                     <div class="col-xs-12 btnwrapper">
                         <button class="col-xs-4 btn navbtn" ng-click="H1Show()">Habit 1</button>
                         <button class="col-xs-4 btn navbtn" ng-click="H2Show()">Habit 2</button>
