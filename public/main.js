@@ -1,7 +1,19 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngRoute'])
+
+angular.module('myApp').config(function($routeProvider){
+    $routeProvider
+    .when('/H1Month',{
+        templateUrl: 'H1Month.html',
+        controller: 'dashController'
+    })
+    .when('/H2Month',{
+        templateUrl: 'H2Month.html',
+        controller: 'dashController'
+    })
+});
 
 angular.module('myApp')
-	.controller('mainController', ['$scope', '$http', function($scope, $http){
+	.controller('mainController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
 
         // var x = Date.now()

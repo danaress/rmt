@@ -115,12 +115,12 @@ app.isSteveAuthenticated = function(req, res, next){
 /** End Passport Config **/
 
 
-app.get('/', function(req, res){
-    if (!req.session.count ) { req.session.count = 0}
-    console.log(req.session.count++)
-    console.log(req.user)
-    res.sendFile('/html/login.html', {root: './public'})
-})
+// app.get('/', function(req, res){
+//     if (!req.session.count ) { req.session.count = 0}
+//     console.log(req.session.count++)
+//     console.log(req.user)
+//     res.sendFile('/html/login.html', {root: './public'})
+// })
 
 // app.post('/test', worker.smsTest)
 
@@ -210,7 +210,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 

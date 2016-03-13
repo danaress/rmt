@@ -5,14 +5,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="./css/dash.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        // <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script> -->
     // <script src="https://code.highcharts.com/highcharts-more.js"></script>
     // <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.0/angular-touch.js"></script>
+<!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.0/angular-touch.js"></script> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <script src="main.js"></script>
     <script src="dash.js"></script>
     </head>
@@ -149,25 +150,34 @@
 
 
 </div> //end of controller
-
-
+</div>
 
 
 <div ng-controller="dashController">
 
-            <div class="container-fluid graphs">
-            </div>
-                <div id="H1Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="H2Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="H3Month" style="width: 400px; height: 400px; margin: 0 auto"></div>                
-                <div id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="H2Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="H3Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="container2" style="width: 400px; height: 400px; margin: 0 auto"></div>
-                <div id="container3" style="width: 400px; height: 400px; margin: 0 auto"></div>
-            </div>
 
+
+            <div class="container-fluid graphs">
+            <button class="btn btn-md" ng-click="H1Show()">H1</button>
+            <button class="btn btn-md" ng-click="H2Show()">H2</button>
+            <button class="btn btn-md" ng-click="H3Show()">H3</button>
+            <ol>
+                <li><button class="btn btn-md" ng-click="WeekShow()">H1</button></li>
+                <li><button class="btn btn-md" ng-click="MonthShow()">H1</button></li>
+                <li><button class="btn btn-md" ng-click="AllTimeShow()">H1</button></li>
+            </ol>
+
+                <div ng-show="H1Month" id="H1Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="H2Month" id="H2Month" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="H3Month" id="H3Month" style="width: 400px; height: 400px; margin: 0 auto"></div>                
+                <div ng-show="H1Week" id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="H2Week" id="H2Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="H3Week" id="H3Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="container" id="container" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="container2" id="container2" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                <div ng-show="container3" id="container3" style="width: 400px; height: 400px; margin: 0 auto"></div>
+
+            </div>
         </div>
     </body>
 </html>

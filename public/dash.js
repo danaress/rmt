@@ -1,6 +1,81 @@
 
 angular.module('myApp')
-    .controller('dashController', ['$scope', '$http', function($scope, $http){        
+
+angular.module('myApp').factory('userInfo', function(){
+    return {}
+    })
+
+    .controller('dashController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){        
+
+        $scope.H1Show = function(){
+            $scope.H1Month = true;
+            $scope.H2Month = false;
+            $scope.H3Month = false;
+            $scope.H1Week = true;
+            $scope.H2Week = false;
+            $scope.H3Week = false;
+            $scope.container = true;
+            $scope.container2 = false;
+            $scope.container3 = false;
+        }
+        $scope.H2Show = function(){
+            $scope.H1Month = false;
+            $scope.H2Month = true;
+            $scope.H3Month = false;
+            $scope.H1Week = false;
+            $scope.H2Week = true;
+            $scope.H3Week = false;
+            $scope.container = false;
+            $scope.container2 = true;
+            $scope.container3 = false;
+        }
+        $scope.H3Show = function(){
+            $scope.H1Month = false;
+            $scope.H2Month = false;
+            $scope.H3Month = true;
+            $scope.H1Week = false;
+            $scope.H2Week = false;
+            $scope.H3Week = true;
+            $scope.container = false;
+            $scope.container2 = false;
+            $scope.container3 = true;
+        }
+
+        $scope.WeekShow = function(){
+            $scope.H1Month = false;
+            $scope.H2Month = false;
+            $scope.H3Month = false;
+            $scope.H1Week = true;
+            $scope.H2Week = true;
+            $scope.H3Week = true;
+            $scope.container = false;
+            $scope.container2 = false;
+            $scope.container3 = false;
+        }
+        $scope.MonthShow = function(){
+            $scope.H1Month = true;
+            $scope.H2Month = true;
+            $scope.H3Month = true;
+            $scope.H1Week = false;
+            $scope.H2Week = false;
+            $scope.H3Week = false;
+            $scope.container = false;
+            $scope.container2 = false;
+            $scope.container3 = false;
+        }
+        $scope.AllTimeShow = function(){
+            $scope.H1Month = false;
+            $scope.H2Month = false;
+            $scope.H3Month = false;
+            $scope.H1Week = false;
+            $scope.H2Week = false;
+            $scope.H3Week = false;
+            $scope.container = true;
+            $scope.container2 = true;
+            $scope.container3 = true;
+        }
+
+
 
 
         $scope.getMetrics = function(req, res){
@@ -14,7 +89,6 @@ angular.module('myApp')
                 $scope.month = 2629746000
                 $scope.datenow = Date.now()
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-                console.log("Num days = "+ $scope.numdays)
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
@@ -29,23 +103,22 @@ angular.module('myApp')
         $scope.getMetrics()
 
 
-angular.module('myApp').factory('userInfo', function(){
-    return {}
-    })
-
-        // $scope.mili = 86399999
-        // $scope.week = 604800000
-        // $scope.month = 2629746000
-        // $scope.datenow = Date.now()
-        // $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-        // console.log("Num days = "+ $scope.numdays)
+        $scope.loadH1 = function(){
+            $scope.loadChartH1Month();
+        }
+        // $scope.loadH2 = function(){
+        //     $scope.loadChartH2Month();
+        // }
 
         $scope.FinalH1N = 0
         $scope.FinalH1Y = 0
+        $scope.FinalH10 = 0
         $scope.FinalH2N = 0
         $scope.FinalH2Y = 0
+        $scope.FinalH20 = 0
         $scope.FinalH3N = 0
         $scope.FinalH3Y = 0
+        $scope.FinalH30 = 0
         $scope.FinalH1WeekY = 0
         $scope.FinalH1WeekN = 0
         $scope.FinalH1Week0 = 0
@@ -66,6 +139,7 @@ angular.module('myApp').factory('userInfo', function(){
         $scope.FinalH3Month0 = 0
 
 
+$scope.test= "H1Month"
 
 
         //Habit 1 LAST MONTH
@@ -154,6 +228,7 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.week1Array = []
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
+            $scope.H1Week0 = 0
             for (var i=0; i<userInfo[0].array1.length; i++){
                 if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.week){
             $scope.week1Array.push(userInfo[0].array1[i][0])
@@ -178,6 +253,7 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.week2Array = []
             $scope.H2WeekY = 0
             $scope.H2WeekN = 0
+            $scope.H2Week0 = 0
             for (var i=0; i<userInfo[0].array2.length; i++){
                 if (($scope.datenow - userInfo[0].array2[i][1]) < $scope.week){
             $scope.week2Array.push(userInfo[0].array2[i][0])
@@ -206,6 +282,7 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.week3Array = []
             $scope.H3WeekY = 0
             $scope.H3WeekN = 0
+            $scope.H3Week0 = 0
             for (var i=0; i<userInfo[0].array3.length; i++){
                 if (($scope.datenow - userInfo[0].array3[i][1]) < $scope.week){
             $scope.week3Array.push(userInfo[0].array3[i][0])
@@ -227,8 +304,6 @@ angular.module('myApp').factory('userInfo', function(){
 
         // Habit 1 ALL TIME
         $scope.array1Metrics = function(){
-            console.log(userInfo[0]);
-            console.log("length = " + userInfo[0].array1.length)
             $scope.H1Y = 0
             $scope.H1N = 0
             for (var i=0; i < userInfo[0].array1.length; i++){
@@ -241,17 +316,10 @@ angular.module('myApp').factory('userInfo', function(){
 
             }
             $scope.FinalH1Y = Math.round(100*($scope.H1Y/$scope.numdays))
-            console.log($scope.FinalH1Y)
             $scope.FinalH1N = Math.round(100*($scope.H1N/$scope.numdays))
-            console.log($scope.FinalH2Y)
             $scope.FinalH10 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
-            console.log($scope.FinalH3Y)
             $scope.loadChart1();
-
-// $scope.FinalH1Y = (100*($scope.H1Y/($scope.H1N+$scope.H1Y)))
-// $scope.FinalH1N = (100*($scope.H1N/($scope.H1N+$scope.H1Y)))
         }
-        ///////End
 
         //Habit 2 ALL TIME
         $scope.array2Metrics = function(){
@@ -272,7 +340,6 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.FinalH20 = Math.round(100-($scope.FinalH2N+$scope.FinalH2Y))
             $scope.loadChart2();
         }
-
 
         //Habit 3 ALL TIME
         $scope.array3Metrics = function(){
@@ -1668,5 +1735,4 @@ $scope.loadChart3 = function(){
     });
 });
 }
-
-    }]);
+}]);
