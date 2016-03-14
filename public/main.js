@@ -67,7 +67,7 @@ angular.module('myApp')
                     $scope.modal2Number = "You don't have a number saved. Add one below."
                     $scope.modalNumber = "It looks like you haven't selected a number yet - head over to Settings in the top right!"
                 } else {
-                    $scope.modal2Number = $scope.allUserInfo[0].number
+                    $scope.modal2Number = + $scope.allUserInfo[0].number
                     $scope.modalNumber = $scope.allUserInfo[0].number
                 }
                 if ($scope.allUserInfo[0].habit1 == ''){
