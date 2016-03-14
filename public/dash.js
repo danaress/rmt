@@ -74,17 +74,21 @@ angular.module('myApp').factory('userInfo', function(){
             $scope.container3 = true;
         }
 
+                $scope.mili = 86399999
+                $scope.week = 604800000
+                console.log($scope.week)
+                $scope.month = 2629746000
+                $scope.datenow = Date.now()
+
         $scope.getMetrics = function(req, res){
             console.log('this far')
             $http.post('/metrics')
             .then(function(returninfo){
                 userInfo = returninfo.data
                 console.log("user info = ", userInfo)
-                $scope.mili = 86399999
-                $scope.week = 604800000
-                $scope.month = 2629746000
-                $scope.datenow = Date.now()
                 console.log($scope.datenow)
+                console.log($scope.datenow - 1457481600)
+                console.log($scope.week)
                 console.log(userInfo[0].start)
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
                 console.log($scope.numdays)
