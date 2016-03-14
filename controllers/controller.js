@@ -39,8 +39,6 @@ getMetrics = function(req, res){
 		{'username': req.user.username},
  function(err, dox){
  	res.send(dox)
-		console.log(err)
-		console.log(dox)
 })}
 
 
