@@ -75,11 +75,11 @@ angular.module('myApp').factory('userInfo', function(){
         }
 
                 $scope.mili = 86399999
-                $scope.week = 604800000
                 console.log("WLHBELHB")
-                console.log($scope.week)
                 $scope.month = 2629746000
                 $scope.datenow = Date.now()
+                $scope.week = ($scope.datenow - 604800000)
+                console.log($scope.week)
 
         $scope.getMetrics = function(req, res){
             console.log('this far')
