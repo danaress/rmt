@@ -33,7 +33,7 @@ angular.module('myApp')
                 data   : $scope.settings
             }).then(function(returnData){
             	console.log("main.js")
-            	})
+            })
         }
 
         $scope.login = function(){
@@ -48,6 +48,32 @@ angular.module('myApp')
         }
 
 
+        var times = {
+            0: '12:00',
+            1: '1:00 AM',
+            2: '2:00 AM',
+            3: '3:00 AM',
+            4: '4:00 AM',
+            5: '5:00 AM',
+            6: '6:00 AM',
+            7: '7:00 AM',
+            8: '8:00 AM',
+            9: '9:00 AM',
+            10: '10:00 AM',
+            11: '11:00 AM',
+            12: '12:00 PM',
+            13: '1:00 PM',
+            14: '2:00 PM',
+            15: '3:00 PM',
+            16: '4:00 PM',
+            17: '5:00 PM',
+            18: '6:00 PM',
+            19: '7:00 PM',
+            20: '8:00 PM',
+            21: '9:00 PM',
+            22: '10:00 PM',
+            23: '11:00 PM',
+        }
 
         $scope.modalInfo = function(req, res){
             $http.post('/metrics')
@@ -58,14 +84,14 @@ angular.module('myApp')
                 $scope.modalUsername = $scope.allUserInfo[0].username
                 if ($scope.allUserInfo[0].time == null){
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
-                console.log($scope.modalTime)
-            } else {
-                $scope.modalTime = $scope.allUserInfo[0].time
-                console.log($scope.modalTime)
-            }
+                $scope.modal2Time = "Please choose a time to receive texts."
+                } else { 
+                    $scope.modalTime = times.$scope.allUserInfo[0].time
+                    console.log($scope.modalTime);
+                }
                 if ($scope.allUserInfo[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
-                    $scope.modalNumber = "It looks like you haven't selected a number yet - head over to Settings in the top right!"
+                    $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
                 } else {
                     $scope.modal2Number = + $scope.allUserInfo[0].number
                     $scope.modalNumber = $scope.allUserInfo[0].number
