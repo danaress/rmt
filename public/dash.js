@@ -75,7 +75,7 @@ angular.module('myApp').factory('userInfo', function(){
         }
 
                 $scope.mili = 86399999
-                $scope.month = 2628000000
+                // $scope.month = 2628000000
                 $scope.datenow = Date.now()
                 $scope.month = ($scope.datenow - 2629746000)
                 $scope.week = ($scope.datenow - 604800000)
@@ -87,8 +87,6 @@ angular.module('myApp').factory('userInfo', function(){
             .then(function(returninfo){
                 userInfo = returninfo.data
                 console.log("user info = ", userInfo)
-                console.log($scope.datenow)
-                console.log($scope.datenow - 1457481600)
                 console.log($scope.week)
                 console.log(userInfo[0].start)
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
