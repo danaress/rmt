@@ -41,7 +41,7 @@ angular.module('myApp')
             22: '10:00 PM',
             23: '11:00 PM'
         }
-console.log($scope.times)
+console.log($scope.times.4)
 
 
 
