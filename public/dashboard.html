@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="./css/dash.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" media="(max-width: 700px)" href="test.css" />
     <script src="https://code.highcharts.com/highcharts.js"></script>
 <!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script> -->
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -67,12 +66,12 @@
                     </select>
                     <h4> What is your phone number?</h4>
                     <p>{{modal2Number}}</p><button ng-hide="numHide" ng-click="numberClick()">Update Number</button>
-                    <input ng-show="numberHide" type="text" ng-model="settings.number" placeholder="Phone number"/><br>
+                    <input class="input" ng-show="numberHide" type="text" ng-model="settings.number" placeholder="Phone number"/><br>
                     <h4>What are you keeping track of?</h4>
-                    <input class="smallBox" type="text" ng-model="settings.habit1" placeholder="Example: "/><br>
-                    <input class="smallBox" type="text" ng-model="settings.habit2" placeholder="Example: "/><br>
-                    <input class="smallBox" type="text" ng-model="settings.habit3" placeholder="Example: "/><br>
-                    <input class="btn btn-sm submitBox" value="Submit Changes" type="submit"/>
+                    <input class="smallBox input" type="text" ng-model="settings.habit1" placeholder="Example: Running 3 miles"/><br>
+                    <input class="smallBox input" type="text" ng-model="settings.habit2" placeholder="Example: Eating 4 types of veggies"/><br>
+                    <input class="smallBox input" type="text" ng-model="settings.habit3" placeholder="Example: Morning meditation"/><br>
+                    <input class="btn button" value="Submit Changes" type="submit"/>
                 </form>
          </div>
     </div>
@@ -95,6 +94,17 @@
          </div>
     </div>
   </div>
+</div>
+<!-- ng-show="welcomeTime" -->
+<div  class="col-xs-12 welcomeBox">
+    <h2>Welcome Habit Streak!</h2>
+    <p>Habit Streak is the easiest way to keep track of your most important daily habits. Follow these instructions to get set up:</p>
+    <ol>
+        <li class="list">Open the settings window in the top right.</li>
+        <li class="list">Fill out the information to specify what time you'd like to receive texts, what number, and what you'd like to keep track of.</li>
+        <li class="list">You can respond to texts with a simple "Y" or "N" depending on whether or not you've met your goals for the day.</li>
+        <li class="list">Log back in to the app any time you'd like to check on your progress.</li>
+    </ol>
 </div>
 
 

@@ -62,7 +62,7 @@ console.log($scope.times)
                 url    : '/habits',
                 data   : $scope.settings
             }).then(function(returnData){
-            	console.log("main.js")
+                $scope.modalInfo()
             })
         }
 
@@ -77,20 +77,27 @@ console.log($scope.times)
             })
         }
 
+        $scope.welcomeFunction = function(){
+            $scope.welcomeTime = false;
+        }
+
         $scope.modalInfo = function(req, res){
             $http.post('/metrics')
             .then(function(returndata){
                 $scope.allUserInfo = returndata.data
-                console.log("info that came back to angular")
-                console.log($scope.allUserInfo)
+                if($scope.allUserInfo[0].time == null && $scope.allUserInfo[0].number == 0 && $scope.allUserInfo[0].habit1 == ''){
+                    $scope.welcomeFunction();
+                }
+                //username
                 $scope.modalUsername = $scope.allUserInfo[0].username
-                    console.log($scope.allUserInfo[0].time)
                 if ($scope.allUserInfo[0].time == null){
+                //text time
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 $scope.modal2Time = "Please choose a time to receive texts."
                 } else {
                     $scope.modalTime = $scope.times[$scope.allUserInfo[0].time]
                 }
+                //phone number
                 if ($scope.allUserInfo[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
                     $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
@@ -98,6 +105,7 @@ console.log($scope.times)
                     $scope.modal2Number = ("Current number: " + $scope.allUserInfo[0].number)
                     $scope.modalNumber = $scope.allUserInfo[0].number
                 }
+                //habits
                 if ($scope.allUserInfo[0].habit1 == ''){
                     $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
                 } else if ($scope.allUserInfo[0].habit1 == ''){
@@ -105,6 +113,7 @@ console.log($scope.times)
                 }
                 })
         }
+        $scope.modalInfo()
 
 
         $scope.numberClick = function(){
