@@ -135,12 +135,13 @@ angular.module('myApp')
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
-            var welcomeBox = function(req, res){
+            $scope.welcomeBox = function(req, res){
             $http.post('/welcomeBox')
             .then(function(returndata){
             $scope.userCheck = returndata.data
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
             $scope.welcomeTime = true;
+            $scope.welcomeBox()
         }})}
         }])
