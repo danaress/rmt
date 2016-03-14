@@ -141,6 +141,6 @@ angular.module('myApp')
             $scope.userCheck = returndata.data
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
-            $scope.welcomeTime = false;
+            $scope.welcomeTime = true;
         }})}
         }])
