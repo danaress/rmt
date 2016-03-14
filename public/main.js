@@ -77,7 +77,7 @@ console.log($scope.times)
         }
 
         $scope.welcomeFunction = function(){
-            $scope.welcomeTime = false;
+            $scope.welcomeTime = true;
         }
 
         $scope.modalInfo = function(req, res){
