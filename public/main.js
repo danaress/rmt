@@ -75,11 +75,6 @@ angular.module('myApp')
             })
         }
 
-        // $scope.welcomeFunction = function(){
-        // if($scope.allUserInfo[0].time == null && $scope.allUserInfo[0].number == 0 && $scope.allUserInfo[0].habit1 == ''){
-        //     $scope.welcomeTime = false;
-        // }}
-
         var modalInfo = function(req, res){
             $http.post('/metrics')
             .then(function(returndata){
@@ -129,10 +124,6 @@ angular.module('myApp')
             $scope.hideBox = false;
         }
 
-
-
-
-
         // Functions for Login screen
 
         $scope.loginClick = function(){
@@ -151,7 +142,18 @@ angular.module('myApp')
             $scope.signupHide = false;
         }
 
-module.exports = {
-    modalInfo : modalInfo,
-}
 	}]);
+
+.controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
+
+            var welcomeBox = function(req, res){
+            $http.post('/welcomeBox')
+            .then(function(returndata){
+            $scope.userCheck = returndata.data
+            if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
+            console.log("Load the box")
+            $scope.welcomeTime = false;
+        }}
+
+
+        }]);

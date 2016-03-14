@@ -49,6 +49,13 @@ getmodal = function(req, res){
  	res.send(docs)
 })}
 
+welcomeCheck = function(req, res){
+	users.find(
+		{'username': req.user.username},
+ function(err, docs){
+ 	res.send(docs)
+})}
+
 
 module.exports = {
 	addHabits : addHabits,

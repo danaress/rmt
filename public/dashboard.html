@@ -95,27 +95,23 @@
     </div>
   </div>
 </div>
+</div>
 
-<div  ng-show="welcomeTime" class="col-xs-12 welcomeBox">
-    <h2>Welcome Habit Streak!</h2>
-    <p>Habit Streak is the easiest way to keep track of your most important daily habits. Follow these instructions to get set up:</p>
-    <ol>
-        <li class="list">Open the settings window in the top right.</li>
-        <li class="list">Fill out the information to specify what time you'd like to receive texts, what number, and what you'd like to keep track of.</li>
-        <li class="list">You can respond to texts with a simple "Y" or "N" depending on whether or not you've met your goals for the day.</li>
-        <li class="list">Log back in to the app any time you'd like to check on your progress.</li>
-    </ol>
+<div ng-controller="welcomeController">
+        <div  ng-show="welcomeTime" class="col-xs-12 welcomeBox">
+            <h2>Welcome Habit Streak!</h2>
+            <p>Habit Streak is the easiest way to keep track of your most important daily habits. Follow these instructions to get set up:</p>
+            <ol>
+                <li class="list">Open the settings window in the top right.</li>
+                <li class="list">Fill out the information to specify what time you'd like to receive texts, what number, and what you'd like to keep track of.</li>
+                <li class="list">You can respond to texts with a simple "Y" or "N" depending on whether or not you've met your goals for the day.</li>
+                <li class="list">Log back in to the app any time you'd like to check on your progress.</li>
+            </ol>
+        </div>
 </div>
 
 
-
-</div>
-
-
-
-<div ng-controller="dashController">
-
-
+    <div ng-controller="dashController">
 
             <div class="container-fluid graphNavs">
                     <div class="col-xs-12 btnwrapper">

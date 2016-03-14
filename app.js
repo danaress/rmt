@@ -151,6 +151,8 @@ console.log(x)
 
 app.post('/habits', controller.addHabits);
 
+app.post('/welcomeBox', controller.welcomeCheck);
+
 app.post('/modal', controller.getmodal);
 
 app.post('/metrics', controller.getMetrics);
@@ -206,7 +208,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 
