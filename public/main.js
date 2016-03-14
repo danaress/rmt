@@ -41,7 +41,7 @@ angular.module('myApp')
             22: '10:00 PM',
             23: '11:00 PM'
         }
-
+console.log($scope.times.4)
 
 
 
@@ -88,7 +88,6 @@ angular.module('myApp')
                 console.log($scope.allUserInfo)
                 $scope.modalUsername = $scope.allUserInfo[0].username
                     console.log($scope.allUserInfo[0].time)
-                    console.log($scope.times.4)
                 if ($scope.allUserInfo[0].time == null){
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 $scope.modal2Time = "Please choose a time to receive texts."
