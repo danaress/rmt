@@ -256,8 +256,8 @@ $scope.test= "H1Month"
                     $scope.H1WeekN = ($scope.H1WeekN + 1)
                 }
             }
-            console.log(H1WeekY)
-            console.log(H1WeekN)
+            console.log($scope.H1WeekY)
+            console.log($scope.H1WeekN)
 
             console.log($scope.week1Array)
             $scope.FinalH1WeekY = Math.round(100*($scope.H1WeekY/7))
