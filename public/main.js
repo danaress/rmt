@@ -77,9 +77,6 @@ console.log($scope.times)
             })
         }
 
-
-     
-
         $scope.modalInfo = function(req, res){
             $http.post('/metrics')
             .then(function(returndata){
@@ -92,22 +89,13 @@ console.log($scope.times)
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 $scope.modal2Time = "Please choose a time to receive texts."
                 } else {
-                    console.log($scope.times)
-                    console.log($scope.times['10'])
-                    var x = 10
-                    var x = x.toString()
-                    console.log(x)
-                    console.log($scope.allUserInfo[0].time)
-                    console.log($scope.allUserInfo[0].time.toString())
-                    console.log(x.toString())
                     $scope.modalTime = $scope.times[$scope.allUserInfo[0].time]
-                    console.log($scope.modalTime);
                 }
                 if ($scope.allUserInfo[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
                     $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
                 } else {
-                    $scope.modal2Number = + $scope.allUserInfo[0].number
+                    $scope.modal2Number = ("Current number: " + $scope.allUserInfo[0].number)
                     $scope.modalNumber = $scope.allUserInfo[0].number
                 }
                 if ($scope.allUserInfo[0].habit1 == ''){
