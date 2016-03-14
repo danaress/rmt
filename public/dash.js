@@ -94,7 +94,6 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.array1Month();
                 $scope.array2Month();
                 $scope.array3Month();
-                $scope.modalInfo();
             })
         }
         $scope.getMetrics()
