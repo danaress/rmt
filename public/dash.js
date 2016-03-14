@@ -244,9 +244,10 @@ $scope.test= "H1Month"
             $scope.H1Week0 = 0
             for (var i=0; i<userInfo[0].array1.length; i++){
                 if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.week){
-                    console.log($scope.datenow)
-                    console.log($scope.datenow - userInfo[0].array1[i][1])
-                    console.log($scope.week)
+                    console.log("date now " + $scope.datenow)
+                    console.log("date input " + userInfo[0].array1[i][1])
+                    console.log("now -input " + $scope.datenow - userInfo[0].array1[i][1])
+                    console.log("week ago " + $scope.week)
             $scope.week1Array.push(userInfo[0].array1[i][0])
     }
             }
