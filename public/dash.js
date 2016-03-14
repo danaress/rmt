@@ -180,6 +180,7 @@ $scope.test= "H1Month"
             $scope.month2Array.push(userInfo[0].array2[i][0])
     }
             }
+            console.log($scope.month2Array)
             for (var i=0; i < $scope.month2Array.length; i++){
                 if ($scope.month2Array[i] == "y" || $scope.month2Array[i] == "Y"){
                     $scope.H2MonthY = ($scope.H2MonthY + 1)
@@ -387,7 +388,7 @@ $scope.loadChartH1Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit1,
+            text: userInfo[0].habit1 + "30 days",
             style: {
                 fontSize: '24px'
             }
