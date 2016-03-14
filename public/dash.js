@@ -244,6 +244,7 @@ $scope.test= "H1Month"
             $scope.H1Week0 = 0
             for (var i=0; i<userInfo[0].array1.length; i++){
                 if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.week){
+                    console.log(userInfo[0].array1[i])
             $scope.week1Array.push(userInfo[0].array1[i][0])
     }
             }
@@ -255,7 +256,10 @@ $scope.test= "H1Month"
                     $scope.H1WeekN = ($scope.H1WeekN + 1)
                 }
             }
-            console.log($scope.FinalH1WeekY)
+            console.log(H1WeekY)
+            console.log(H1WeekN)
+
+            console.log($scope.week1Array)
             $scope.FinalH1WeekY = Math.round(100*($scope.H1WeekY/7))
             $scope.FinalH1WeekN = Math.round(100*($scope.H1WeekN/7))
             $scope.FinalH1Week0 = Math.round(100*(7-($scope.H1WeekN + $scope.H1WeekY))/7)
