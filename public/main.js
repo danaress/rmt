@@ -92,7 +92,8 @@ console.log($scope.times['4'])
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 $scope.modal2Time = "Please choose a time to receive texts."
                 } else {
-                    $scope.modalTime = $scope.times['$scope.allUserInfo[0].time']
+                    var x = $scope.allUserInfo[0].time
+                    $scope.modalTime = $scope.times.x
                     console.log($scope.modalTime);
                 }
                 if ($scope.allUserInfo[0].number == 0){
