@@ -143,7 +143,7 @@ angular.module('myApp')
         }
 
 	}]);
-
+angular.module('myApp')
 .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
             var welcomeBox = function(req, res){
