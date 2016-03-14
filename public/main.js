@@ -62,7 +62,6 @@ console.log($scope.times)
                 url    : '/habits',
                 data   : $scope.settings
             }).then(function(returnData){
-                $scope.modalInfo()
             })
         }
 
