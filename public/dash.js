@@ -388,7 +388,7 @@ $scope.loadChartH1Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit1 + "30 days",
+            text: userInfo[0].habit1 + " H1 30 days",
             style: {
                 fontSize: '24px'
             }
@@ -500,7 +500,7 @@ $scope.loadChartH2Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit2,
+            text: userInfo[0].habit2 + " H2 30 days",
             style: {
                 fontSize: '24px'
             }
@@ -612,7 +612,7 @@ $scope.loadChartH3Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit3,
+            text: userInfo[0].habit3 + " H3 30 days",
             style: {
                 fontSize: '24px'
             }
@@ -723,7 +723,7 @@ $scope.loadChartH3Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit3,
+            text: userInfo[0].habit3 + " H3 7 days",
             style: {
                 fontSize: '24px'
             }
@@ -836,7 +836,7 @@ $scope.loadChartH2Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit2,
+            text: userInfo[0].habit2 + " H2 7 days",
             style: {
                 fontSize: '24px'
             }
@@ -949,7 +949,7 @@ $scope.loadChartH1Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit1,
+            text: userInfo[0].habit1 + " H1 7 days",
             style: {
                 fontSize: '24px'
             }
@@ -1062,7 +1062,7 @@ $scope.loadChart1 = function(){
         },
 
         title: {
-            text: userInfo[0].habit1,
+            text: userInfo[0].habit1 + " H1 All Time",
             style: {
                 fontSize: '24px'
             }
@@ -1173,7 +1173,7 @@ $scope.loadChart2 = function(){
         },
 
         title: {
-            text: userInfo[0].habit2,
+            text: userInfo[0].habit2 + " H2 All Time",
             style: {
                 fontSize: '24px'
             }
@@ -1284,7 +1284,7 @@ $scope.loadChart3 = function(){
         },
 
         title: {
-            text: userInfo[0].habit3,
+            text: userInfo[0].habit3 + " H3 All Time",
             style: {
                 fontSize: '24px'
             }
