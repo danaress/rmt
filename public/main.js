@@ -1,16 +1,5 @@
 angular.module('myApp', ['ngRoute'])
 
-// angular.module('myApp').config(function($routeProvider){
-//     $routeProvider
-//     .when('/H1Month',{
-//         templateUrl: 'H1Month.html',
-//         controller: 'dashController'
-//     })
-//     .when('/H2Month',{
-//         templateUrl: 'H2Month.html',
-//         controller: 'dashController'
-//     })
-// });
 
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
@@ -144,7 +133,7 @@ angular.module('myApp')
 
 	}]);
 angular.module('myApp')
-.controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
+    .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
             var welcomeBox = function(req, res){
             $http.post('/welcomeBox')
@@ -153,7 +142,5 @@ angular.module('myApp')
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
             $scope.welcomeTime = false;
-        }}
-
-
+        }})
         }]);
