@@ -100,7 +100,7 @@ console.log($scope.times)
                     console.log($scope.allUserInfo[0].time)
                     console.log($scope.allUserInfo[0].time.toString())
                     console.log(x.toString())
-                    $scope.modalTime = $scope.times.x
+                    $scope.modalTime = $scope.times[$scope.allUserInfo[0].time)]
                     console.log($scope.modalTime);
                 }
                 if ($scope.allUserInfo[0].number == 0){
