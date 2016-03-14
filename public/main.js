@@ -150,4 +150,4 @@ console.log($scope.times.4)
             $scope.signupHide = false;
         }
 
-	}]);
+	]);
