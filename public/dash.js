@@ -170,7 +170,7 @@ $scope.test= "H1Month"
             console.log($scope.H1Month0)
             $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/30))
             $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/30))
-            $scope.FinalH1Month0 = Math.round(100*(($scope.FinalH1MonthN + $scope.FinalH1MonthY)/30))
+            $scope.FinalH1Month0 = Math.round(100*(30-($scope.FinalH1MonthN + $scope.FinalH1MonthY))/30)
             console.log($scope.FinalH1MonthY)
             console.log($scope.FinalH1MonthN)
             console.log($scope.FinalH1Month0)
@@ -290,7 +290,7 @@ $scope.test= "H1Month"
             console.log($scope.H2Week0)
             $scope.FinalH2WeekY = Math.round(100*($scope.H2WeekY/7))
             $scope.FinalH2WeekN = Math.round(100*($scope.H2WeekN/7))
-            $scope.FinalH2Week0 = Math.round(10*(7-($scope.H2WeekN + $scope.H2WeekY)))
+            $scope.FinalH2Week0 = Math.round(100*(7-($scope.H2WeekN + $scope.H2WeekY))/7)
             console.log($scope.FinalH2WeekY)
             console.log($scope.FinalH2WeekN)
             console.log($scope.FinalH2Week0)
@@ -318,7 +318,7 @@ $scope.test= "H1Month"
             }
             $scope.FinalH3WeekY = Math.round(100*($scope.H3WeekY/7))
             $scope.FinalH3WeekN = Math.round(100*($scope.H3WeekN/7))
-            $scope.FinalH3Week0 = Math.round(10*(7-($scope.H3WeekN + $scope.H3WeekY)))
+            $scope.FinalH3Week0 = Math.round(100*(7-($scope.H3WeekN + $scope.H3WeekY))/7)
             $scope.loadChartH3Week();
         }
 
