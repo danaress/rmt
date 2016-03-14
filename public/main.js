@@ -95,6 +95,8 @@ console.log($scope.times)
                     console.log($scope.times)
                     console.log($scope.times['10'])
                     var x = $scope.allUserInfo[0].time
+                    console.log(x)
+                    console.log(x.toString())
                     console.log($scope.allUserInfo[0].time)
                     console.log($scope.allUserInfo[0].time.toString())
                     console.log(x.toString())
