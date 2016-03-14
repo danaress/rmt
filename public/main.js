@@ -15,14 +15,6 @@ angular.module('myApp', ['ngRoute'])
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
-
-        // var x = Date.now()
-
-        // console.log(x);
-
-
-        // Functions for Signing up, selecting preferred time, setting habits, and logging in.
-
         $scope.signup = function(){
             $http({ 
                 method : 'POST',

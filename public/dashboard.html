@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script src="https://code.highcharts.com/highcharts.js"></script>
 <!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script> -->
-    // <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    // <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
@@ -19,7 +19,7 @@
     </head>
     <body>
     	<div ng-controller="mainController">
-        <nav class="navbar navbar-fixed-top">
+        <nav class="navbar">
             <div class="container-fluid navbar">
                 <!-- <div class="col-xs-12"> -->
                     <h1 class="col-xs-6 bigIcon"><i class="ion-person" ng-click="modalInfo()" data-toggle="modal" data-target="#newModal"></i></h1>
@@ -32,7 +32,7 @@
     <div class="modal-dialog modal-lg modaltest">
         <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><b>X</b></button>
             <h3 class="modal-title" id="myModalLabel">Settings</h3>
             </div>
             <div class="modal-body">
@@ -82,7 +82,7 @@
     <div class="modal-dialog modal-lg modaltest">
         <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><b>X</b></button>
             <h3 class="modal-title" id="myModalLabel">Account Information</h3>
             </div>
             <div class="modal-body">
@@ -98,7 +98,7 @@
 
 
 
-</div> //end of controller
+</div>
 
 
 

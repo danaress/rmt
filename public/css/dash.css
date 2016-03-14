@@ -5,6 +5,8 @@
 }
 
 #mainHeader{
+
+
 background-color: #00C7AB;
 }
 
@@ -70,7 +72,7 @@ background-color: #00C7AB;
 .graphNavs{
 	border-bottom: 1px #00C7AB solid;
 	padding: 0px;
-	margin-top: 9%;
+/*	margin-top: 9%;*/
 }
 
 .smallBox{
