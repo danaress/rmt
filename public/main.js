@@ -93,6 +93,8 @@ console.log($scope.times)
                 $scope.modal2Time = "Please choose a time to receive texts."
                 } else {
                     console.log($scope.times)
+                    console.log($scope.times.10)
+                    console.log($scope.times['10'])
                     var x = $scope.allUserInfo[0].time
                     console.log($scope.allUserInfo[0].time)
                     console.log($scope.allUserInfo[0].time.toString())
