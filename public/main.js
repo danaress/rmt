@@ -41,7 +41,6 @@ angular.module('myApp')
             '22': '10:00 PM',
             '23': '11:00 PM'
         }
-console.log($scope.times)
 
 
 
@@ -81,7 +80,7 @@ console.log($scope.times)
         //     $scope.welcomeTime = false;
         // }}
 
-        $scope.modalInfo = function(req, res){
+        var modalInfo = function(req, res){
             $http.post('/metrics')
             .then(function(returndata){
                 $scope.allUserInfo = returndata.data
@@ -152,4 +151,7 @@ console.log($scope.times)
             $scope.signupHide = false;
         }
 
+module.exports = {
+    modalInfo : modalInfo,
+}
 	}]);

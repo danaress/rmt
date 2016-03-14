@@ -5,6 +5,8 @@ angular.module('myApp').factory('userInfo', function(){
     return {}
     })
 
+var modalInfo = require('modalInfo')
+
     .controller('dashController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){        
         $scope.H1Show = function(){
             $scope.H1Month = true;
