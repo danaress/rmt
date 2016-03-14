@@ -110,7 +110,6 @@ console.log($scope.times)
                 }
                 })
         }
-        $scope.modalInfo()
 
 
 
