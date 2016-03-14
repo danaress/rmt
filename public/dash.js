@@ -84,7 +84,10 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.week = 604800000
                 $scope.month = 2629746000
                 $scope.datenow = Date.now()
+                console.log($scope.datenow)
+                console.log(userInfo[0].start)
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
+                console.log($scope.numdays)
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
