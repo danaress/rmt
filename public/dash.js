@@ -88,9 +88,9 @@ angular.module('myApp').factory('userInfo', function(){
             .then(function(returninfo){
                 userInfo = returninfo.data
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-                userInfo[0].habit1 = $scope.H1
-                userInfo[0].habit2 = $scope.H2
-                userInfo[0].habit3 = $scope.H3
+                userInfo[0].habit1 = $scope.habit1name
+                userInfo[0].habit2 = $scope.habit2name
+                userInfo[0].habit3 = $scope.habit3name
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
