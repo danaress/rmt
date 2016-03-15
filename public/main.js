@@ -4,33 +4,6 @@ angular.module('myApp', ['ngRoute'])
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
-   $scope.times = {
-            '0': '12:00',
-            '1': '1:00 AM',
-            '2': '2:00 AM',
-            '3': '3:00 AM',
-            '4': '4:00 AM',
-            '5': '5:00 AM',
-            '6': '6:00 AM',
-            '7': '7:00 AM',
-            '8': '8:00 AM',
-            '9': '9:00 AM',
-            '10': '10:00 AM',
-            '11': '11:00 AM',
-            '12': '12:00 PM',
-            '13': '1:00 PM',
-            '14': '2:00 PM',
-            '15': '3:00 PM',
-            '16': '4:00 PM',
-            '17': '5:00 PM',
-            '18': '6:00 PM',
-            '19': '7:00 PM',
-            '20': '8:00 PM',
-            '21': '9:00 PM',
-            '22': '10:00 PM',
-            '23': '11:00 PM'
-        }
-
 
 
         $scope.signup = function(){
@@ -105,51 +78,87 @@ angular.module('myApp')
 
 	}]);
 
+angular.module('myApp').factory('userData', function(){
+    return {}
+    })
+
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', function($scope, $http){
+
+
+           $scope.times = {
+            '0': '12:00',
+            '1': '1:00 AM',
+            '2': '2:00 AM',
+            '3': '3:00 AM',
+            '4': '4:00 AM',
+            '5': '5:00 AM',
+            '6': '6:00 AM',
+            '7': '7:00 AM',
+            '8': '8:00 AM',
+            '9': '9:00 AM',
+            '10': '10:00 AM',
+            '11': '11:00 AM',
+            '12': '12:00 PM',
+            '13': '1:00 PM',
+            '14': '2:00 PM',
+            '15': '3:00 PM',
+            '16': '4:00 PM',
+            '17': '5:00 PM',
+            '18': '6:00 PM',
+            '19': '7:00 PM',
+            '20': '8:00 PM',
+            '21': '9:00 PM',
+            '22': '10:00 PM',
+            '23': '11:00 PM'
+        }
 
             $scope.modalInfo = function(){
             console.log("click worked.")
                 //username
-                $scope.modalUsername = $scope.userCheck[0].username
-                if ($scope.userCheck[0].time == null){
+                $scope.modalUsername = userData[0].username
+                console.log("username = "+$scope.modalUsername)
+                if (userData[0].time == null){
                 //text time
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
                 $scope.modal2Time = "Please choose a time to receive texts."
                 } else {
-                    $scope.modalTime = $scope.times[$scope.userCheck[0].time]
+                $scope.modalTime = $scope.times[userData[0].time]
                 }
                 //phone number
-                if ($scope.userCheck[0].number == 0){
+                if (userData[0].number == 0){
                     $scope.modal2Number = "You don't have a number saved. Add one below."
                     $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
                 } else {
-                    $scope.modal2Number = ("Current number: " + $scope.userCheck[0].number)
-                    $scope.modalNumber = $scope.userCheck[0].number
+                    $scope.modal2Number = ("Current number: " + userData[0].number)
+                    $scope.modalNumber = userData[0].number
                 }
                 //habits
-                if ($scope.userCheck[0].habit1 == ''){
+                if (userData[0].habit1 == ''){
                     $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
-                } else if ($scope.userCheck[0].habit1 == ''){
-                    $scope.modalHabit = ("Habit 1: " + $scope.userCheck[0].habit1 + ". Habit 2: " + $scope.userCheck[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
+                } else if (userData[0].habit1 != ''){
+                    $scope.modalHabit = ("Habit 1: " + userData[0].habit1 + ". Habit 2: " + userData[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
                 }
                 }
 
             $scope.welcomeBox = function(req, res){
                 console.log("got thiiiis far")
-            $http.post('/welcomebox')
-            .then(function(ReturnData){
-            $scope.userCheck = ReturnData.data
-            console.log($scope.userCheck)
+            $http({ 
+                method : 'POST',
+                url    : '/welcomebox'
+            }).then(function(ReturnData){
+            userData = ReturnData.data
+            console.log(userData)
+            console.log(userData[0].username)
             console.log("data back")
-            if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
-            console.log("Load the box")
+            $scope.modalInfo();
+            if(userData[0].time == null && userData[0].number == 0 && userData[0].habit1 == ''){
             $scope.welcomeTime = true;
-            $scope.modalInfo()
+
 
         }})}
-
-            $scope.welcomeBox();
+  $scope.welcomeBox();
+          
         
 
 

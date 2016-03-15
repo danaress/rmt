@@ -153,7 +153,6 @@ app.post('/habits', controller.addHabits);
 
 app.post('/welcomebox', controller.welcomeCheck);
 
-// app.post('/modal', controller.getmodal);
 
 app.post('/metrics', controller.getMetrics);
 

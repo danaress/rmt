@@ -37,7 +37,6 @@ getMetrics = function(req, res){
 		{'username': req.user.username},
  function(err, dox){
  	res.send(dox)
- 	res.send(err)
 })}
 
 
@@ -54,7 +53,6 @@ welcomeCheck = function(req, res){
 		{'username': req.user.username},
  function(err, docs){
  	res.send(docs)
- 	res.send(err)
 })}
 
 

@@ -23,7 +23,7 @@
             <div class="container-fluid navbar">
                 <!-- <div class="col-xs-12"> -->
                     <h1 class="col-xs-6 bigIcon"><i class="ion-person" ng-click="modalInfo()" data-toggle="modal" data-target="#newModal"></i></h1>
-                    <h1 class="col-xs-6 bigIcon"><i ng-click="modalInfo()" data-toggle="modal" ng-touch="testing()" data-target="#myModal" class="ion-ios-gear floatRight"></i></h1>
+                    <h1 class="col-xs-6 bigIcon"><i data-toggle="modal" ng-touch="testing()" data-target="#myModal" class="ion-ios-gear floatRight"></i></h1>
                 <!-- </div> -->
             </div>
         </nav>
@@ -64,10 +64,9 @@
                         <option value="22">10:00 PM</option>
                         <option value="23">11:00 PM</option>
                     </select>
-                    <h4> What is your phone number?</h4>
-                    <p>{{modal2Number}}</p><button ng-hide="numHide" ng-click="numberClick()">Update Number</button>
-                    <input class="input" ng-show="numberHide" type="text" ng-model="settings.number" placeholder="Phone number"/><br>
-                    <h4>What are you keeping track of?</h4>
+                    <h4> Update your phone number:</h4>
+                    <input class="input" type="text" ng-model="settings.number" placeholder="Phone number"/><br>
+                    <h4>Update what you're keeping track of:</h4>
                     <input class="smallBox input" type="text" ng-model="settings.habit1" placeholder="Example: Running 3 miles"/><br>
                     <input class="smallBox input" type="text" ng-model="settings.habit2" placeholder="Example: Eating 4 types of veggies"/><br>
                     <input class="smallBox input" type="text" ng-model="settings.habit3" placeholder="Example: Morning meditation"/><br>
@@ -78,23 +77,6 @@
   </div>
 </div>
 
-<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg modaltest">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><b>X</b></button>
-            <h3 class="modal-title" id="myModalLabel">Account Information</h3>
-            </div>
-            <div class="modal-body">
-                <p class="description">Habit Tracker is the easiest way to keep track of your most important daily habits over sms.</p>
-                <h3>Username: </h3><h3 class="description">{{modalUsername}}</h3>
-                <h3>Selected time to receive texts: </h3><h3 class="description">{{modalTime}}</h3>
-                <h3>Phone number to receive texts: </h3><h3 class="description">{{modalNumber}}</h3>
-                <h3>Habits you are currently tracking: </h3><h3 class="description">{{modalHabit}}</h>
-         </div>
-    </div>
-  </div>
-</div>
 </div>
 
 <div ng-controller="welcomeController">
@@ -108,6 +90,24 @@
                 <li class="list">Log back in to the app any time you'd like to check on your progress.</li>
             </ol>
         </div>
+
+        <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modaltest">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><b>X</b></button>
+            <h3 class="modal-title" id="myModalLabel">Account Information</h3>
+            </div>
+            <div class="modal-body">
+                <p class="description">Habit Tracker is the easiest way to keep track of your most important daily habits over sms.</p>
+                <h3>Username: </h3><p class="description">{{modalUsername}}</p>
+                <h3>Selected time to receive texts: </h3><p class="description">{{modalTime}}</p>
+                <h3>Phone number to receive texts: </h3><p class="description">{{modalNumber}}</p>
+                <h3>Habits you are currently tracking: </h3><p class="description">{{modalHabit}}</p>
+         </div>
+    </div>
+  </div>
+</div>
 </div>
 
 
