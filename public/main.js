@@ -85,7 +85,6 @@ angular.module('myApp').factory('userData', function(){
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', function($scope, $http){
 
-
            $scope.times = {
             '0': '12:00',
             '1': '1:00 AM',
@@ -137,12 +136,12 @@ angular.module('myApp')
                 if (userData[0].habit1 == ''){
                     $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
                 } else if (userData[0].habit1 != ''){
-                    $scope.modalHabit = ("Habit 1: " + userData[0].habit1 + ". Habit 2: " + userData[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
+                    $scope.modalHabit = "Habit 1: " + userData[0].habit1 + ". Habit 2: " + userData[0].habit2 + ". Habit 3: " + userData[0].habit3
                 }
                 }
 
             $scope.welcomeBox = function(req, res){
-                console.log("got thiiiis far")
+            console.log("got thiiiis far")
             $http({ 
                 method : 'POST',
                 url    : '/welcomebox'
