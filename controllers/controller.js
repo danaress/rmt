@@ -59,6 +59,5 @@ welcomeCheck = function(req, res){
 module.exports = {
 	addHabits : addHabits,
 	getMetrics : getMetrics,
-	getmodal : getmodal,
 	welcomeCheck: welcomeCheck
 }
