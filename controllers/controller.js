@@ -50,6 +50,7 @@ getmodal = function(req, res){
 })}
 
 welcomeCheck = function(req, res){
+	console.log(req.user.username)
 	users.find(
 		{'username': req.user.username},
  function(err, doc){

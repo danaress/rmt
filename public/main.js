@@ -134,9 +134,9 @@ angular.module('myApp')
                 }
                 }
 
-            $scope.welcomeBox = function(req, res){
+            $scope.welcomeBox = function(){
             console.log("Function fired")
-            $http.get('/welcomeBox')
+            $http.post('/welcomeBox')
             .then(function(ReturnData){
             $scope.userCheck = ReturnData.data
             console.log("data back")
