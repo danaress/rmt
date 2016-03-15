@@ -29,8 +29,6 @@ addHabits = function(req, res){
 				habit3: req.body.habit3,
 		}
 	}, function(err, doc){
-		console.log(err)
-		console.log(doc)
 	})
 }
 
@@ -42,20 +40,19 @@ getMetrics = function(req, res){
 })}
 
 
-getmodal = function(req, res){
-	users.find(
-		{'username': req.user.username},
- function(err, docs){
- 	res.send(docs)
-})}
+// getmodal = function(req, res){
+// 	users.find(
+// 		{'username': req.user.username},
+//  function(err, docs){
+//  	res.send(docs)
+// })}
 
 welcomeCheck = function(req, res){
 	console.log("username = " +req.user.username)
 	users.find(
 		{'username': req.user.username},
- function(err, doc){
- 	console.log("doc = " + doc)
- 	res.send(doc)
+ function(err, docs){
+ 	res.send(docs)
 })}
 
 
