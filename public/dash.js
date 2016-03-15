@@ -193,7 +193,7 @@ $scope.test= "H1Month"
             }
             $scope.FinalH2MonthY = Math.round(100*($scope.H2MonthY/30))
             $scope.FinalH2MonthN = Math.round(100*($scope.H2MonthN/30))
-            $scope.FinalH2Month0 = Math.round(100*-($scope.FinalH2MonthN + $scope.FinalH3MonthY))
+            $scope.FinalH2Month0 = Math.round(100-($scope.FinalH2MonthN + $scope.FinalH3MonthY))
             $scope.loadChartH2Month();
         }
 
