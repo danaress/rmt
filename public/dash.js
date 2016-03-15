@@ -79,9 +79,6 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.datenow = Date.now()
                 $scope.month = ($scope.datenow - 2629746000)
                 $scope.week = ($scope.datenow - 604800000)
-                userInfo[0].habit1 = $scope.habit1name
-                userInfo[0].habit2 = $scope.habit2name
-                userInfo[0].habit3 = $scope.habit3name
 
         $scope.getMetrics = function(req, res){
             console.log('this far')
@@ -89,6 +86,9 @@ angular.module('myApp').factory('userInfo', function(){
             .then(function(returninfo){
                 userInfo = returninfo.data
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
+                userInfo[0].habit1 = $scope.habit1name
+                userInfo[0].habit2 = $scope.habit2name
+                userInfo[0].habit3 = $scope.habit3name
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
