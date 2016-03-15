@@ -152,7 +152,7 @@ width: 100%;
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1080px) {
 .step1{
 	font-size: 2em;
 }
