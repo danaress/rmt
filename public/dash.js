@@ -213,7 +213,7 @@ $scope.test= "H1Month"
                 if ($scope.month3Array[i] == "y" || $scope.month3Array[i] == "Y"){
                     $scope.H3MonthY = ($scope.H3MonthY + 1)
                     
-                } else if ($scope.month2Array[i] == "n" || $scope.month1Array[i] == "N"){
+                } else if ($scope.month3Array[i] == "n" || $scope.month3Array[i] == "N"){
                     $scope.H3MonthN = ($scope.H3MonthN + 1)
                 }
             }
@@ -222,8 +222,6 @@ $scope.test= "H1Month"
             $scope.FinalH3Month0 = Math.round(100-($scope.FinalH3MonthN + $scope.FinalH3MonthY))
             $scope.loadChartH3Month();
         }
-
-
         //Habit 1 LAST WEEK
         $scope.array1Week = function(){
             console.log(userInfo[0]);
