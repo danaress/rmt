@@ -191,14 +191,9 @@ $scope.test= "H1Month"
                     $scope.H2MonthN = ($scope.H2MonthN + 1)
                 }
             }
-            console.log($scope.H2MonthY)
-            console.log($scope.H2MonthN)
             $scope.FinalH2MonthY = Math.round(100*($scope.H2MonthY/30))
             $scope.FinalH2MonthN = Math.round(100*($scope.H2MonthN/30))
             $scope.FinalH2Month0 = Math.round(100-($scope.FinalH2MonthN + $scope.FinalH2MonthY))
-            console.log($scope.FinalH2MonthY)
-            console.log($scope.FinalH2MonthN)
-            console.log($scope.FinalH2Month0)
             $scope.loadChartH2Month();
         }
 
@@ -290,6 +285,9 @@ $scope.test= "H1Month"
             $scope.H3Week0 = 0
             for (var i=0; i<userInfo[0].array3.length; i++){
                 if (userInfo[0].array3[i][1] > $scope.week){
+                    console.log("Made it through")
+                    console.log(userInfo[0].array3[i][1])
+                    console.log($scope.week)
             $scope.week3Array.push(userInfo[0].array3[i][0])
     }
             }
@@ -301,9 +299,15 @@ $scope.test= "H1Month"
                     $scope.H3WeekN = ($scope.H3WeekN + 1)
                 }
             }
+            console.log($scope.H3WeekN)
+            console.log($scope.H3WeekY)
             $scope.FinalH3WeekY = Math.round(100*($scope.H3WeekY/7))
             $scope.FinalH3WeekN = Math.round(100*($scope.H3WeekN/7))
             $scope.FinalH3Week0 = Math.round(100-($scope.FinalH3WeekN + $scope.FinalH3WeekY))
+            console.log($scope.FinalH3WeekY)
+            console.log($scope.FinalH3WeekN)
+            console.log($scope.FinalH3Week0)
+
             $scope.loadChartH3Week();
         }
 
