@@ -150,7 +150,7 @@ $scope.test= "H1Month"
             $scope.H1MonthY = 0
             $scope.H1MonthN = 0
             for (var i=0; i< userInfo[0].array1.length; i++){
-                if (($scope.datenow - userInfo[0].array1[i][1]) < $scope.month){
+                if (userInfo[0].array1[i][1] > $scope.month){
             $scope.month1Array.push(userInfo[0].array1[i][0])
     }
             }
