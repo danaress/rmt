@@ -135,10 +135,10 @@ angular.module('myApp')
                 }
 
             $scope.welcomeBox = function(req, res){
-                console.log("Function fired")
+            console.log("Function fired")
             $http.post('/welcomeBox')
-            .then(function(returndata){
-            $scope.userCheck = returndata.data
+            .then(function(ReturnData){
+            $scope.userCheck = ReturnData.data
             console.log("data back")
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
