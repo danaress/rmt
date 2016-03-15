@@ -145,7 +145,7 @@ angular.module('myApp')
                     $scope.modalHabit = ("Habit 1: " + $scope.userCheck[0].habit1 + ". Habit 2: " + $scope.userCheck[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
                 }
                 }
-        }
+        
 
 
         }])
