@@ -80,6 +80,7 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.month = ($scope.datenow - 2629746000)
                 $scope.week = ($scope.datenow - 604800000)
                 console.log($scope.week)
+                console.log()
 
         $scope.getMetrics = function(req, res){
             console.log('this far')
@@ -946,9 +947,6 @@ $scope.loadChartH2Week = function(){
 });
 }
 
-
-
-
 // /////////////////////////////////////// HighCharts Activity Gauge for Array 1  in LAST 7 DAYS ///////////////////////////////
 $scope.loadChartH1Week = function(){
         $(function () {
@@ -1113,11 +1111,6 @@ $scope.loadChart1 = function(){
                 innerRadius: '63%',
                 backgroundColor:'rgba(231, 76, 60, .1)',
                 borderWidth: 0
-            }, { // Track for Stand
-                outerRadius: '62%',
-                innerRadius: '38%',
-                backgroundColor: 'rgba(149, 165, 166, .1)',
-                borderWidth: 0
             }]
         },
 
@@ -1156,15 +1149,6 @@ $scope.loadChart1 = function(){
                 radius: '75%',
                 innerRadius: '75%',
                 y: $scope.FinalH1N
-            }]
-        }, {
-            name: 'Not recorded',
-            borderColor: 'rgb(149, 165, 166)',
-            data: [{
-                color: 'rgb(149, 165, 166)',
-                radius: '50%',
-                innerRadius: '50%',
-                y: $scope.FinalH10
             }]
         }]
     }
