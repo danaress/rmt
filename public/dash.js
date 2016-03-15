@@ -80,7 +80,7 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.month = ($scope.datenow - 2629746000)
                 $scope.week = ($scope.datenow - 604800000)
                 console.log($scope.week)
-                console.log()
+                console.log($scope.month)
 
         $scope.getMetrics = function(req, res){
             console.log('this far')
@@ -176,6 +176,9 @@ $scope.test= "H1Month"
             $scope.H2MonthN = 0
             for (var i=0; i<userInfo[0].array2.length; i++){
                 if (userInfo[0].array2[i][1] > $scope.month){
+                    console.log("made it through")
+                    console.log(userInfo[0].array2[i][1])
+                    console.log($scope.month)
             $scope.month2Array.push(userInfo[0].array2[i][0])
     }
             }
@@ -231,12 +234,6 @@ $scope.test= "H1Month"
             $scope.H1Week0 = 0
             for (var i=0; i<userInfo[0].array1.length; i++){
                 if (userInfo[0].array1[i][1] > $scope.week){
-                    console.log("Made it through")
-                    console.log(userInfo[0].array1[i][1])
-                    console.log($scope.week)
-                    console.log($scope.datenow - userInfo[0].array1[i][1])
-                    console.log(($scope.datenow) - (userInfo[0].array1[i][1]))
-                    console.log("week ago " + $scope.week)
             $scope.week1Array.push(userInfo[0].array1[i][0])
     }
             }
