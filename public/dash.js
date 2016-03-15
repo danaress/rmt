@@ -364,7 +364,7 @@ $scope.loadChartH1Month = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 55
+            marginTop: 75
         },
 
         credits: {
@@ -476,7 +476,7 @@ $scope.loadChartH2Month = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -586,7 +586,7 @@ $scope.loadChartH3Month = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -696,7 +696,7 @@ $scope.loadChartH3Week = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -806,7 +806,7 @@ $scope.loadChartH2Week = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -916,7 +916,7 @@ $scope.loadChartH1Week = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -1026,7 +1026,7 @@ $scope.loadChart1 = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -1123,7 +1123,7 @@ $scope.loadChart2 = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
@@ -1221,7 +1221,7 @@ $scope.loadChart3 = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 75
         },
 
         credits: {
