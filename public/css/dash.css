@@ -1,4 +1,5 @@
 /* Index Html Doc */
+
 body{
 	font-size: 12pt;
 }
@@ -7,8 +8,6 @@ body{
 }
 
 #mainHeader{
-
-
 background-color: #00C7AB;
 }
 
@@ -150,4 +149,47 @@ background-color: #00C7AB;
 .list{
 	font-family: helvetica;
 	font-size: 18px;
+}
+
+
+@media screen and (min-width: 900px) {
+.step1{
+	font-size: 2em;
+}
+
+.button{
+	background-color: #00C7AB;
+	width: 20%;
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: white;
+	font-family: helvetica;
+}
+
+.input{
+	border: none;
+	width: 50%;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid black;
+	font-size: 20px;
+	line-height: 30px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.input:focus{
+	box-shadow: none;
+	outline: none;
+}
+.header{
+	width: 100%;
+	text-align: center;
+	margin-top: 10%; 
+}
+.spacing{
+  margin-bottom: 10%;
+}
 }

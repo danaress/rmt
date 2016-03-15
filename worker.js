@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/users', function(err){
 	if (err) console.log(err)
-		console.log("connected to mongo")
+	console.log("connected to mongo")
 })
 
 var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
