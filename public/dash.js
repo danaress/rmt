@@ -244,7 +244,7 @@ $scope.test= "H1Month"
             $scope.H1Week0 = 0
             for (var i=0; i<userInfo[0].array1.length; i++){
                 console.log($scope.week)
-                if (userInfo[0].array1[i][1] < $scope.week){
+                if (userInfo[0].array1[i][1] > $scope.week){
                     console.log("Made it through")
                     console.log(userInfo[0].array1[i][1])
                     console.log($scope.week)
