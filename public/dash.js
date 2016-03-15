@@ -173,9 +173,6 @@ $scope.test= "H1Month"
             $scope.H2MonthN = 0
             for (var i=0; i<userInfo[0].array2.length; i++){
                 if (userInfo[0].array2[i][1] > $scope.month){
-                    console.log("made it through")
-                    console.log(userInfo[0].array2[i][1])
-                    console.log($scope.month)
             $scope.month2Array.push(userInfo[0].array2[i][0])
     }
             }

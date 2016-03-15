@@ -137,9 +137,10 @@ angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
             $scope.welcomeBox = function(req, res){
-                console.log("function fired")
+            console.log("function fired")
             $http.post('/welcomeBox')
             .then(function(returndata){
+            console.log("data made it back")
             $scope.userCheck = returndata.data
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
