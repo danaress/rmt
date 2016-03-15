@@ -343,9 +343,8 @@ $scope.test= "H1Month"
                 }
 
             }
-            $scope.FinalH1Y = Math.round(100*($scope.H1Y/$scope.numdays))
-            $scope.FinalH1N = Math.round(100*($scope.H1N/$scope.numdays))
-            $scope.FinalH10 = Math.round(100-($scope.FinalH1N+$scope.FinalH1Y))
+            $scope.FinalH1Y = Math.round(100*($scope.H1Y/($scope.H1Y+$scope.H1N)))
+            $scope.FinalH1N = Math.round(100*($scope.H1N/($scope.H1Y+$scope.H1N))
             $scope.loadChart1();
         }
 
