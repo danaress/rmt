@@ -146,6 +146,7 @@ angular.module('myApp')
             $scope.welcomeTime = true;
             $scope.modalUsername = $scope.userCheck[0].username
             if ($scope.userCheck[0].time == null){
+                console.log("got this far")
             //text time
             $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
             $scope.modal2Time = "Please choose a time to receive texts."
@@ -154,11 +155,13 @@ angular.module('myApp')
             }
             //phone number
             if ($scope.userCheck[0].number == 0){
+                console.log("got this far")
                 $scope.modal2Number = "You don't have a number saved. Add one below."
                 $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
             } else {
                 $scope.modal2Number = ("Current number: " + $scope.userCheck[0].number)
                 $scope.modalNumber = $scope.userCheck[0].number
+                console.log("got this far")
             }
             //habits
             if ($scope.userCheck[0].habit1 == ''){
