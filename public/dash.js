@@ -79,8 +79,9 @@ angular.module('myApp').factory('userInfo', function(){
                 $scope.datenow = Date.now()
                 $scope.month = ($scope.datenow - 2629746000)
                 $scope.week = ($scope.datenow - 604800000)
-                console.log($scope.week)
-                console.log($scope.month)
+                userInfo[0].habit1 = $scope.habit1name
+                userInfo[0].habit2 = $scope.habit2name
+                userInfo[0].habit3 = $scope.habit3name
 
         $scope.getMetrics = function(req, res){
             console.log('this far')
@@ -88,9 +89,6 @@ angular.module('myApp').factory('userInfo', function(){
             .then(function(returninfo){
                 userInfo = returninfo.data
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-                userInfo[0].habit1 = $scope.habit1name
-                userInfo[0].habit2 = $scope.habit2name
-                userInfo[0].habit3 = $scope.habit3name
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
@@ -374,7 +372,7 @@ $scope.loadChartH1Month = function(){
         },
 
         title: {
-            text: "Past 30 Days: "+userInfo[0].habit1,
+            text: "Past 30 Days: "+ userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -1036,7 +1034,7 @@ $scope.loadChart1 = function(){
         },
 
         title: {
-            text:"All Time: "+userInfo[0].habit1,
+            text:"All Time: "+$scope.habit1name,
             style: {
                 fontSize: '24px'
             }
@@ -1133,7 +1131,7 @@ $scope.loadChart2 = function(){
         },
 
         title: {
-            text:"All Time: "+ userInfo[0].habit2,
+            text:"All Time: "+ $scope.habit2name,
             style: {
                 fontSize: '24px'
             }
@@ -1231,7 +1229,7 @@ $scope.loadChart3 = function(){
         },
 
         title: {
-            text:"All Time: "+userInfo[0].habit3,
+            text:"All Time: "+$scope.habit3name,
             style: {
                 fontSize: '24px'
             }
