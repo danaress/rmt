@@ -107,20 +107,6 @@ angular.module('myApp')
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
-
-            $scope.welcomeBox()
-
-            $scope.welcomeBox = function(req, res){
-            $http.post('/welcomeBox')
-            .then(function(returndata){
-            $scope.userCheck = returndata.data
-            if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
-            console.log("Load the box")
-            $scope.welcomeTime = true;
-            $scope.modalInfo()
-
-        }})}
-
             $scope.modalInfo = function(){
             console.log("click worked.")
                 //username
@@ -147,6 +133,19 @@ angular.module('myApp')
                     $scope.modalHabit = ("Habit 1: " + $scope.userCheck[0].habit1 + ". Habit 2: " + $scope.userCheck[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
                 }
                 }
+
+            $scope.welcomeBox = function(req, res){
+            $http.post('/welcomeBox')
+            .then(function(returndata){
+            $scope.userCheck = returndata.data
+            if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
+            console.log("Load the box")
+            $scope.welcomeTime = true;
+            $scope.modalInfo()
+
+        }})}
+
+            $scope.welcomeBox()
         
 
 
