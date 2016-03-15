@@ -167,7 +167,7 @@ $scope.test= "H1Month"
             console.log($scope.H1Month0)
             $scope.FinalH1MonthY = Math.round(100*($scope.H1MonthY/30))
             $scope.FinalH1MonthN = Math.round(100*($scope.H1MonthN/30))
-            $scope.FinalH1Month0 = Math.round(100*(30-($scope.FinalH1MonthN + $scope.FinalH1MonthY))/30)
+            $scope.FinalH1Month0 = Math.round(100-($scope.FinalH1MonthN + $scope.FinalH1MonthY))
             console.log($scope.FinalH1MonthY)
             console.log($scope.FinalH1MonthN)
             console.log($scope.FinalH1Month0)
@@ -268,7 +268,7 @@ $scope.test= "H1Month"
             console.log($scope.week1Array)
             $scope.FinalH1WeekY = Math.round(100*($scope.H1WeekY/7))
             $scope.FinalH1WeekN = Math.round(100*($scope.H1WeekN/7))
-            $scope.FinalH1Week0 = Math.round(100*(7-($scope.H1WeekN + $scope.H1WeekY))/7)
+            $scope.FinalH1Week0 = Math.round(100-($scope.FinalH1WeekN + $scope.FinalH1WeekY))
             $scope.loadChartH1Week();
         }
 
