@@ -107,6 +107,9 @@ angular.module('myApp')
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
+
+            $scope.welcomeBox()
+
             $scope.welcomeBox = function(req, res){
             $http.post('/welcomeBox')
             .then(function(returndata){
@@ -117,7 +120,6 @@ angular.module('myApp')
             $scope.modalInfo()
 
         }})}
-            $scope.welcomeBox()
 
             $scope.modalInfo = function(){
             console.log("click worked.")
