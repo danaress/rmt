@@ -1,5 +1,4 @@
-/* Index Html Doc */
-
+@media screen and (max-width: 899px) {
 body{
 	font-size: 12pt;
 }
@@ -150,13 +149,12 @@ background-color: #00C7AB;
 	font-family: helvetica;
 	font-size: 18px;
 }
-
+}
 
 @media screen and (min-width: 900px) {
 .step1{
 	font-size: 2em;
 }
-
 .button{
 	background-color: #00C7AB;
 	width: 20%;
@@ -167,7 +165,6 @@ background-color: #00C7AB;
 	color: white;
 	font-family: helvetica;
 }
-
 .input{
 	border: none;
 	width: 50%;
@@ -179,7 +176,6 @@ background-color: #00C7AB;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-
 .input:focus{
 	box-shadow: none;
 	outline: none;
