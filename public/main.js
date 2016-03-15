@@ -64,36 +64,7 @@ angular.module('myApp')
             })
         }
 
-        // var modalInfo = function(req, res){
-        //     console.log("click worked.")
-        //     $http.post('/metrics')
-        //     .then(function(returndata){
-        //         $scope.allUserInfo = returndata.data
-        //         //username
-        //         $scope.modalUsername = $scope.allUserInfo[0].username
-        //         if ($scope.allUserInfo[0].time == null){
-        //         //text time
-        //         $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
-        //         $scope.modal2Time = "Please choose a time to receive texts."
-        //         } else {
-        //             $scope.modalTime = $scope.times[$scope.allUserInfo[0].time]
-        //         }
-        //         //phone number
-        //         if ($scope.allUserInfo[0].number == 0){
-        //             $scope.modal2Number = "You don't have a number saved. Add one below."
-        //             $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
-        //         } else {
-        //             $scope.modal2Number = ("Current number: " + $scope.allUserInfo[0].number)
-        //             $scope.modalNumber = $scope.allUserInfo[0].number
-        //         }
-        //         //habits
-        //         if ($scope.allUserInfo[0].habit1 == ''){
-        //             $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
-        //         } else if ($scope.allUserInfo[0].habit1 == ''){
-        //             $scope.modalHabit = ("Habit 1: " + $scope.allUserInfo[0].habit1 + ". Habit 2: " + $scope.allUserInfo[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
-        //         }
-        //         })
-        // }
+
 
 
 
@@ -137,40 +108,46 @@ angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
             $scope.welcomeBox = function(req, res){
-            console.log("function fired")
             $http.post('/welcomeBox')
             .then(function(returndata){
-            console.log("data made it back")
             $scope.userCheck = returndata.data
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
             $scope.welcomeTime = true;
-            $scope.modalUsername = $scope.userCheck[0].username
-            if ($scope.userCheck[0].time == null){
-                console.log("got this far")
-            //text time
-            $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
-            $scope.modal2Time = "Please choose a time to receive texts."
-            } else {
-                $scope.modalTime = $scope.times[$scope.userCheck[0].time]
-            }
-            //phone number
-            if ($scope.userCheck[0].number == 0){
-                console.log("got this far")
-                $scope.modal2Number = "You don't have a number saved. Add one below."
-                $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
-            } else {
-                $scope.modal2Number = ("Current number: " + $scope.userCheck[0].number)
-                $scope.modalNumber = $scope.userCheck[0].number
-                console.log("got this far")
-            }
-            //habits
-            if ($scope.userCheck[0].habit1 == ''){
-                $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
-            } else if ($scope.userCheck[0].habit1 == ''){
-                $scope.modalHabit = ("Habit 1: " + $scope.userCheck[0].habit1 + ". Habit 2: " + $scope.userCheck[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
-            }
-        }
-        })}
+            $scope.modalInfo()
+
+        }})}
             $scope.welcomeBox()
+
+            $scope.modalInfo = function(req, res){
+            console.log("click worked.")
+            $http.post('/metrics')
+            .then(function(returndata){
+                $scope.allUserInfo = returndata.data
+                //username
+                $scope.modalUsername = $scope.allUserInfo[0].username
+                if ($scope.allUserInfo[0].time == null){
+                //text time
+                $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
+                $scope.modal2Time = "Please choose a time to receive texts."
+                } else {
+                    $scope.modalTime = $scope.times[$scope.allUserInfo[0].time]
+                }
+                //phone number
+                if ($scope.allUserInfo[0].number == 0){
+                    $scope.modal2Number = "You don't have a number saved. Add one below."
+                    $scope.modalNumber = "It looks like you haven't added a number yet - head over to Settings in the top right!"
+                } else {
+                    $scope.modal2Number = ("Current number: " + $scope.allUserInfo[0].number)
+                    $scope.modalNumber = $scope.allUserInfo[0].number
+                }
+                //habits
+                if ($scope.allUserInfo[0].habit1 == ''){
+                    $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
+                } else if ($scope.allUserInfo[0].habit1 == ''){
+                    $scope.modalHabit = ("Habit 1: " + $scope.allUserInfo[0].habit1 + ". Habit 2: " + $scope.allUserInfo[0].habit2 + ". Habit 3: " + $scope.allUserInfo[0].habit3)
+                }
+                })
+        }
+
         }])
