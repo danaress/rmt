@@ -299,15 +299,9 @@ $scope.test= "H1Month"
                     $scope.H3WeekN = ($scope.H3WeekN + 1)
                 }
             }
-            console.log($scope.H3WeekN)
-            console.log($scope.H3WeekY)
             $scope.FinalH3WeekY = Math.round(100*($scope.H3WeekY/7))
             $scope.FinalH3WeekN = Math.round(100*($scope.H3WeekN/7))
             $scope.FinalH3Week0 = Math.round(100-($scope.FinalH3WeekN + $scope.FinalH3WeekY))
-            console.log($scope.FinalH3WeekY)
-            console.log($scope.FinalH3WeekN)
-            console.log($scope.FinalH3Week0)
-
             $scope.loadChartH3Week();
         }
 
