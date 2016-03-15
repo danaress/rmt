@@ -65,6 +65,7 @@ angular.module('myApp')
         }
 
         var modalInfo = function(req, res){
+            console.log("click worked.")
             $http.post('/metrics')
             .then(function(returndata){
                 $scope.allUserInfo = returndata.data
