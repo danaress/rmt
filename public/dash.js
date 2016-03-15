@@ -87,11 +87,10 @@ angular.module('myApp').factory('userInfo', function(){
             $http.post('/metrics')
             .then(function(returninfo){
                 userInfo = returninfo.data
-                console.log("user info = ", userInfo)
-                console.log($scope.week)
-                console.log(userInfo[0].start)
                 $scope.numdays = Math.round(($scope.datenow - userInfo[0].start)/$scope.mili)
-                console.log($scope.numdays)
+                userInfo[0].habit1 = $scope.H1
+                userInfo[0].habit2 = $scope.H2
+                userInfo[0].habit3 = $scope.H3
                 $scope.array1Metrics();
                 $scope.array2Metrics();
                 $scope.array3Metrics();
@@ -367,7 +366,7 @@ $scope.loadChartH1Month = function(){
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50
+            marginTop: 55
         },
 
         credits: {
@@ -375,7 +374,7 @@ $scope.loadChartH1Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit1 + " H1 30 days",
+            text: "Past 30 Days: "+userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -487,7 +486,7 @@ $scope.loadChartH2Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit2 + " H2 30 days",
+            text: "Past 30 Days: "+userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -597,7 +596,7 @@ $scope.loadChartH3Month = function(){
         },
 
         title: {
-            text: userInfo[0].habit3 + " H3 30 days",
+            text: "Past 30 Days: "+userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
@@ -707,7 +706,7 @@ $scope.loadChartH3Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit3 + " H3 7 days",
+            text:"Past 7 Days: "+userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
@@ -817,7 +816,7 @@ $scope.loadChartH2Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit2 + " H2 7 days",
+            text:"Past 7 Days: "+ userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -927,7 +926,7 @@ $scope.loadChartH1Week = function(){
         },
 
         title: {
-            text: userInfo[0].habit1 + " H1 7 days",
+            text:"Past 7 Days: "+userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -1037,7 +1036,7 @@ $scope.loadChart1 = function(){
         },
 
         title: {
-            text: userInfo[0].habit1 + " H1 All Time",
+            text:"All Time: "+userInfo[0].habit1,
             style: {
                 fontSize: '24px'
             }
@@ -1134,7 +1133,7 @@ $scope.loadChart2 = function(){
         },
 
         title: {
-            text: userInfo[0].habit2 + " H2 All Time",
+            text:"All Time: "+ userInfo[0].habit2,
             style: {
                 fontSize: '24px'
             }
@@ -1232,7 +1231,7 @@ $scope.loadChart3 = function(){
         },
 
         title: {
-            text: userInfo[0].habit3 + " H3 All Time",
+            text:"All Time: "+userInfo[0].habit3,
             style: {
                 fontSize: '24px'
             }
