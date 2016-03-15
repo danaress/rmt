@@ -1,4 +1,4 @@
-@media screen and (max-width: 899px) {
+
 body{
 	font-size: 12pt;
 }
@@ -149,7 +149,7 @@ background-color: #00C7AB;
 	font-family: helvetica;
 	font-size: 18px;
 }
-}
+
 
 @media screen and (min-width: 900px) {
 .step1{
