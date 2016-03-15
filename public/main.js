@@ -105,7 +105,7 @@ angular.module('myApp')
 
 	}]);
 angular.module('myApp')
-    .controller('welcomeController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
+    .controller('welcomeController', ['$scope', '$http', function($scope, $http){
 
             $scope.modalInfo = function(){
             console.log("click worked.")
@@ -136,7 +136,7 @@ angular.module('myApp')
 
             $scope.welcomeBox = function(req, res){
             console.log("Function fired")
-            $http.post('/welcomeBox')
+            $http.get('/welcomeBox')
             .then(function(ReturnData){
             $scope.userCheck = ReturnData.data
             console.log("data back")

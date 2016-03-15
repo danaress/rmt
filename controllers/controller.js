@@ -52,8 +52,8 @@ getmodal = function(req, res){
 welcomeCheck = function(req, res){
 	users.find(
 		{'username': req.user.username},
- function(err, docs){
- 	res.send(docs)
+ function(err, doc){
+ 	res.send(doc)
 })}
 
 

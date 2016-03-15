@@ -151,7 +151,7 @@ console.log(x)
 
 app.post('/habits', controller.addHabits);
 
-app.post('/welcomeBox', controller.welcomeCheck);
+app.get('/welcomeBox', controller.welcomeCheck);
 
 app.post('/modal', controller.getmodal);
 
