@@ -104,6 +104,7 @@ angular.module('myApp')
         }
 
 	}]);
+
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', function($scope, $http){
 
@@ -134,11 +135,12 @@ angular.module('myApp')
                 }
                 }
 
-            $scope.welcomeBox = function(){
-            console.log("Function fired")
-            $http.post('/welcomeBox')
+            $scope.welcomeBox = function(req, res){
+                console.log("got thiiiis far")
+            $http.post('/welcomebox')
             .then(function(ReturnData){
             $scope.userCheck = ReturnData.data
+            console.log($scope.userCheck)
             console.log("data back")
             if($scope.userCheck[0].time == null && $scope.userCheck[0].number == 0 && $scope.userCheck[0].habit1 == ''){
             console.log("Load the box")
