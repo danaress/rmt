@@ -67,7 +67,9 @@ background-color: #00C7AB;
 }
 
 /* Dash Html Doc */
-
+.graphbtn{
+	font-size: 30px;
+}
 .bigIcon{
 	font-size: 100px;
 	color: white;
