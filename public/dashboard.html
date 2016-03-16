@@ -36,9 +36,9 @@
             <h3 class="modal-title" id="myModalLabel">Settings</h3>
             </div>
             <div class="modal-body">
-                <h4>What time would you like to receive texts?</h4>
-                <form ng-submit="habitSetting()">
-                    <select class="form-group" name="time" ng-model="settings.time">
+                <h4>What time would you like to receive texts?</h4><button class="btn" ng-click="text()">Save Time</button>
+                <form>
+                    <select class="form-group" name="time" ng-model="setTime.time">
                         <option value="0">12:00 AM</option>
                         <option value="1">1:00 AM</option>
                         <option value="2">2:00 AM</option>
@@ -65,12 +65,12 @@
                         <option value="23">11:00 PM</option>
                     </select>
                     <h3> Update your phone number:</h3>
-                    <input class="input" type="text" ng-model="settings.number" placeholder="Phone number"/><br>
+                    <input class="input" type="text" ng-model="setNumber.number" placeholder="Phone number"/><button class="btn" ng-click="number()">save</button><br>
                     <h3>Update what you're keeping track of:</h3>
-                    <input class="smallBox input" type="text" ng-model="settings.habit1" placeholder="Example: Running 3 miles"/><br>
-                    <input class="smallBox input" type="text" ng-model="settings.habit2" placeholder="Example: Eating 4 types of veggies"/><br>
-                    <input class="smallBox input" type="text" ng-model="settings.habit3" placeholder="Example: Morning meditation"/><br>
-                    <input class="btn button" value="Submit Changes" type="submit"/>
+                    <input class="smallBox input" type="text" ng-model="SetHabit1.habit1" placeholder="Example: Running 3 miles"/><button class="btn" ng-click="habit1()">save</button><br>
+                    <input class="smallBox input" type="text" ng-model="SetHabit2.habit2" placeholder="Example: Eating 4 types of veggies"/><button class="btn" ng-click="habit2()">save</button><h3>{{currentHabit2}}</h3><br>
+                    <input class="smallBox input" type="text" ng-model="SetHabit3.habit3" placeholder="Example: Morning meditation"/><button class="btn"  ng-click="habit3()">save</button><h3>{{currentHabit3}}</h3><br>
+                    <input class="btn button" value="Close" data-toggle="modal"/>
                 </form>
          </div>
     </div>
@@ -103,7 +103,12 @@
                 <h3>Username: </h3><p class="description">{{modalUsername}}</p>
                 <h3>Selected time to receive texts: </h3><p class="description">{{modalTime}}</p>
                 <h3>Phone number to receive texts: </h3><p class="description">{{modalNumber}}</p>
-                <h3>Habits you are currently tracking: </h3><p class="description">{{modalHabit}}</p>
+                <h3>Habits you are currently tracking: </h3>
+                <ul>
+                    <li>{{modalHabit1}}</li>
+                    <li>{{modalHabit2}}</li>
+                    <li>{{modalHabit3}}</li>
+                </ul>
          </div>
     </div>
   </div>

@@ -153,8 +153,20 @@ app.post('/habits', controller.addHabits);
 
 app.post('/welcomebox', controller.welcomeCheck);
 
+app.post('/time', controller.textSetting);
+
+app.post('/number', controller.numberSetting);
+
+app.post('/habit1Set', controller.Habit1Update);
+
+app.post('/habit2Set', controller.Habit2Update);
+
+app.post('/habit3Set', controller.Habit3Update);
+
+app.post('/checkinfo', controller.checksettings);
 
 app.post('/metrics', controller.getMetrics);
+
 
 app.post('/signup', function(req, res){
 	console.log("111");
@@ -207,7 +219,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 

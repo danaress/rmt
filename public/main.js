@@ -1,10 +1,28 @@
 angular.module('myApp', ['ngRoute'])
 
+angular.module('myApp').factory('userData', function(){
+    return {}
+    })
 
 angular.module('myApp')
 	.controller('mainController', ['$scope', '$http', 'userInfo', function($scope, $http, $userInfo){
 
 
+        $scope.checkInfo = function(req, res){
+            console.log("TEST")
+            $http({ 
+                method : 'POST',
+                url    : '/checkinfo',
+            }).then(function(Returndata){
+            $scope.currentSettings = Returndata.data
+            console.log($scope.currentSettings)
+            $scope.currentTime = $scope.currentSettings[0].time
+            $scope.currentNumber = $scope.currentSettings[0].number
+            $scope.currentHabit1 = $scope.currentSettings[0].habit1
+            $scope.currentHabit2 = $scope.currentSettings[0].habit2
+            $scope.currentHabit3 = $scope.currentSettings[0].habit3
+        })
+    }
 
         $scope.signup = function(){
             $http({ 
@@ -17,14 +35,87 @@ angular.module('myApp')
             })
         }
 
-        $scope.habitSetting = function(){
-        	$http({ 
+        // $scope.habitSetting = function(){
+        // 	$http({ 
+        //         method : 'POST',
+        //         url    : '/habits',
+        //         data   : $scope.settings
+        //     }).then(function(returnData){
+        //     })
+        // }
+
+        $scope.timeSetting = function(){
+            console.log("reached P request")
+            $http({ 
                 method : 'POST',
-                url    : '/habits',
-                data   : $scope.settings
-            }).then(function(returnData){
+                url    : '/time',
+                data   : $scope.setTime
+            }).then(function(returntime){
+                $scope.checkInfo()
             })
         }
+
+        $scope.numberSetting = function(){
+            $http({ 
+                method : 'POST',
+                url    : '/number',
+                data   : $scope.setNumber
+            }).then(function(returnNumber){
+                $scope.checkInfo()
+            })
+        }
+
+        $scope.habit1Setting = function(){
+            $http({ 
+                method : 'POST',
+                url    : '/habit1Set',
+                data   : $scope.SetHabit1
+            }).then(function(returnHabit1){
+                $scope.checkInfo()
+            })
+        }
+
+        $scope.habit2Setting = function(){
+            $http({ 
+                method : 'POST',
+                url    : '/habit2Set',
+                data   : $scope.SetHabit2
+            }).then(function(returnHabit2){
+                $scope.checkInfo()
+            })
+        }
+
+        $scope.habit3Setting = function(){
+            $http({ 
+                method : 'POST',
+                url    : '/habit3Set',
+                data   : $scope.SetHabit3
+            }).then(function(returnHabit3){
+                $scope.checkInfo()
+            })
+        }
+
+
+        $scope.text = function(){
+            $scope.timeSetting()
+        }        
+
+        $scope.number = function(){
+            $scope.numberSetting()
+        } 
+
+        $scope.habit1 = function(){
+            $scope.habit1Setting()
+        } 
+
+        $scope.habit2 = function(){
+            $scope.habit2Setting()
+        } 
+
+        $scope.habit3 = function(){
+            $scope.habit3Setting()
+        } 
+
 
         $scope.login = function(){
             $http({
@@ -36,17 +127,6 @@ angular.module('myApp')
                 else { console.log(returnData)}
             })
         }
-
-
-
-
-
-        $scope.numberClick = function(){
-            $scope.numberHide = true;
-            $scope.numHide = true;
-        }
-
-
 
         $scope.testing = function(){
             console.log("hideBox")
@@ -77,10 +157,6 @@ angular.module('myApp')
         }
 
 	}]);
-
-angular.module('myApp').factory('userData', function(){
-    return {}
-    })
 
 angular.module('myApp')
     .controller('welcomeController', ['$scope', '$http', function($scope, $http){
@@ -136,7 +212,9 @@ angular.module('myApp')
                 if (userData[0].habit1 == ''){
                     $scope.modalHabit = "It looks like you haven't specified any habits yet - head over to Settings in the top right!"
                 } else if (userData[0].habit1 != ''){
-                    $scope.modalHabit = "Habit 1: " + userData[0].habit1 + ". Habit 2: " + userData[0].habit2 + ". Habit 3: " + userData[0].habit3
+                    $scope.modalHabit1 = "Habit 1: " + userData[0].habit1 
+                    $scope.modalHabit2 = "Habit 2: " + userData[0].habit2
+                    $scope.modalHabit3 = "Habit 3: " + userData[0].habit3
                 }
                 }
 
