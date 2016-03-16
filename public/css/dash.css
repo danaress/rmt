@@ -48,7 +48,7 @@ width: 100%;
 
 .dashinput{
 	border: none;
-	width: 100%;
+	width: 60%;
 	padding-top: 40px;
 	padding-bottom: 20px;
 	border-bottom: 2px solid black;
@@ -220,12 +220,21 @@ width: 100%;
 
 .dashinput{
 	border: none;
-	width: 60%;
+	width: 50%;
 	padding-top: 20px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid gray;
 	font-size: 14px;
 	line-height: 20px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;	
+}
+.timeinput{
+	border: none;
+	width: 40%;
+	border-bottom: 1px solid gray;
+	font-size: 14px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	outline: none;	
