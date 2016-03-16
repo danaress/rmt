@@ -26,7 +26,7 @@ var client = require('twilio')(accountSid, authToken);
 			    client.messages.create({ 
 				to: +docs[i].number, 
 				from: "+13038482330", 
-				body: "'Hey " + docs[i].username + ", did you meet your goals for today? " + docs[i].habit1 + ", " + docs[i].habit2 + ", " + docs[i].habit3 + "? (Y N Y)",   
+				body: "'Hey " + docs[i].username + "! Did you meet your goals for today? " + docs[i].habit1 + ",  " + docs[i].habit2 + ",  and  " + docs[i].habit3 + "?  (Respond Y N Y)",   
 			},  function(err, responseData) { 
 			})
 				}})}}
