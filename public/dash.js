@@ -369,7 +369,7 @@ $scope.loadChartH1Month = function(){
         title: {
             text: "Past 30 Days: "+ userInfo[0].habit1,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -481,7 +481,7 @@ $scope.loadChartH2Month = function(){
         title: {
             text: "Past 30 Days: "+userInfo[0].habit2,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -591,7 +591,7 @@ $scope.loadChartH3Month = function(){
         title: {
             text: "Past 30 Days: "+userInfo[0].habit3,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -701,7 +701,7 @@ $scope.loadChartH3Week = function(){
         title: {
             text:"Past 7 Days: "+userInfo[0].habit3,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -811,7 +811,7 @@ $scope.loadChartH2Week = function(){
         title: {
             text:"Past 7 Days: "+ userInfo[0].habit2,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -921,7 +921,7 @@ $scope.loadChartH1Week = function(){
         title: {
             text:"Past 7 Days: "+userInfo[0].habit1,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -1031,7 +1031,7 @@ $scope.loadChart1 = function(){
         title: {
             text:"All Time: "+$scope.habit1name,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -1128,7 +1128,7 @@ $scope.loadChart2 = function(){
         title: {
             text:"All Time: "+ $scope.habit2name,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
@@ -1226,7 +1226,7 @@ $scope.loadChart3 = function(){
         title: {
             text:"All Time: "+$scope.habit3name,
             style: {
-                fontSize: '24px'
+                fontSize: '28px'
             }
         },
 
