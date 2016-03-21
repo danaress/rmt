@@ -43,8 +43,6 @@ var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
 var client = require('twilio')(accountSid, authToken);
 
 
-
-
 // Passport
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
@@ -114,15 +112,6 @@ app.isSteveAuthenticated = function(req, res, next){
 }
 /** End Passport Config **/
 
-
-// app.get('/', function(req, res){
-//     if (!req.session.count ) { req.session.count = 0}
-//     console.log(req.session.count++)
-//     console.log(req.user)
-//     res.sendFile('/html/login.html', {root: './public'})
-// })
-
-// app.post('/test', worker.smsTest)
 
 app.post('/test', function (req, res) {
 	var x = req.body.Body.split(' ')

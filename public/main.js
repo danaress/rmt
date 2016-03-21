@@ -35,15 +35,6 @@ angular.module('myApp')
             })
         }
 
-        // $scope.habitSetting = function(){
-        // 	$http({ 
-        //         method : 'POST',
-        //         url    : '/habits',
-        //         data   : $scope.settings
-        //     }).then(function(returnData){
-        //     })
-        // }
-
         $scope.timeSetting = function(){
             console.log("reached P request")
             $http({ 
