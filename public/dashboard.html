@@ -4,13 +4,16 @@
     	<title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="./css/dash.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <script src="https://code.highcharts.com/highcharts.js"></script>
 <!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script> -->
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+    <!-- Intro JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.0.0/introjs.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.0.0/intro.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
 <!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.0/angular-touch.js"></script> -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
@@ -20,10 +23,10 @@
     <body>
     <div ng-controller="mainController">
         <nav class="navbar">
-            <div class="container-fluid navbar">
+            <div data-setp="2" data-intro="Welcome to Streak! Streak is the easiest way to keep track of your most important daily habits over SMS. Click 'Next' to continue the tour."class="container-fluid navbar">
                 <!-- <div class="col-xs-12"> -->
-                    <h1 class="col-xs-6 bigIcon"><div class="ion-person" ng-click="modalInfo()" data-toggle="modal" data-target="#newModal"></div></h1>
-                    <h1 data-toggle="modal" data-target="#myModal" class="col-xs-6 bigIcon"><div class="ion-ios-gear floatRight"></div></h1>
+                    <h1 class="col-xs-6 bigIcon"><div data-setp="2" data-intro="This is your profile, where you can get a quick summary of your account." class="ion-person floatLeft" ng-click="modalInfo()" data-toggle="modal" data-target="#newModal"></div></h1>
+                    <h1 data-toggle="modal" data-target="#myModal" class="col-xs-6 bigIcon"><div data-setp="3" data-intro="This is your account settings, where you can enter in your phone number, habits you'd like to track, and what time to receive texts." class="ion-ios-gear floatRight"></div></h1>
                 <!-- </div> -->
             </div>
         </nav>
@@ -85,16 +88,16 @@
 </div>
 
 <div ng-controller="welcomeController">
-        <div  ng-show="welcomeTime" class="col-xs-12 welcomeBox">
-            <h2>Welcome Habit Streak!</h2>
-            <p>Habit Streak is the easiest way to keep track of your most important daily habits. Follow these instructions to get set up:</p>
+<!--         <div  ng-show="welcomeTime" class="col-xs-12 welcomeBox">
+            <h2 class="intro-test">Welcome to Streak!</h2>
+            <p>Streak is the easiest way to keep track of your most important daily habits. Follow these instructions to get set up:</p>
             <ol>
                 <li class="list">Open the settings window in the top right.</li>
                 <li class="list">Fill out the information to specify what time you'd like to receive texts, what number, and what you'd like to keep track of.</li>
                 <li class="list">You can respond to texts with a simple "Y" or "N" depending on whether or not you've met your goals for the day.</li>
                 <li class="list">Log back in to the app any time you'd like to check on your progress.</li>
             </ol>
-        </div>
+        </div> -->
 
 <div class="modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
     <div class="modal-dialog modal-lg modaltest">
@@ -124,7 +127,7 @@
     <div ng-controller="dashController">
 
             <div class="container-fluid graphNavs">
-                    <div class="col-xs-12 btnwrapper">
+                    <div data-setp="4" data-intro="You can navigate between viewing your performance on individual goals, or for specific timeframes." class="col-xs-12 btnwrapper">
                         <button class="col-xs-4 btn navbtn graphbtn" ng-click="H1Show()">{{habit1name}}</button>
                         <button class="col-xs-4 btn navbtn graphbtn" ng-click="H2Show()">{{habit2name}}</button>
                         <button class="col-xs-4 btn navbtn graphbtn" ng-click="H3Show()">{{habit3name}}</button>
@@ -137,7 +140,7 @@
                 <div class="col-xs-2">
                 </div>
                 <div class="col-xs-8 graph">
-                    <div class="graph" ng-show="H1Week" id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
+                    <div data-setp="5" data-intro="We want to make it as easy as possible to check your progress. Here you can see how often you are hitting your goals, missing your goals, or not responding. Head over to your account setting to start using Streak!" class="graph" ng-show="H1Week" id="H1Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
                     <div class="graph" ng-show="H2Week" id="H2Week" style="width: 400px; height: 400px; margin: 0 auto"></div>
                     <div class="graph" ng-show="H3Week" id="H3Week" style="width: 400px; height: 400px; margin: 0 auto"></div>     
                     <div class="graph" ng-show="H1Month" id="H1Month" style="width: 400px; height: 400px; margin: 0 auto"></div>

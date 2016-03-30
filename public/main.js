@@ -210,18 +210,16 @@ angular.module('myApp')
                 }
 
             $scope.welcomeBox = function(req, res){
-            console.log("got thiiiis far")
             $http({ 
                 method : 'POST',
                 url    : '/welcomebox'
             }).then(function(ReturnData){
             userData = ReturnData.data
-            console.log(userData)
-            console.log(userData[0].username)
             console.log("data back")
             $scope.modalInfo();
             if(userData[0].time == null && userData[0].number == 0 && userData[0].habit1 == ''){
-            $scope.welcomeTime = true;
+            // $scope.welcomeTime = true;
+            introJs().start();
 
 
         }})}
