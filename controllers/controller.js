@@ -1,21 +1,6 @@
 var users = require('../models/model.js')
 var mongoose = require('mongoose');
 
-// addSettings = function(req, res){
-
-// 	console.log("req user" + req.user);
-// 	users.update(
-// 		{ username: req.user.username},
-// 		{ $set:
-// 			{
-// 				time: req.body.time
-// 		}
-// 	}, function(err, doc){
-// 		console.log(err)
-// 		console.log(doc)
-// 	})
-// }
-
 addHabits = function(req, res){
 
 	users.update(
@@ -33,7 +18,6 @@ addHabits = function(req, res){
 }
 
 textSetting = function(req, res){
-	console.log("made it to controller")
 	users.update(
 		{ 'username': req.user.username},
 		{ $set:
@@ -45,7 +29,6 @@ textSetting = function(req, res){
 }
 
 numberSetting = function(req, res){
-	console.log("made it to controller")
 	users.update(
 		{ 'username': req.user.username},
 		{ $set:
@@ -57,7 +40,6 @@ numberSetting = function(req, res){
 }
 
 Habit1Update = function(req, res){
-	console.log("made it to controller")
 	users.update(
 		{ 'username': req.user.username},
 		{ $set:
@@ -69,7 +51,6 @@ Habit1Update = function(req, res){
 }
 
 Habit2Update = function(req, res){
-	console.log("made it to controller")
 	users.update(
 		{ 'username': req.user.username},
 		{ $set:
@@ -107,7 +88,6 @@ checksettings = function(req, res){
 
 
 welcomeCheck = function(req, res){
-	console.log("username = " +req.user.username)
 	users.find(
 		{'username': req.user.username},
  function(err, docs){

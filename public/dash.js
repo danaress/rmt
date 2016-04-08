@@ -138,8 +138,6 @@ angular.module('myApp').factory('userInfo', function(){
 $scope.test= "H1Month"
   //Habit 1 LAST MONTH
         $scope.array1Month= function(){
-            console.log(userInfo[0]);
-            console.log("length = " + userInfo[0].array1.length)
             $scope.month1Array = []
             $scope.H1MonthY = 0
             $scope.H1MonthN = 0
@@ -164,8 +162,6 @@ $scope.test= "H1Month"
 
         //Habit 2 LAST MONTH
         $scope.array2Month= function(){
-            console.log(userInfo[0]);
-            console.log("length = " + userInfo[0].array2.length)
             $scope.month2Array = []
             $scope.H2MonthY = 0
             $scope.H2MonthN = 0
@@ -174,7 +170,6 @@ $scope.test= "H1Month"
             $scope.month2Array.push(userInfo[0].array2[i][0])
     }
             }
-            console.log($scope.month2Array)
             for (var i=0; i < $scope.month2Array.length; i++){
                 if ($scope.month2Array[i] == "y" || $scope.month2Array[i] == "Y"){
                     $scope.H2MonthY = ($scope.H2MonthY + 1)
@@ -191,8 +186,6 @@ $scope.test= "H1Month"
 
         //Habit 3 LAST MONTH
         $scope.array3Month= function(){
-            console.log(userInfo[0]);
-            console.log("length = " + userInfo[0].array3.length)
             $scope.month3Array = []
             $scope.H3MonthY = 0
             $scope.H3MonthN = 0
@@ -216,8 +209,6 @@ $scope.test= "H1Month"
         }
         //Habit 1 LAST WEEK
         $scope.array1Week = function(){
-            console.log(userInfo[0]);
-            console.log("length = " + userInfo[0].array1.length)
             $scope.week1Array = []
             $scope.H1WeekY = 0
             $scope.H1WeekN = 0
@@ -252,7 +243,6 @@ $scope.test= "H1Month"
             $scope.week2Array.push(userInfo[0].array2[i][0])
     }
             }
-            console.log($scope.week2Array);
             for (var i=0; i < $scope.week2Array.length; i++){
                 if ($scope.week2Array[i] == "y" || $scope.week2Array[i] == "Y"){
                     $scope.H2WeekY = ($scope.H2WeekY + 1)
@@ -275,9 +265,6 @@ $scope.test= "H1Month"
             $scope.H3Week0 = 0
             for (var i=0; i<userInfo[0].array3.length; i++){
                 if (userInfo[0].array3[i][1] > $scope.week){
-                    console.log("Made it through")
-                    console.log(userInfo[0].array3[i][1])
-                    console.log($scope.week)
             $scope.week3Array.push(userInfo[0].array3[i][0])
     }
             }
@@ -315,7 +302,6 @@ $scope.test= "H1Month"
 
         //Habit 2 ALL TIME
         $scope.array2Metrics = function(){
-            console.log("length = " + userInfo[0].array2.length)
             $scope.H2Y = 0
             $scope.H2N = 0
             for (var i=0; i < userInfo[0].array2.length; i++){

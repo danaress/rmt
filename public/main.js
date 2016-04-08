@@ -9,13 +9,11 @@ angular.module('myApp')
 
 
         $scope.checkInfo = function(req, res){
-            console.log("TEST")
             $http({ 
                 method : 'POST',
                 url    : '/checkinfo',
             }).then(function(Returndata){
             $scope.currentSettings = Returndata.data
-            console.log($scope.currentSettings)
             $scope.currentTime = $scope.currentSettings[0].time
             $scope.currentNumber = $scope.currentSettings[0].number
             $scope.currentHabit1 = $scope.currentSettings[0].habit1
@@ -30,13 +28,11 @@ angular.module('myApp')
                 url    : '/signup',
                 data   : $scope.signupForm
             }).then(function(returnData){
-                console.log(returnData)
                 if ( returnData.data.success ) { window.location.href="/dashboard.html" }
             })
         }
 
         $scope.timeSetting = function(){
-            console.log("reached P request")
             $http({ 
                 method : 'POST',
                 url    : '/time',
@@ -120,12 +116,10 @@ angular.module('myApp')
         }
 
         $scope.testing = function(){
-            console.log("hideBox")
             $scope.hideBox = true;
         }
 
         $scope.cancelBox = function(){
-            console.log("hideBox")
             $scope.hideBox = false;
         }
 
@@ -180,10 +174,8 @@ angular.module('myApp')
         }
 
             $scope.modalInfo = function(){
-            console.log("click worked.")
                 //username
                 $scope.modalUsername = userData[0].username
-                console.log("username = "+$scope.modalUsername)
                 if (userData[0].time == null){
                 //text time
                 $scope.modalTime = "It looks like you haven't selected a time yet - head over to Settings in the top right!"
@@ -215,7 +207,6 @@ angular.module('myApp')
                 url    : '/welcomebox'
             }).then(function(ReturnData){
             userData = ReturnData.data
-            console.log("data back")
             $scope.modalInfo();
             if(userData[0].time == null && userData[0].number == 0 && userData[0].habit1 == ''){
             // $scope.welcomeTime = true;
