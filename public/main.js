@@ -23,9 +23,10 @@ angular.module('myApp')
     }
 
         $scope.signup = function(){
+            console.log("main")
             $http({ 
                 method : 'POST',
-                url    : '/signup',
+                url    : '/signup1',
                 data   : $scope.signupForm
             }).then(function(returnData){
                 if ( returnData.data.success ) { window.location.href="/dashboard.html" }
@@ -58,16 +59,6 @@ angular.module('myApp')
                 url    : '/habit1Set',
                 data   : $scope.SetHabit1
             }).then(function(returnHabit1){
-                $scope.checkInfo()
-            })
-        }
-
-        $scope.habit2Setting = function(){
-            $http({ 
-                method : 'POST',
-                url    : '/habit2Set',
-                data   : $scope.SetHabit2
-            }).then(function(returnHabit2){
                 $scope.checkInfo()
             })
         }

@@ -2,17 +2,13 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
   <head>
-
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
-
     <title></title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.0/angular-touch.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <script src="main.js"></script>
     <script src="dash.js"></script>
     <link rel="stylesheet" href="./css/dash.css">
@@ -20,52 +16,23 @@
   	<body ng-controller="mainController">
 
 
-      <!-- Spacing on top half of login screen -->
-      <div id="mainHeader" class="container-fluid">
-        <div class="col-xs-12 spacing">
-            <div class="col-xs-4 header">
-              <h2 class="headline">Welcome to Streak</h2>
-              <p class="welcome">Sign Up or Log In Below:</p>
-            </div>
-        </div>
-      </div>
 
       <!-- Container w/ Signup button and form -->
       <div class="container-fluid">
-        <div class="col-xs-12">
-          <h3 class="step1">Step 1: Create Your Free Account</h3>
+        <div class="col-xs-8 col-xs-offset-2 center">
+          <h3 class="mainText">Welcome to Remind Me To, a simple sms-based reminder app. To get started, enter your phone number and press "Send me a text" :)</h3>
+
         </div>
-          <div class="col-xs-12 background">
-                <form class="form-group" ng-submit="signup()">
-                    <input class="input" type="text" ng-model="signupForm.username" placeholder="Username"/>
-                    <input class="input" type="password" ng-model="signupForm.password" placeholder="Password"/>
-                    <input class="form-control button" value="Sign Up" type="submit"/>
-                </form>
+          <div class="col-xs-4 col-xs-offset-4">
+            <div class="center">
+                  <form class="form-group width100" ng-submit="signup()">
+                      <input class="form-control width100" type="text" ng-model="signupForm.username" placeholder="example: 5550125544"/>
+                      <input class="form-control width100" value="Send me a text" type="submit"/>
+                  </form>
+            </div>
           </div>
-        <div class="col-xs-4">
-        </div>
-      </div> 
 
-
-
-
-
-
-      <!-- Container w/ Login button and from -->
-      <div class="container-fluid">
-        <div class="col-xs-12">
-          <h3 class="step1">Already Have An Account? Log In:</h3>
-        </div>
-          <div class="col-xs-12 background">
-                <form class="form-group" ng-submit="login()">
-                    <input class="input" type="text" ng-model="loginForm.username" placeholder="Username"/>
-                    <input class="input" type="password" ng-model="loginForm.password" placeholder="Password"/>
-                    <input class="form-control button" value="Log In" ng-click="" type="submit"/>
-                </form>
-          </div>
-        <div class="col-xs-4">
-        </div>
-      </div> 
+      </div>
 
   
 	</body>
