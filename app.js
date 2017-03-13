@@ -34,7 +34,11 @@ var users = require('./models/model.js')
 // Routes
 
 app.post('/signup1', controller.webentry);
-app.post('/incomingsms', controller.incomingsms);
+app.post("/incomingsms", function (request, response) {
+  console.log(request.body); 
+  response.send("<Response><Message>Hello</Message></Response>")
+  
+});
 
 
 // Testing Twilio
@@ -56,7 +60,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 
