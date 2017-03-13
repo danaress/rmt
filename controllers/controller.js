@@ -51,13 +51,20 @@ var userWebEntry =
 )}
 
 incomingsms = function(req, res){
+
+						if(req.body != "test"){
+
 						client.messages.create({ 
 
 	                body: "We received your message",
 	                to: '+12039470215', 
 	                from: "+15184810107"
 	            },  function(err, responseData) { 
-	            })}
+	            })
+				    }else{
+					res.send("doc")
+				}
+			}
 
 
 module.exports = {
