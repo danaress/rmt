@@ -34,6 +34,8 @@ var users = require('./models/model.js')
 // Routes
 
 app.post('/signup1', controller.webentry);
+app.post('/incomingsms', controller.incomingsms);
+
 
 // Testing Twilio
 // app.post('/signup1', function(req, res){
