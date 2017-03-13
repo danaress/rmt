@@ -28,7 +28,9 @@ var users = require('./models/model.js')
 
 
 ////////////// Twili0 ///////////
-
+var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
+var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
+const client = require('twilio')(accountSid, authToken);
 
 
 // Routes
