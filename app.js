@@ -18,7 +18,7 @@ var controller = require("./controllers/controller.js")
 // Database
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
-mongoose.createConnection('mongodb://localhost/users', function(err){
+mongoose.connect('mongodb://localhost/users', function(err){
 	if (err) console.log(err)
 		// console.log("connected to mongo")
 })
@@ -29,13 +29,11 @@ var users = require('./models/model.js')
 
 ////////////// Twili0 ///////////
 
-var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
-var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
-const client = require('twilio')(accountSid, authToken);
+
 
 // Routes
 
-app.post('/signup1', controller.signup);
+app.post('/signup1', controller.webentry);
 
 // Testing Twilio
 // app.post('/signup1', function(req, res){
@@ -56,7 +54,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 4000
+var port = 80
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 
