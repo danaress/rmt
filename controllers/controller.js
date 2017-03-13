@@ -25,8 +25,8 @@ var userWebEntry =
 					// Send this text message
 					client.messages.create({ 
 
-	                body: "It looks like you already started an account.",
-	                to: '+12039470215', 
+	                body: "It looks like you've already signed up.'",
+	                to: number, 
 	                from: "+15184810107"
 	            },  function(err, responseData) { 
 	            })			
@@ -40,8 +40,8 @@ var userWebEntry =
 					// And send them this text message
 					client.messages.create({ 
 
-	                body: "Welcome new user :)",
-	                to: '+12039470215', 
+	                body: "Thanks for signing up for Remind Me To :)",
+	                to: number, 
 	                from: "+15184810107"
 	            },  function(err, responseData) { 
 	            })
