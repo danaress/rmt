@@ -61,7 +61,9 @@ incomingsms = function(req, res){
 
 
 module.exports = {
-	webentry : webentry
+	webentry : webentry,
+	incomingsms : incomingsms
+
 }
 
 
