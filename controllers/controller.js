@@ -62,8 +62,9 @@ incomingsms = function(req, res){
 	            },  function(err, responseData) { 
 	            })
 				    }else{
-					res.send("doc")
+				    	console.log("nada")
 				}
+				res.send("<Response><Message>Hello from Twilio!</Message></Response>")
 			}
 
 
