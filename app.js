@@ -46,11 +46,12 @@ app.post('/signup1', controller.webentry);
 // });
 
 app.post('/incomingsms', function(req, res) {
-  var twilio = require('twilio');
-  var twiml = new twilio.TwimlResponse();
-  twiml.message('The Robots are coming! Head for the hills!');
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+					client.messages.create({ 
+	                body: "Hey",
+	                to: "+12039470215", 
+	                from: "+15184810107"
+	            },  function(err, responseData) { 
+	            })	
 });
 
 
