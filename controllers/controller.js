@@ -6,9 +6,11 @@ var twilio = require('twilio')
 incomingsms = function(req, res){
   var twilio = require('twilio');
   var twiml = new twilio.TwimlResponse();
-  twiml.message('The Robots are coming! Head for the hills!');
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+	twiml.message('Message received.');
+	response.writeHead(200, {
+		'Content-Type':'text/xml'
+	});
+	response.end(twiml.toString());
 }
 
 webentry = function(req, res){
@@ -56,28 +58,27 @@ var userWebEntry =
 	}
 )}
 
-incomingsms = function(req, res){
+// incomingsms = function(req, res){
 
-						if(req.body != "test"){
+// 						if(req.body != "test"){
 
-						client.messages.create({ 
+// 						client.messages.create({ 
 
-	                body: "We received your message",
-	                to: '+12039470215', 
-	                from: "+15184810107"
-	            },  function(err, responseData) { 
-	            })
-				    }else{
-				    	console.log("nada")
-				}
-				res.send("<Response><Message>Hello from Twilio!</Message></Response>")
-			}
+// 	                body: "We received your message",
+// 	                to: '+12039470215', 
+// 	                from: "+15184810107"
+// 	            },  function(err, responseData) { 
+// 	            })
+// 				    }else{
+// 				    	console.log("nada")
+// 				}
+// 				res.send("<Response><Message>Hello from Twilio!</Message></Response>")
+// 			}
 
 
 module.exports = {
 	webentry : webentry,
 	incomingsms : incomingsms
-
 }
 
 
