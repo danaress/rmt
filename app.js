@@ -1,7 +1,7 @@
 // Requires \\
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
-var worker = require('./worker.js')
 var twilio = require('twilio');
 var Twilio = require('twilio-js');
 
@@ -10,8 +10,7 @@ var Twilio = require('twilio-js');
 app.use(express.static(__dirname + '/public'));
 
 // Body Parser Setup
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -32,7 +31,7 @@ var users = require('./models/model.js')
 
 
 ////////////// Twili0 ///////////
-var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
+var accountSid = 'APfcbd7ab9a74519320629c60920c3a789'; 
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
 const client = require('twilio')(accountSid, authToken);
 
@@ -40,10 +39,12 @@ const client = require('twilio')(accountSid, authToken);
 // Routes
 
 app.post('/signup1', controller.webentry);
-// app.post("/incomingsms", function (req, res) {
-//   console.log(req.body); 
-//   res.send("<Response></Response>")
-// });
+
+
+app.post("/incomingsms", function (request, response) {
+  console.log(req.body); 
+  response.send("<Response></Response>")
+});
 
 // app.post('/incomingsms', function(req, res) {
 //   var twilio = require('twilio');
@@ -53,7 +54,7 @@ app.post('/signup1', controller.webentry);
 //   res.end(twiml.toString());
 // });
 
-app.post('/incomingsms', controller.incomingsms);
+// app.post('/incomingsms', controller.incomingsms);
 
 
 
