@@ -3,6 +3,10 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 var twilio = require('twilio')
 
+var accountSid = 'APfcbd7ab9a74519320629c60920c3a789'; 
+var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
+const client = require('twilio')(accountSid, authToken);
+
 incomingsms = function(req, res){
   var twilio = require('twilio');
   var twiml = new twilio.TwimlResponse();
