@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 var twilio = require('twilio')
 
-var accountSid = 'APfcbd7ab9a74519320629c60920c3a789'; 
+var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
 const client = require('twilio')(accountSid, authToken);
 
@@ -17,16 +17,34 @@ incomingsms = function(req, res){
 	response.end(twiml.toString());
 }
 
+
+test = function(req, res){
+client.messages.create({
+    body: 'Hello from Node',
+    to: '+12039470215',  // Text this number
+    from: '+15184810107' // From a valid Twilio number
+}, function(err, message) {
+    if(err) {
+        console.error(err.message);
+    }
+})
+}
+
+
+
 webentry = function(req, res){
 var number = ("+1"+req.body.username)
+console.log(req.body)
 var userWebEntry = 
 			{
 				username : req.body.username,
 				messageTime : '4/1/2017',
 				message : 'test'
 			}
+			// console.log(userWebEntry)
 	// Seeing if the user already exists in the database form their phone number.
 	users.find({username: req.body.username}, function(err, doc){
+				console.log("does user exist?")
 				console.log(err)
 				console.log(doc)
 				res.send(doc)

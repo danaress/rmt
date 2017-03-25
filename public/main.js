@@ -23,7 +23,7 @@ angular.module('myApp')
     // }
 
         $scope.signup = function(){
-            console.log("main")
+            console.log($scope.signupForm)
             $http({ 
                 method : 'POST',
                 url    : '/signup1',
@@ -32,6 +32,18 @@ angular.module('myApp')
                 if ( returnData.data.success ) { window.location.href="/" }
             })
         }
+
+        $scope.test = function(){
+            console.log("test")
+            $http({ 
+                method : 'POST',
+                url    : '/test',
+                data   : $scope.signupForm
+            }).then(function(returnData){
+                if ( returnData.data.success ) { window.location.href="/" }
+            })
+        }
+
 
 //         $scope.timeSetting = function(){
 //             $http({ 

@@ -10,7 +10,7 @@ var Twilio = require('twilio-js');
 app.use(express.static(__dirname + '/public'));
 
 // Body Parser Setup
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -31,9 +31,10 @@ var users = require('./models/model.js')
 
 
 ////////////// Twili0 ///////////
-var accountSid = 'APfcbd7ab9a74519320629c60920c3a789'; 
+var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
-const client = require('twilio')(accountSid, authToken);
+var client = new twilio.RestClient(accountSid, authToken);
+// const client = require('twilio')(accountSid, authToken);
 
 
 // Routes
@@ -47,30 +48,32 @@ app.post('/signup1', controller.webentry);
 // });
 
 app.post('/incomingsms', function(req, res) {
-  var twilio = require('twilio');
   var twiml = new twilio.TwimlResponse();
   twiml.message('The Robots are coming! Head for the hills!');
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
 });
 
+// app.post('/test', controller.test);
+
+
 // app.post('/incomingsms', controller.incomingsms);
 
 
 
-
 // Testing Twilio
-// app.post('/signup1', function(req, res){
-//     var number = ("+1"+req.body.username)
-// client.messages.create({ 
-
-//                 body: "Hello :)",
-//                 to: number, 
-//                 from: "+15184810107"
-//             },  function(err, responseData) { 
-//             })
-// console.log(number)
-//     })
+app.post('/test', function(req, res){
+	console.log("should be sending text")
+client.messages.create({
+    body: 'Hello from Node',
+    to: '+12039470215',  // Text this number
+    from: '+15184810107' // From a valid Twilio number
+}, function(err, message) {
+    if(err) {
+        console.error(err.message);
+    }
+})
+    })
 
 
 app.get('/', function(req, res) {
