@@ -7,29 +7,18 @@ var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb';
 var authToken = '2e9a7be1ba9cd9544c2b7739a92c670d';
 const client = require('twilio')(accountSid, authToken);
 
+
 test = function(req, res){
-  var twiml = new twilio.TwimlResponse();
-	twiml.message('Message received.');
-	res.writeHead(200, {
-		'Content-Type':'text/xml'
-	});
-	res.end(twiml.toString());
-}
-
-
-// test = function(req, res){
-// 	console.log("should be sending text")
-// client.messages.create({
-//     body: 'Hello1',
-//     to: '+12039470215',  // Text this number
-//     from: '+15184810107' // From a valid Twilio number
-// }, function(err, message) {
-//     if(err) {
-//         console.error(err.message);
-//     }
-// })
-// res.send("<Response><Message>Hello from Twilio!</Message></Response>")
-// }
+	console.log("should be sending text")
+client.messages.create({
+    body: 'Hello1',
+    to: '+12039470215',  // Text this number
+    from: '+15184810107' // From a valid Twilio number
+}, function(err, message) {
+    if(err) {
+        console.error(err.message);
+    }
+})}
 
 
 
