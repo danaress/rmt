@@ -10,10 +10,10 @@ const client = require('twilio')(accountSid, authToken);
 test = function(req, res){
   var twiml = new twilio.TwimlResponse();
 	twiml.message('Message received.');
-	response.writeHead(200, {
+	res.writeHead(200, {
 		'Content-Type':'text/xml'
 	});
-	response.end(twiml.toString());
+	res.end(twiml.toString());
 }
 
 
