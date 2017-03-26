@@ -101,7 +101,6 @@ var userWebEntry =
 
 module.exports = {
 	webentry : webentry,
-	incomingsms : incomingsms,
 	test : test
 }
 
