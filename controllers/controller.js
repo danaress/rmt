@@ -29,6 +29,7 @@ client.messages.create({
         console.error(err.message);
     }
 })
+res.send("<Response><Message>Hello from Twilio!</Message></Response>")
 }
 
 
