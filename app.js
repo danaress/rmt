@@ -1,4 +1,5 @@
 // Requires \\
+var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -48,7 +49,11 @@ app.post('/signup1', controller.webentry);
 // });
 
 app.post('/test', function(req, res) {
-res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
+ var twilio = require('twilio');
+  var twiml = new twilio.TwimlResponse();
+  twiml.message('The Robots are coming! Head for the hills!');
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
 });
 
 
