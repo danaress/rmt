@@ -54,26 +54,26 @@ app.post('/incomingsms', function(req, res) {
   res.end(twiml.toString());
 });
 
-// app.post('/test', controller.test);
+
 
 
 // app.post('/incomingsms', controller.incomingsms);
 
-
-
+app.post('/test', controller.test);
 // Testing Twilio
-app.post('/test', function(req, res){
-	console.log("should be sending text")
-client.messages.create({
-    body: 'Hello from Node',
-    to: '+12039470215',  // Text this number
-    from: '+15184810107' // From a valid Twilio number
-}, function(err, message) {
-    if(err) {
-        console.error(err.message);
-    }
-})
-    })
+
+// app.post('/test', function(req, res){
+// 	console.log("should be sending text")
+// client.messages.create({
+//     body: 'Hello from Node',
+//     to: '+12039470215',  // Text this number
+//     from: '+15184810107' // From a valid Twilio number
+// }, function(err, message) {
+//     if(err) {
+//         console.error(err.message);
+//     }
+// })
+//     })
 
 
 app.get('/', function(req, res) {

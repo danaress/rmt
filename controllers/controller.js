@@ -19,8 +19,9 @@ incomingsms = function(req, res){
 
 
 test = function(req, res){
+	console.log("should be sending text")
 client.messages.create({
-    body: 'Hello from Node',
+    body: 'Hello1',
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
@@ -100,7 +101,8 @@ var userWebEntry =
 
 module.exports = {
 	webentry : webentry,
-	incomingsms : incomingsms
+	incomingsms : incomingsms,
+	test : test
 }
 
 
