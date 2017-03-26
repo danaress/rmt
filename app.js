@@ -59,7 +59,14 @@ app.post('/incomingsms', function(req, res) {
 
 // app.post('/incomingsms', controller.incomingsms);
 
-app.post('/test', controller.test);
+// app.post('/test', controller.test);
+
+app.post("/test", function (request, response) {
+  console.log(request.body);
+  response.send("<Response><Message>Hello from Twilio!</Message></Response>")
+});
+
+
 // Testing Twilio
 
 // app.post('/test', function(req, res){
