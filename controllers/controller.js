@@ -9,13 +9,13 @@ const client = require('twilio')(accountSid, authToken);
 
 
 test = function(req, res){
-	var body1 = req.body.Body
-	var includesRMT = body1.toLowerCase().indexOf("remind me to")
-
+	var originalMessage = req.body.Body
+	var includesRMT = originalMessage.toLowerCase().indexOf("remind me to")
+	var sliced = originalMessage.slice(includesRMT, 11)
 checkFormat = function(){
 	if (includesRMT!=-1){
 	client.messages.create({
-    body: "correct format",
+    body: sliced,
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
