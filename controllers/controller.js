@@ -9,15 +9,35 @@ const client = require('twilio')(accountSid, authToken);
 
 
 test = function(req, res){
-client.messages.create({
-    body: req.body.Body,
+	var body = req.body.Body
+	var reminder = body.toLowerCase()
+	var includesRMT = reminder.includes("remind me to")
+	if (includesRMT){
+
+	client.messages.create({
+    body: "thanks for using the correct format.",
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
     if(err) {
         console.error(err.message);
     }
-})}
+})
+	} else {
+
+	// if the sms doesn't include "Remind Me To" they get this message.
+	client.messages.create({
+    body: "this does not appear to be a valid reminder.",
+    to: '+12039470215',  // Text this number
+    from: '+15184810107' // From a valid Twilio number
+}, function(err, message) {
+    if(err) {
+        console.error(err.message);
+    }
+})
+	}
+
+}
 
 
 
