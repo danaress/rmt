@@ -12,7 +12,6 @@ test = function(req, res){
 	var body1 = req.body.Body
 	var includesRMT = true
 	// var includesRMT = body1.includes("remind me to")
-	checkFormat();
 
 checkFormat = function(){
 	if (includesRMT = true){
@@ -39,6 +38,8 @@ checkFormat = function(){
 })
 	}
 }
+	checkFormat();
+
 
 }
 
