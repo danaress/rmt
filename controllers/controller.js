@@ -13,7 +13,7 @@ test = function(req, res){
 	var includesRMT = body1.indexOf("remind me to")
 
 checkFormat = function(){
-	if (includesRMT>0){
+	if (includesRMT!=-1){
 	client.messages.create({
     body: "correct format",
     to: '+12039470215',  // Text this number
