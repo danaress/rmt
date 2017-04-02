@@ -15,7 +15,7 @@ test = function(req, res){
 checkFormat = function(){
 	if (includesRMT>0){
 	client.messages.create({
-    body: body1,
+    body: "correct format",
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
@@ -27,7 +27,7 @@ checkFormat = function(){
 
 	// if the sms doesn't include "Remind Me To" they get this message.
 	client.messages.create({
-    body: body1,
+    body: "incorrect format",
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
