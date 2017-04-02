@@ -10,7 +10,7 @@ const client = require('twilio')(accountSid, authToken);
 
 test = function(req, res){
 client.messages.create({
-    body: response.body.Body,
+    body: req.body.Body,
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
