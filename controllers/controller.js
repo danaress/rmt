@@ -10,8 +10,7 @@ const client = require('twilio')(accountSid, authToken);
 
 test = function(req, res){
 	var body1 = req.body.Body
-	var includesRMT = true
-	// var includesRMT = body1.includes("remind me to")
+	var includesRMT = body1.includes("remind me to")
 
 checkFormat = function(){
 	if (includesRMT = true){
