@@ -37,8 +37,7 @@ angular.module('myApp')
             console.log("test")
             $http({ 
                 method : 'POST',
-                url    : '/test',
-                data   : $scope.signupForm
+                url    : '/test'
             }).then(function(returnData){
                 if ( returnData.data.success ) { window.location.href="/" }
             })
