@@ -10,10 +10,10 @@ const client = require('twilio')(accountSid, authToken);
 
 test = function(req, res){
 	var body1 = req.body.Body
-	var includesRMT = body1.includes("remind me to")
+	var includesRMT = body1.indexOf("remind me to")
 
 checkFormat = function(){
-	if (includesRMT = true){
+	if (includesRMT>0){
 	client.messages.create({
     body: body1,
     to: '+12039470215',  // Text this number
