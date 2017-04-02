@@ -11,7 +11,7 @@ const client = require('twilio')(accountSid, authToken);
 test = function(req, res){
 	var originalMessage = req.body.Body
 	var includesRMT = originalMessage.toLowerCase().indexOf("remind me to")
-	var sliced = originalMessage.slice(includesRMT, 11)
+	var sliced = originalMessage.slice(12)
 checkFormat = function(){
 	if (includesRMT!=-1){
 	client.messages.create({
