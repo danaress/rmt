@@ -12,8 +12,10 @@ test = function(req, res){
 	var body1 = req.body.Body
 	var reminder = body1.toString().toLowerCase()
 	var includesRMT = reminder.includes("remind me to")
-	if (includesRMT = true){
+	checkFormat();
 
+checkFormat = function(){
+	if (includesRMT = true){
 	client.messages.create({
     body: "thanks for using the correct format.",
     to: '+12039470215',  // Text this number
@@ -36,6 +38,7 @@ test = function(req, res){
     }
 })
 	}
+}
 
 }
 
