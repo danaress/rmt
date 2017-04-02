@@ -48,20 +48,20 @@ app.post('/signup1', controller.webentry);
 //   response.send("<Response></Response>")
 // });
 
-app.post('/test', function(req, res) {
- var twilio = require('twilio');
-  var twiml = new twilio.TwimlResponse();
-  twiml.message('The Robots are coming! Head for the hills!');
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
-});
+// app.post('/test', function(req, res) {
+//  var twilio = require('twilio');
+//   var twiml = new twilio.TwimlResponse();
+//   twiml.message('The Robots are coming! Head for the hills!');
+//   res.writeHead(200, {'Content-Type': 'text/xml'});
+//   res.end(twiml.toString());
+// });
 
 
 
 
 // app.post('/incomingsms', controller.incomingsms);
 
-// app.post('/test', controller.test);
+app.post('/test', controller.test);
 
 
 // Testing Twilio

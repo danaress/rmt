@@ -9,7 +9,6 @@ const client = require('twilio')(accountSid, authToken);
 
 
 test = function(req, res){
-	console.log("should be sending text")
 client.messages.create({
     body: 'Hello1',
     to: '+12039470215',  // Text this number
