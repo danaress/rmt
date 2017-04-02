@@ -12,7 +12,7 @@ test = function(req, res){
 	var body1 = req.body.Body
 	var reminder = body1.toString().toLowerCase()
 	var includesRMT = reminder.includes("remind me to")
-	if (includesRMT){
+	if (includesRMT = true){
 
 	client.messages.create({
     body: "thanks for using the correct format.",
