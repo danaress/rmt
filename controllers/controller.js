@@ -10,7 +10,7 @@ const client = require('twilio')(accountSid, authToken);
 
 test = function(req, res){
 client.messages.create({
-    body: 'Hello1',
+    body: response.body.Body,
     to: '+12039470215',  // Text this number
     from: '+15184810107' // From a valid Twilio number
 }, function(err, message) {
@@ -68,24 +68,6 @@ var userWebEntry =
 		}
 	}
 )}
-
-// incomingsms = function(req, res){
-
-// 						if(req.body != "test"){
-
-// 						client.messages.create({ 
-
-// 	                body: "We received your message",
-// 	                to: '+12039470215', 
-// 	                from: "+15184810107"
-// 	            },  function(err, responseData) { 
-// 	            })
-// 				    }else{
-// 				    	console.log("nada")
-// 				}
-// 				res.send("<Response><Message>Hello from Twilio!</Message></Response>")
-// 			}
-
 
 module.exports = {
 	webentry : webentry,
