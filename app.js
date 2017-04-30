@@ -57,6 +57,30 @@ app.post('/signup1', controller.webentry);
 
 app.post('/test1', controller.test);
 
+
+app.post('/newtest', function(req, res){
+
+	users.update(
+			{username:'2039470215'},
+			{$push:
+					{messages :{
+						messageDate:'4/30/17',
+						message:'messageBody'
+					}
+				}
+			}, 
+			function(err, doc){
+			console.log("err = "+err)
+			console.log(doc)
+
+	}
+)
+	res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
+
+})
+
+
+
 app.post('/test', function(req, res){
 
 	// Body of SMS
