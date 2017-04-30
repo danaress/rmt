@@ -84,10 +84,10 @@ app.post('/newtest', function(req, res){
 app.post('/test', function(req, res){
 
 	// Body of SMS
-	// var originalMessage = req.body.Body
+	var originalMessage = req.body.Body
 	// var from = req.body.from
 	var from = req.body.From
-	var originalMessage = "remind me to go to the store // saturday at 11:05pm"
+	// var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
