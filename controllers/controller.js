@@ -4,6 +4,8 @@ var db = mongoose.connection;
 var twilio = require('twilio')
 var date = require('datejs')
 var moment = require('moment')
+var bodyParser = require('body-parser');
+
 
 
 var accountSid = 'AC49f665c07dac0c475d23f634e9df43cb'; 
@@ -22,7 +24,7 @@ test = function(req, res){
 
 	// Body of SMS
 	var originalMessage = req.body.Body
-	var from = req.body.From
+	var from = req.body.from
 	// var originalMessage = "Remind me to call mom// saturday at 3:54pm"
 
 	// slice must equal 'remind me to' or it fails format test
@@ -150,11 +152,11 @@ var formattedDate = moment(newDate).format('llll')
 
 
 users.update(
-			{'username':"2039470215"},
+			{'username':from},
 			{$push: 
 					{messages :{
-						messageDate: '4/30/17',
-						message: "please import"
+						messageDate:formattedDate,
+						message:messageBody
 					}
 				}
 			}, 
