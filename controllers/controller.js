@@ -152,11 +152,11 @@ var formattedDate = moment(newDate).format('llll')
 
 
 users.update(
-			{'username':req.body.From},
+			{'username':'2039470215'},
 			{$push: 
 					{messages :{
 						messageDate:'4/30/17',
-						message:'nlkjnljnkljnlkjn'
+						message:req.body.Body
 					}
 				}
 			}, 
