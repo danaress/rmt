@@ -25,15 +25,15 @@ var outgoing = require("./controllers/outgoing.js")
 
 
 // Database
-var users = require('./models/model.js')
+
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost/users', function(err){
-// 	if (err) console.log(err)
-// 		// console.log("connected to mongo")
-// })
+mongoose.connect('mongodb://localhost/users', function(err){
+	if (err) console.log(err)
+		// console.log("connected to mongo")
+})
 var db = mongoose.connection;
-
+var users = require('./models/model.js')
 
 
 ////////////// Twili0 ///////////
@@ -55,12 +55,15 @@ app.post('/signup1', controller.webentry);
 //   res.end(twiml.toString());
 // });
 
+app.post('/test1', controller.test);
+
 app.post('/test', function(req, res){
 
 	// Body of SMS
-	var originalMessage = req.body.Body
-	var from = req.body.from
-	// var originalMessage = "Remind me to call mom// saturday at 3:54pm"
+	// var originalMessage = req.body.Body
+	// var from = req.body.from
+	var from = 12039470215
+	var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
@@ -107,7 +110,9 @@ app.post('/test', function(req, res){
     }	
 
 checkFormat = function(){
+	console.log("made it this far")
 	if (formatCheck = false){
+		console.log("shit is false")
 	client.messages.create({
     body: "please check the correct format.",
     to: '+12039470215',  // Text this number
@@ -118,7 +123,7 @@ checkFormat = function(){
     }
 })
 	} else {
-
+		console.log("shit is good")
 	// if the sms passes the format check, send to DB.
 
 	// Index of End of Message
@@ -163,11 +168,11 @@ checkFormat = function(){
 	} else if((dayVal - todayNum) <= -1){
 	    nextWeek = true
 	    numDays = ((dayVal - todayNum) + 7)
-	    // console.log("send in days2 = " + numDays)
+	    console.log("send in days2 = " + numDays)
 	} else {
 	    nextWeek = false
 	    numDays = (dayVal - todayNum)
-	    // console.log("send in days3 = " + numDays)
+	    console.log("send in days3 = " + numDays)
 	}
 
 var messageDate = today.addDays(numDays)
@@ -182,14 +187,14 @@ if(time.slice(0,1)==' '){
 
 var newDate = messageDate.at(time)
 var formattedDate = moment(newDate).format('llll')
-
-
+console.log(formattedDate)
+console.log(messageBody)
 users.update(
-			{'username':from},
-			{$push: 
+			{username:'2039470215'},
+			{$push:
 					{messages :{
-						messageDate:formattedDate,
-						message:messageBody
+						messageDate:'4/30/17',
+						message:'messageBody'
 					}
 				}
 			}, 
@@ -230,7 +235,7 @@ app.get('/', function(req, res) {
 });
 
 // Creating Server and Listening for Connections \\
-var port = 80
+var port = 3000
 app.listen(port, function(){
   console.log('*** Server running on port ' + port + " ***");
 

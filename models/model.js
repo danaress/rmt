@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
 var userSchema = mongoose.Schema({
     username: { type: Number, required: true, unique: false },
     messages: [{
-    messageDate: { type: Date, required: true },
+    messageDate: { type: String, required: true },
     message: { type: String, required: true, default: 0 }
 }]
 

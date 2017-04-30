@@ -23,9 +23,10 @@ const client = require('twilio')(accountSid, authToken);
 test = function(req, res){
 
 	// Body of SMS
-	var originalMessage = req.body.Body
-	var from = req.body.from
-	// var originalMessage = "Remind me to call mom// saturday at 3:54pm"
+	// var originalMessage = req.body.Body
+	// var from = req.body.from
+	// var from = 12039470215
+	var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
@@ -97,8 +98,6 @@ checkFormat = function(){
 	var today = new Date;
 	var todayNum = today.getDay()
 
-
-
 	if (dayTime.includes('sunday')){
 	    dayName = 'sunday'
 	    dayVal = 0
@@ -150,19 +149,21 @@ if(time.slice(0,1)==' '){
 var newDate = messageDate.at(time)
 var formattedDate = moment(newDate).format('llll')
 
-
+console.log("in controller")
+var from1 = 2039470215
 users.update(
-			{'username':'2039470215'},
+			{username:from1},
 			{$push: 
 					{messages :{
-						messageDate:'4/30/17',
-						message:req.body.Body
+						messageDate:formattedDate,
+						message:messageBody
 					}
 				}
 			}, 
 			function(err, doc){
 			console.log("err = "+err)
 			console.log(doc)
+			// res.send(doc)
 	}
 )
 
@@ -170,7 +171,7 @@ users.update(
 	// end of else statement
 }
 	checkFormat();
-res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
+// res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
 }
 
 
