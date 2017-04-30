@@ -86,7 +86,7 @@ app.post('/test', function(req, res){
 	// Body of SMS
 	// var originalMessage = req.body.Body
 	// var from = req.body.from
-	var from = 12039470215
+	var from = req.body.From
 	var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
 	// slice must equal 'remind me to' or it fails format test
@@ -214,11 +214,11 @@ var formattedDate = moment(newDate).format('llll')
 console.log(formattedDate)
 console.log(messageBody)
 users.update(
-			{username:'2039470215'},
+			{username:from},
 			{$push:
 					{messages :{
-						messageDate:'4/30/17',
-						message:'messageBody'
+						messageDate:formattedDate,
+						message:messageBody
 					}
 				}
 			}, 
