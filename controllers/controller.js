@@ -161,7 +161,7 @@ users.update(
 			function(err, doc){
 			console.log("err = "+err)
 			console.log(doc)
-		res.send(doc)
+		res.send("test")
 	}
 )
 
