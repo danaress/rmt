@@ -22,6 +22,86 @@ angular.module('myApp')
     //     })
     // }
 
+
+    $scope.parse = function(req, res){
+
+var testMessage = "Remind me to call mom// next monday at 9:30am"
+var dayTime = testMessage.toLowerCase().slice(testMessage.indexOf("//")+2)
+
+var dayVal;
+var nextWeek;
+var dayName;
+var numDays;
+var ampmCheck;
+var meridian;
+var today = new Date;
+var todayNum = today.getDay()
+
+
+if (dayTime.includes('sunday')){
+    dayName = 'sunday'
+    dayVal = 0
+} else if (dayTime.includes('monday')){
+    dayName = 'monday'
+    dayVal = 1
+} else if (dayTime.includes('tuesday')){
+    dayName = 'tuesday'
+    dayVal = 2
+} else if (dayTime.includes('wednesday')){
+    dayName = 'wednesday'
+    dayVal = 3
+} else if (dayTime.includes('thursday')){
+    dayName = 'thursday'
+    dayVal = 4
+} else if (dayTime.includes('friday')){
+    dayName = 'friday'
+    dayVal = 5
+} else if (dayTime.includes('saturday')){
+    dayName = 'saturday'
+    dayVal = 6
+}
+
+
+if (dayTime.includes("next") && dayTime.indexOf("next") < dayTime.indexOf(dayName)){
+    nextWeek = true
+    numDays = ((dayVal - todayNum) + 7)
+    console.log("send in days = " + numDays)
+} else if((dayVal - todayNum) <= -1){
+    nextWeek = true
+    numDays = ((dayVal - todayNum) + 7)
+    console.log("send in days = " + numDays)
+} else {
+    nextWeek = false
+    numDays = (dayVal - todayNum)
+    console.log("send in days = " + numDays)
+}
+
+if(dayTime.toLowerCase().includes('am')){
+    meridian = 'am'
+} else if(dayTime.toLowerCase().includes('pm')) {
+    meridian = 'pm'
+} else {
+    ampmCheck = false;
+}
+
+var messageDate = today.addDays(numDays)
+
+var time = dayTime.substring(dayTime.indexOf(meridian)-5)
+
+if(!isNaN(time.substring(0,1))){
+    time = dayTime.substring(dayTime.indexOf(meridian)-4)
+    console.log(time)
+    console.log(messageDate.at(time))
+} else {
+    time = dayTime.substring(dayTime.indexOf(meridian)-5)
+    console.log(time)
+    console.log(messageDate.at(time))
+}
+
+
+
+}
+
         $scope.signup = function(){
             console.log($scope.signupForm)
             $http({ 
@@ -39,6 +119,32 @@ angular.module('myApp')
                 method : 'POST',
                 url    : '/test'
             }).then(function(returnData){
+                if ( returnData.data.success ) { window.location.href="/" }
+            })
+        }
+
+        $scope.checkTime = function(){
+            console.log("import")
+            $http({ 
+                method : 'POST',
+                url    : '/checkTime'
+            }).then(function(returnData){
+                console.log("here's return data:")
+                console.log(returnData)
+                console.log(returnData.data)
+                if ( returnData.data.success ) { window.location.href="/" }
+            })
+        }
+
+        $scope.importData = function(){
+            console.log("import")
+            $http({ 
+                method : 'POST',
+                url    : '/importData'
+            }).then(function(returnData){
+                console.log("here's return data:")
+                console.log(returnData)
+                console.log(returnData.data)
                 if ( returnData.data.success ) { window.location.href="/" }
             })
         }

@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "datejs": "^1.0.0-rc3",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "http": "0.0.0",
     "intro.js": "^2.0.0",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.25",
     "mongoose": "^4.8.6",
     "twilio": "^2.11.1",

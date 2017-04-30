@@ -4,6 +4,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var twilio = require('twilio');
+var Date = require('datejs')
+var moment = require('moment')
+
 // var Twilio = require('twilio-js');
 
 
@@ -16,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 var controller = require("./controllers/controller.js")
+var outgoing = require("./controllers/outgoing.js")
+
 
 
 
@@ -39,15 +44,9 @@ var client = new twilio.RestClient(accountSid, authToken);
 
 
 // Routes
-
 app.post('/signup1', controller.webentry);
 
-
-// app.post("/incomingsms", function (request, response) {
-//   console.log(req.body); 
-//   response.send("<Response></Response>")
-// });
-
+// testing twilio http request in server.
 // app.post('/test', function(req, res) {
 //  var twilio = require('twilio');
 //   var twiml = new twilio.TwimlResponse();
@@ -56,28 +55,11 @@ app.post('/signup1', controller.webentry);
 //   res.end(twiml.toString());
 // });
 
-
-
-
-// app.post('/incomingsms', controller.incomingsms);
-
 app.post('/test', controller.test);
+// app.post('/importData', controller.importData);
+app.post('/checkTime', outgoing.checkTime);
 
 
-// Testing Twilio
-
-// app.post('/test', function(req, res){
-// 	console.log("should be sending text")
-// client.messages.create({
-//     body: 'Hello from Node',
-//     to: '+12039470215',  // Text this number
-//     from: '+15184810107' // From a valid Twilio number
-// }, function(err, message) {
-//     if(err) {
-//         console.error(err.message);
-//     }
-// })
-//     })
 
 
 app.get('/', function(req, res) {
