@@ -89,16 +89,6 @@ app.post('/test', function(req, res){
 	var from = req.body.From
 	// var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
-	client.messages.create({
-    body: originalMessage,
-    to: '+12039470215',  // Text this number
-    from: '+15184810107' // From a valid Twilio number
-}, function(err, message) {
-    if(err) {
-        console.error(err.message);
-    }
-})
-
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
 
@@ -235,7 +225,7 @@ users.update(
 			function(err, doc){
 			console.log("err = "+err)
 			console.log(doc)
-
+			res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
 	}
 )
 
@@ -243,7 +233,6 @@ users.update(
 	// end of else statement
 }
 	checkFormat();
-	res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
 })
 // 
 // END OF FUNCTION FROM CONTROLLER
