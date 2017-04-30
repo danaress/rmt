@@ -155,8 +155,8 @@ users.update(
 			{'username':from},
 			{$push: 
 					{messages :{
-						'messageDate':formattedDate,
-						'message':messageBody
+						messageDate:'4/30/17',
+						message:'nlkjnljnkljnlkjn'
 					}
 				}
 			}, 
