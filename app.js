@@ -25,14 +25,14 @@ var outgoing = require("./controllers/outgoing.js")
 
 
 // Database
+var users = require('./models/model.js')
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/users', function(err){
-	if (err) console.log(err)
-		// console.log("connected to mongo")
-})
+// mongoose.connect('mongodb://localhost/users', function(err){
+// 	if (err) console.log(err)
+// 		// console.log("connected to mongo")
+// })
 var db = mongoose.connection;
-var users = require('./models/model.js')
 
 
 
