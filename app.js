@@ -196,6 +196,8 @@ users.update(
 			function(err, doc){
 			console.log("err = "+err)
 			console.log(doc)
+			res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
+
 	}
 )
 
@@ -203,7 +205,6 @@ users.update(
 	// end of else statement
 }
 	checkFormat();
-res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
 })
 // 
 // END OF FUNCTION FROM CONTROLLER
