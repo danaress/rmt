@@ -4,7 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var twilio = require('twilio');
-var Date = require('datejs')
+var date = require('datejs')
 var moment = require('moment')
 
 // var Twilio = require('twilio-js');
