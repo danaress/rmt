@@ -89,6 +89,16 @@ app.post('/test', function(req, res){
 	var from = req.body.From
 	// var originalMessage = "remind me to go to the store // saturday at 11:05pm"
 
+	client.messages.create({
+    body: originalMessage,
+    to: '+12039470215',  // Text this number
+    from: '+15184810107' // From a valid Twilio number
+}, function(err, message) {
+    if(err) {
+        console.error(err.message);
+    }
+})
+
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
 
