@@ -324,7 +324,6 @@ if(!isNaN(time.substring(0,1))){
 //         }})}
   // $scope.welcomeBox();
           
-        
 
 
         }])
