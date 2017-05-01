@@ -136,6 +136,8 @@ if(!isNaN(time.substring(0,1))){
             })
         }
 
+        setTimeout($scope.checkTime,10000)
+
         $scope.importData = function(){
             console.log("import")
             $http({ 
