@@ -85,9 +85,9 @@ app.post('/test', function(req, res){
 
 	// Body of SMS
 	var originalMessage = req.body.Body
-	// var from = req.body.from
 	var from = req.body.From
-	// var originalMessage = "remind me to go to the store // saturday at 11:05pm"
+	// var from = '2039470215'
+	// var originalMessage = "remind me to do something cool // monday at 11:35pm"
 
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)
@@ -225,14 +225,15 @@ users.update(
 			function(err, doc){
 			console.log("err = "+err)
 			console.log(doc)
-			res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
+
 	}
 )
 
-	}
+	}	
 	// end of else statement
 }
 	checkFormat();
+	res.send("<?xml version='1.0' encoding='UTF-8'?><Response></Response>")
 })
 // 
 // END OF FUNCTION FROM CONTROLLER
@@ -248,7 +249,7 @@ users.update(
 
 
 // app.post('/importData', controller.importData);
-app.post('/checkTime', outgoing.checkTime);
+// app.post('/checkTime', outgoing.checkTime);
 
 
 

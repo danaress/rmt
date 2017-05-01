@@ -13,34 +13,34 @@ const client = require('twilio')(accountSid, authToken);
 var timeNow = moment().format('llll')
 
 
-checkTime = function(req, res){
+// checkTime = function(req, res){
 
-	users.find({}, function(err, doc){
-		for (i=0; i<doc.length; i++){
-			for(j=0; j<doc[i].messages.length; j++){
-				var number = ("+"+(doc[i].username))
-				// console.log("scheduled time = "+doc[i].messages[j].messageDate)
-				if(moment(doc[i].messages[j].messageDate).format('llll') == timeNow){
+// 	users.find({}, function(err, doc){
+// 		for (i=0; i<doc.length; i++){
+// 			for(j=0; j<doc[i].messages.length; j++){
+// 				var number = ("+"+(doc[i].username))
+// 				// console.log("scheduled time = "+doc[i].messages[j].messageDate)
+// 				if(moment(doc[i].messages[j].messageDate).format('llll') == timeNow){
 
-					client.messages.create({
-					    body: doc[i].messages[j].message,
-					    to: number,  // Text this number
-					    from: '+15184810107' // From a valid Twilio number
-					})
+// 						client.messages.create({
+// 					    body: doc[i].messages[j].message,
+// 					    to: number,  // Text this number
+// 					    from: '+15184810107' // From a valid Twilio number
+// 					})
 
-				}else{
+// 				}else{
 					
-				}
-			}
-		}
-				res.send(doc)
-	}
-)
+// 				}
+// 			}
+// 		}
+// 				res.send(doc)
+// 	}
+// )
 
 
 
-}
-setTimeout(checkTime(),1000)
+// }
+// setTimeout(checkTime(),1000)
 module.exports = {
-	checkTime : checkTime
+	// checkTime : checkTime
 }

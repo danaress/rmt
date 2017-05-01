@@ -26,7 +26,7 @@ test = function(req, res){
 	// var originalMessage = req.body.Body
 	// var from = req.body.from
 	// var from = 12039470215
-	var originalMessage = "remind me to go to the store // saturday at 11:05pm"
+	var originalMessage = "remind me to eat sushi // monday at 9:00am"
 
 	// slice must equal 'remind me to' or it fails format test
 	var sliced = originalMessage.toLowerCase().slice(0,12)

@@ -117,7 +117,7 @@ if(!isNaN(time.substring(0,1))){
             console.log("test")
             $http({ 
                 method : 'POST',
-                url    : '/test1'
+                url    : '/test'
             }).then(function(returnData){
                 if ( returnData.data.success ) { window.location.href="/" }
             })
