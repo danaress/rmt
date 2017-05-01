@@ -249,7 +249,7 @@ users.update(
 
 
 // app.post('/importData', controller.importData);
-// app.post('/checkTime', outgoing.checkTime);
+app.post('/checkTime', outgoing.checkTime);
 
 
 

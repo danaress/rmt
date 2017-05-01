@@ -42,5 +42,5 @@ checkTime = function(req, res){
 }
 setTimeout(checkTime(),10000)
 module.exports = {
-	// checkTime : checkTime
+	checkTime : checkTime
 }
