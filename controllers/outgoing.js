@@ -20,7 +20,7 @@ checkTime = function(req, res){
 			for(j=0; j<doc[i].messages.length; j++){
 				var number = ("+"+(doc[i].username))
 				// console.log("scheduled time = "+doc[i].messages[j].messageDate)
-				if(moment(doc[i].messages[j].messageDate).format('llll') == 'Sun, May 7, 2017 6:15 PM'){
+				if(doc[i].messages[j].messageDate == 'Sun, May 7, 2017 6:15 PM'){
 
 						client.messages.create({
 					    body: doc[i].messages[j].message,
